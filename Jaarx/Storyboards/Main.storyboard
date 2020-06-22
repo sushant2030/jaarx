@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MrF-AB-pWI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HomeVC-->
+        <scene sceneID="vKc-mw-SMj">
+            <objects>
+                <viewController id="MrF-AB-pWI" customClass="HomeVC" customModule="Jaarx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LXK-5D-rEI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qCi-b5-75c">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qCi-b5-75c" firstAttribute="trailing" secondItem="h1b-gt-wtG" secondAttribute="trailing" id="H8l-RY-SoN"/>
+                            <constraint firstItem="qCi-b5-75c" firstAttribute="leading" secondItem="h1b-gt-wtG" secondAttribute="leading" id="Z3D-fx-HTo"/>
+                            <constraint firstItem="qCi-b5-75c" firstAttribute="top" secondItem="h1b-gt-wtG" secondAttribute="top" id="koR-yT-dec"/>
+                            <constraint firstItem="qCi-b5-75c" firstAttribute="bottom" secondItem="h1b-gt-wtG" secondAttribute="bottom" id="xr4-vw-bex"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h1b-gt-wtG"/>
+                    </view>
+                    <connections>
+                        <outlet property="homeTableView" destination="qCi-b5-75c" id="ylP-k0-6DQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6hd-yG-8bb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-330" y="136"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_Jaarx_JaarxUITests {
+  umbrella header "Pods-Jaarx-JaarxUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
