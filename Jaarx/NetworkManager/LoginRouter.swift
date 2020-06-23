@@ -34,14 +34,5 @@ extension LoginRouter : APIRouter {
     var httpMethod: HTTPMethod {
         return .post
     }
-    
-    var url: URL {
-        return URL.init(string: self.baseURL + self.path)!
-    }
-        
-    func asURLRequest() throws -> URLRequest {
-        return URLRequest.init(url: self.url)
-    }
-    
-    
+
 }
