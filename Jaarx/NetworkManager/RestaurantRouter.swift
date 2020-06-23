@@ -11,9 +11,9 @@ import Alamofire
 
 enum RestaurantRouter {
     case add(id : Int)
-    case getFavorites(user_id : String)
-    case addReviews(res_id : String , review : String)
-    case setFavorite(user_id : String, res_id : String , status : Bool)
+    case getFavorites(userId : String)
+    case addReviews(resId : String , review : String)
+    case setFavorite(userId : String, resId : String , status : Bool)
     
 }
 
@@ -46,10 +46,10 @@ extension RestaurantRouter : APIRouter {
         switch self {
         case .add(let id):
             return [Constants.RestaurantAPIParameter.id : id]
-        case .getFavorites(let user_id):
-            return [Constants.RestaurantAPIParameter.userId : user_id]
-        case .setFavorite(let user_id,let res_id,let status):
-            return [Constants.RestaurantAPIParameter.userId : user_id, Constants.RestaurantAPIParameter.resId : res_id, Constants.RestaurantAPIParameter.status:status]
+        case .getFavorites(let userId):
+            return [Constants.RestaurantAPIParameter.userId : userId]
+        case .setFavorite(let userId,let resId,let status):
+            return [Constants.RestaurantAPIParameter.userId : userId, Constants.RestaurantAPIParameter.resId : resId, Constants.RestaurantAPIParameter.status:status]
         default:
             return nil
         }
