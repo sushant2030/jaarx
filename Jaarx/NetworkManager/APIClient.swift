@@ -42,10 +42,28 @@ class APIClient {
                print(error)
            }
        }
-    static func registerDeviceWith(params:[String:Any], completion:@escaping (AFResult<RegisterDeviceResponse>)->Void){
+    static func registerDeviceWith(params:[String:Any], completion:@escaping (AFResult<GenericResponse>)->Void){
         do {
          let userRouter = try UserRouter.registerDevice(params: params).asURLRequest()
             performRequest(route: userRouter, completion:completion )
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    static func bookTableWith(params:[String:Any], completion:@escaping (AFResult<GenericResponse>)->Void){
+        do {
+         let restaurantRouter = try RestaurantRouter.bookTableWith(params: params).asURLRequest()
+            performRequest(route: restaurantRouter, completion:completion )
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    static func updateBookingWith(params:[String:Any], completion:@escaping (AFResult<GenericResponse>)->Void){
+        do {
+         let restaurantRouter = try RestaurantRouter.updateBookingWith(params: params).asURLRequest()
+            performRequest(route: restaurantRouter, completion:completion )
         }
         catch (let error){
             print(error)

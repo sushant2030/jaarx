@@ -14,6 +14,8 @@ enum RestaurantRouter {
     case getFavorites(userId : String)
     case addReviews(resId : String , review : String)
     case setFavorite(userId : String, resId : String , status : Bool)
+    case bookTableWith(params : [String:Any])
+    case updateBookingWith(params : [String:Any])
     
 }
 
@@ -29,6 +31,10 @@ extension RestaurantRouter : APIRouter {
             return ""
         case .setFavorite:
             return "/restaurant/restaurant_favorite"
+        case .bookTableWith:
+            return "/book/table"
+        case .updateBookingWith:
+            return "/book/update"
         }
     }
     
@@ -50,6 +56,10 @@ extension RestaurantRouter : APIRouter {
             return [Constants.RestaurantAPIParameter.userId : userId]
         case .setFavorite(let userId,let resId,let status):
             return [Constants.RestaurantAPIParameter.userId : userId, Constants.RestaurantAPIParameter.resId : resId, Constants.RestaurantAPIParameter.status:status]
+        case .bookTableWith(let params):
+            return params
+        case .updateBookingWith(let params):
+        return params
         default:
             return nil
         }

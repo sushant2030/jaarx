@@ -43,7 +43,7 @@
 		9E91BEC11DB656DD387951FE /* Pods_JaarxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */; };
 		D84D8C5624A2495E007F7EDA /* AddOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = D84D8C5524A2495E007F7EDA /* AddOrder.json */; };
 		D84D8C5824A24B1E007F7EDA /* AddOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */; };
-		D84D8C5B24A287DF007F7EDA /* RegisterDeviceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D8C5A24A287DF007F7EDA /* RegisterDeviceResponse.swift */; };
+		D84D8C5D24A2A6D2007F7EDA /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D8C5C24A2A6D1007F7EDA /* GenericResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +126,7 @@
 		D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JaarxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84D8C5524A2495E007F7EDA /* AddOrder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AddOrder.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderResponse.swift; sourceTree = "<group>"; };
-		D84D8C5A24A287DF007F7EDA /* RegisterDeviceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDeviceResponse.swift; sourceTree = "<group>"; };
+		D84D8C5C24A2A6D1007F7EDA /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		F9A3A7AF1C6EE0BD4E545198 /* Pods-JaarxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JaarxTests.debug.xcconfig"; path = "Target Support Files/Pods-JaarxTests/Pods-JaarxTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,7 +165,7 @@
 				5BC0C70824A27A1D0045782B /* FavoriteRestaurant.swift */,
 				5BC0C70924A27A1D0045782B /* UserDetail.swift */,
 				D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */,
-				D84D8C5A24A287DF007F7EDA /* RegisterDeviceResponse.swift */,
+				D84D8C5C24A2A6D1007F7EDA /* GenericResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -623,6 +623,7 @@
 				5B8546E3249502710092743E /* HomeRouter.swift in Sources */,
 				5BA783392497E1B1007A4755 /* Helper.swift in Sources */,
 				5BC0C70B24A27A1D0045782B /* UserDetail.swift in Sources */,
+				D84D8C5D24A2A6D2007F7EDA /* GenericResponse.swift in Sources */,
 				5B72E1B0240EED600032F004 /* SquareCollectionCell.swift in Sources */,
 				5B72E173240ECFD40032F004 /* ViewController.swift in Sources */,
 				5B72E16F240ECFD40032F004 /* AppDelegate.swift in Sources */,
@@ -632,7 +633,6 @@
 				5B8546DB24942D610092743E /* LoginRouter.swift in Sources */,
 				5B72E1A6240ED16C0032F004 /* CarouselCell.swift in Sources */,
 				D84D8C5824A24B1E007F7EDA /* AddOrderResponse.swift in Sources */,
-				D84D8C5B24A287DF007F7EDA /* RegisterDeviceResponse.swift in Sources */,
 				5BC0C70A24A27A1D0045782B /* FavoriteRestaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

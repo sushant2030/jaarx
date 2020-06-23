@@ -39,9 +39,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             "deviceToken"  : "dMLIHIE8TUuQhpDPd2UvA8:APA91bFcjfjyZW1OgFzyEyVw0QyxnMIkVKcMed5zBhvALm-o35t3pmCWwK_4elTseRdJ1lEhOeFphL2uFoymrT3EoCDDByd2veswkjhA18CWlO8FANt1OwHlk5eIDdDmNOnCbNHZRf-G",
             "deviceOS" : "iOS"
         ]
-        APIClient.registerDeviceWith(params: parameters) { (registerDeviceResponse) in
-            print(registerDeviceResponse)
+        APIClient.registerDeviceWith(params: parameters) { (response) in
+     //       print(response)
         }
+        let bookTableParameters: [String: Any] = [
+            "date" : "12-12-1992",
+            "time" : "13:00",
+            "res_id" : 11,
+            "order_id" : 72,
+            "noOfPersons" : 5,
+            "user_id" : "81952a9e-7016-4e58-9e43-d4bb0900ee91"
+        ]
+        APIClient.bookTableWith(params: bookTableParameters){ (response) in
+  //      print(response)
+            
+        }
+        let updateBookingParameters: [String: Any] = [
+                   "status" : "accepted",
+                   "dineinTableId" : 1,
+                   "tableBookingId" : 10018
+               ]
+               APIClient.updateBookingWith(params: updateBookingParameters){ (response) in
+               print(response)
+               }
         if let parameters = Helper.loadJson(filename: "AddOrder"){
         APIClient.addOrderWith(params: parameters) { (addOrderResponse) in
        //     print(addOrderResponse)
