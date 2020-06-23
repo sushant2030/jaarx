@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         APIClient.getHomeData { (homeResponse) in
-            print(homeResponse)
+       //     print(homeResponse)
         }
 //        let parameters: [String: Any] = [
 //            "user_id" : "dda17e3d-fc66-49ae-a24d-1c832d9c71b4",
@@ -34,9 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                ]
 //            ]
 //        ]
+       let parameters: [String: Any] = [
+            "user_id" : "ea5d6d15-b83e-4110-95a3-e049895ea7b9",
+            "deviceToken"  : "dMLIHIE8TUuQhpDPd2UvA8:APA91bFcjfjyZW1OgFzyEyVw0QyxnMIkVKcMed5zBhvALm-o35t3pmCWwK_4elTseRdJ1lEhOeFphL2uFoymrT3EoCDDByd2veswkjhA18CWlO8FANt1OwHlk5eIDdDmNOnCbNHZRf-G",
+            "deviceOS" : "iOS"
+        ]
+        APIClient.registerDeviceWith(params: parameters) { (registerDeviceResponse) in
+            print(registerDeviceResponse)
+        }
         if let parameters = Helper.loadJson(filename: "AddOrder"){
         APIClient.addOrderWith(params: parameters) { (addOrderResponse) in
-            print(addOrderResponse)
+       //     print(addOrderResponse)
         }
         }
         return true

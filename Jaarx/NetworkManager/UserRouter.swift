@@ -14,6 +14,7 @@ enum UserRouter {
     case getOrder(userId : String)
     case getBookingRequests(user_id : String)
     case addOrder(params : [String:Any])
+    case registerDevice(params : [String:Any])
 }
 
 extension UserRouter : APIRouter {
@@ -28,12 +29,16 @@ extension UserRouter : APIRouter {
             return "/book/user_requests"
         case .addOrder:
             return "/order/add"
+        case .registerDevice:
+            return "/device/register_device"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
         case .addOrder:
+            return .post
+        case .registerDevice:
             return .post
         default:
             return .get
@@ -49,8 +54,10 @@ extension UserRouter : APIRouter {
             return [Constants.UserAPIParameter.userId : userId]
         case .getBookingRequests(let user_id):
             return [Constants.UserAPIParameter.user_id:user_id]
-        case .addOrder(let order):
-            return order
+        case .addOrder(let param):
+            return param
+        case .registerDevice(let param):
+            return param
             
         }
         

@@ -10,8 +10,8 @@ import Foundation
 
 struct  AddOrderResponse : Codable{
     
-    let message : String
-    let orderId : Int
+    let message : String?
+    let orderId : Int?
     
     enum CodingKeys: String, CodingKey {
     case message = "message"

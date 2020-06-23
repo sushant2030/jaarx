@@ -10,7 +10,7 @@
 		290D975F4799E2D9C2A8604B /* Pods_Jaarx_JaarxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A6CB78A280854C7E884C5EE /* Pods_Jaarx_JaarxUITests.framework */; };
 		5B3D014824A0A38F002EFD89 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D014624A0A38F002EFD89 /* APIClient.swift */; };
 		5B3D014924A0A38F002EFD89 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D014724A0A38F002EFD89 /* APIRouter.swift */; };
-		5B3D014C24A0A586002EFD89 /* HomeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D014B24A0A586002EFD89 /* HomeResponseModel.swift */; };
+		5B3D014C24A0A586002EFD89 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D014B24A0A586002EFD89 /* HomeResponse.swift */; };
 		5B72E16F240ECFD40032F004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E16E240ECFD40032F004 /* AppDelegate.swift */; };
 		5B72E171240ECFD40032F004 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E170240ECFD40032F004 /* SceneDelegate.swift */; };
 		5B72E173240ECFD40032F004 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E172240ECFD40032F004 /* ViewController.swift */; };
@@ -41,6 +41,7 @@
 		9E91BEC11DB656DD387951FE /* Pods_JaarxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */; };
 		D84D8C5624A2495E007F7EDA /* AddOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = D84D8C5524A2495E007F7EDA /* AddOrder.json */; };
 		D84D8C5824A24B1E007F7EDA /* AddOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */; };
+		D84D8C5B24A287DF007F7EDA /* RegisterDeviceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D8C5A24A287DF007F7EDA /* RegisterDeviceResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +81,7 @@
 		367EF26E4B19F7ED29051596 /* Pods-JaarxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JaarxTests.release.xcconfig"; path = "Target Support Files/Pods-JaarxTests/Pods-JaarxTests.release.xcconfig"; sourceTree = "<group>"; };
 		5B3D014624A0A38F002EFD89 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		5B3D014724A0A38F002EFD89 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
-		5B3D014B24A0A586002EFD89 /* HomeResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeResponseModel.swift; sourceTree = "<group>"; };
+		5B3D014B24A0A586002EFD89 /* HomeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		5B72E16B240ECFD40032F004 /* Jaarx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jaarx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B72E16E240ECFD40032F004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B72E170240ECFD40032F004 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 		D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JaarxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84D8C5524A2495E007F7EDA /* AddOrder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AddOrder.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderResponse.swift; sourceTree = "<group>"; };
+		D84D8C5A24A287DF007F7EDA /* RegisterDeviceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDeviceResponse.swift; sourceTree = "<group>"; };
 		F9A3A7AF1C6EE0BD4E545198 /* Pods-JaarxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JaarxTests.debug.xcconfig"; path = "Target Support Files/Pods-JaarxTests/Pods-JaarxTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,8 +157,9 @@
 		5B3D014A24A0A564002EFD89 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5B3D014B24A0A586002EFD89 /* HomeResponseModel.swift */,
+				5B3D014B24A0A586002EFD89 /* HomeResponse.swift */,
 				D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */,
+				D84D8C5A24A287DF007F7EDA /* RegisterDeviceResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -608,7 +611,7 @@
 				5B8546E62496754A0092743E /* Constants.swift in Sources */,
 				5B72E1B5240EF2B80032F004 /* BucketCell.swift in Sources */,
 				5B8546DF249439A60092743E /* UserRouter.swift in Sources */,
-				5B3D014C24A0A586002EFD89 /* HomeResponseModel.swift in Sources */,
+				5B3D014C24A0A586002EFD89 /* HomeResponse.swift in Sources */,
 				5B72E1AB240EE7CC0032F004 /* LongCollectionCell.swift in Sources */,
 				5BA9E69B241033B00044CDBF /* HomeVC.swift in Sources */,
 				5B8546E3249502710092743E /* HomeRouter.swift in Sources */,
@@ -622,6 +625,7 @@
 				5B8546DB24942D610092743E /* LoginRouter.swift in Sources */,
 				5B72E1A6240ED16C0032F004 /* CarouselCell.swift in Sources */,
 				D84D8C5824A24B1E007F7EDA /* AddOrderResponse.swift in Sources */,
+				D84D8C5B24A287DF007F7EDA /* RegisterDeviceResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

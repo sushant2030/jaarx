@@ -42,6 +42,15 @@ class APIClient {
                print(error)
            }
        }
+    static func registerDeviceWith(params:[String:Any], completion:@escaping (AFResult<RegisterDeviceResponse>)->Void){
+        do {
+         let userRouter = try UserRouter.registerDevice(params: params).asURLRequest()
+            performRequest(route: userRouter, completion:completion )
+        }
+        catch (let error){
+            print(error)
+        }
+    }
 }
 
 
