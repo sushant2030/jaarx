@@ -30,18 +30,8 @@ struct Helper {
     
     static func makeHttpBodyWithParameters(_ parameters:Parameters) -> Data? {
         do {
-            
             let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
-            let decoded = try JSONSerialization.jsonObject(with: jsonData, options: [])
-            if let dictFromJSON = decoded as? [String:Any] {
-                print(dictFromJSON)
-                let jsonString = dictFromJSON.reduce("") { "\($0)\($1.0)=\($1.1)" }
-                let jsonData = jsonString.data(using: .utf8, allowLossyConversion: false)!
-                return jsonData
-            } else {
-                return nil
-            }
-            
+            return jsonData
         } catch {
             return nil
         }

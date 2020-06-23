@@ -48,6 +48,8 @@ extension RestaurantRouter : APIRouter {
             return [Constants.RestaurantAPIParameter.id : id]
         case .getFavorites(let user_id):
             return [Constants.RestaurantAPIParameter.userId : user_id]
+        case .setFavorite(let user_id,let res_id,let status):
+            return [Constants.RestaurantAPIParameter.userId : user_id, Constants.RestaurantAPIParameter.resId : res_id, Constants.RestaurantAPIParameter.status:status]
         default:
             return nil
         }

@@ -26,7 +26,7 @@ extension APIRouter {
     }
     
     var headers: HTTPHeaders? {
-        return ["Content-Type": "application/json"]
+        return ["Content-Type": "application/json","os":"iOS"]
     }
     
     var version: String {
@@ -36,4 +36,33 @@ extension APIRouter {
     var encoding: ParameterEncoding {
         return JSONEncoding.default
     }
+    
+    var url: URL {
+           switch httpMethod {
+           case .get:
+               var parameterString : String?
+               if (parameters != nil) {
+                   parameterString = Helper.makeUrlWithParameters(parameters!)
+               }
+               return URL.init(string: self.baseURL + self.path + (parameterString ?? ""))!
+           default:
+               return URL.init(string: self.baseURL + self.path)!
+           }
+       }
+
+       
+       func asURLRequest() throws -> URLRequest {
+           var urlRequest = URLRequest.init(url: self.url)
+           urlRequest.httpMethod = httpMethod.rawValue
+           urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+           if httpMethod == .post{
+               if let parameters = parameters {
+                   let jsonData = Helper.makeHttpBodyWithParameters(parameters)
+                   if let bodyData = jsonData {
+                       urlRequest.httpBody = bodyData
+                   }
+               }
+           }
+           return urlRequest
+       }
 }
