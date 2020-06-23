@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  HomeResponse.swift
 //  Jaarx
 //
 //  Created by Sumit Kumar on 14/06/20.

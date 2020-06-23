@@ -1,5 +1,5 @@
 //
-//  UserDetailModel.swift
+//  UserDetail.swift
 //  Jaarx
 //
 //  Created by Sushant Alone on 23/06/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserDetailModel : Codable {
+struct UserDetail : Codable {
     let message : String?
     let userData : UserData?
 }

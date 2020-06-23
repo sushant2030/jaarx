@@ -1,5 +1,5 @@
 //
-//  FavoriteRestaurantModel.swift
+//  FavoriteRestaurant.swift
 //  Jaarx
 //
 //  Created by Sushant Alone on 23/06/20.
@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct FavoriteRestaurantModel : Codable {
+struct FavoriteRestaurant : Codable {
     let code : Int?
     let message : String?
     let favoriteData : FavoriteData
