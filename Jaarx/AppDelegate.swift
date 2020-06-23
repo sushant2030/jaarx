@@ -20,6 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         APIClient.getHomeData { (homeResponse) in
             print(homeResponse)
         }
+//        let parameters: [String: Any] = [
+//            "user_id" : "dda17e3d-fc66-49ae-a24d-1c832d9c71b4",
+//            "table_id" : 1,
+//            "food_items": [
+//                [
+//                    "food_id" : 1001,
+//                    "quantity": 7
+//                ],
+//                [
+//                    "food_id" : 1003,
+//                    "quantity": 4
+//                ]
+//            ]
+//        ]
+        if let parameters = Helper.loadJson(filename: "AddOrder"){
+        APIClient.addOrderWith(params: parameters) { (addOrderResponse) in
+            print(addOrderResponse)
+        }
+        }
         return true
     }
 

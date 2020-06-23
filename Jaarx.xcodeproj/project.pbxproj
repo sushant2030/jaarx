@@ -39,6 +39,8 @@
 		5BA9E69B241033B00044CDBF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9E69A241033B00044CDBF /* HomeVC.swift */; };
 		5BA9E69E241035B80044CDBF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9E69D241035B80044CDBF /* DataSource.swift */; };
 		9E91BEC11DB656DD387951FE /* Pods_JaarxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */; };
+		D84D8C5624A2495E007F7EDA /* AddOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = D84D8C5524A2495E007F7EDA /* AddOrder.json */; };
+		D84D8C5824A24B1E007F7EDA /* AddOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,8 @@
 		9FEBE11E3D7CA881AAA1305F /* Pods-Jaarx-JaarxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jaarx-JaarxUITests.debug.xcconfig"; path = "Target Support Files/Pods-Jaarx-JaarxUITests/Pods-Jaarx-JaarxUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C88D9129F2CB3B3F88B93793 /* Pods-Jaarx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jaarx.debug.xcconfig"; path = "Target Support Files/Pods-Jaarx/Pods-Jaarx.debug.xcconfig"; sourceTree = "<group>"; };
 		D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JaarxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D84D8C5524A2495E007F7EDA /* AddOrder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AddOrder.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderResponse.swift; sourceTree = "<group>"; };
 		F9A3A7AF1C6EE0BD4E545198 /* Pods-JaarxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JaarxTests.debug.xcconfig"; path = "Target Support Files/Pods-JaarxTests/Pods-JaarxTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3D014B24A0A586002EFD89 /* HomeResponseModel.swift */,
+				D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 		5B72E16D240ECFD40032F004 /* Jaarx */ = {
 			isa = PBXGroup;
 			children = (
+				D84D8C5924A2735D007F7EDA /* JsonFiles */,
 				5B3D014A24A0A564002EFD89 /* Models */,
 				5B8546E4249675210092743E /* Utils */,
 				5BA497B52413B0D400CED8EA /* NetworkManager */,
@@ -343,6 +349,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D84D8C5924A2735D007F7EDA /* JsonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D84D8C5524A2495E007F7EDA /* AddOrder.json */,
+			);
+			path = JsonFiles;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -455,6 +469,7 @@
 			files = (
 				5BA9E698241030CC0044CDBF /* Main.storyboard in Resources */,
 				5B72E17E240ECFD70032F004 /* LaunchScreen.storyboard in Resources */,
+				D84D8C5624A2495E007F7EDA /* AddOrder.json in Resources */,
 				5B72E17B240ECFD70032F004 /* Assets.xcassets in Resources */,
 				5B72E1A7240ED16C0032F004 /* CarouselCell.xib in Resources */,
 				5B72E1B1240EED600032F004 /* SquareCollectionCell.xib in Resources */,
@@ -606,6 +621,7 @@
 				5BA9E69E241035B80044CDBF /* DataSource.swift in Sources */,
 				5B8546DB24942D610092743E /* LoginRouter.swift in Sources */,
 				5B72E1A6240ED16C0032F004 /* CarouselCell.swift in Sources */,
+				D84D8C5824A24B1E007F7EDA /* AddOrderResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

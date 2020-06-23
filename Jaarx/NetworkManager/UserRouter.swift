@@ -13,6 +13,7 @@ enum UserRouter {
     case userDetails(userId : String)
     case getOrder(userId : String)
     case getBookingRequests(user_id : String)
+    case addOrder(params : [String:Any])
 }
 
 extension UserRouter : APIRouter {
@@ -25,11 +26,18 @@ extension UserRouter : APIRouter {
             return "/user/getOrders?"
         case .getBookingRequests:
             return "/book/user_requests"
+        case .addOrder:
+            return "/order/add"
         }
     }
     
     var httpMethod: HTTPMethod {
-        return .get
+        switch self {
+        case .addOrder:
+            return .post
+        default:
+            return .get
+        }
     }
 
     
@@ -41,6 +49,9 @@ extension UserRouter : APIRouter {
             return [Constants.UserAPIParameter.userId : userId]
         case .getBookingRequests(let user_id):
             return [Constants.UserAPIParameter.user_id:user_id]
+        case .addOrder(let order):
+            return order
+            
         }
         
     }
@@ -63,8 +74,17 @@ extension UserRouter : APIRouter {
         var urlRequest = URLRequest.init(url: self.url)
         urlRequest.httpMethod = httpMethod.rawValue
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        if httpMethod == .post{
+            if let parameters = parameters {
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+                    urlRequest.httpBody = jsonData
+                } catch (let error) {
+                    print("error:\(error)")
+                }
+            }
+        }
         return urlRequest
     }
-    
     
 }
