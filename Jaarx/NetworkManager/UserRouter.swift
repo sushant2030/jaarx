@@ -18,7 +18,7 @@ enum UserRouter {
 }
 
 extension UserRouter : APIRouter {
-    
+
     var path: String {
         switch self {
         case .userDetails:
@@ -63,35 +63,5 @@ extension UserRouter : APIRouter {
         
     }
     
-    var url: URL {
-        switch httpMethod {
-        case .get:
-            var parameterString : String?
-            if (parameters != nil) {
-                parameterString = Helper.makeUrlWithParameters(parameters!)
-            }
-            return URL.init(string: self.baseURL + self.path + (parameterString ?? ""))!
-        default:
-            return URL.init(string: self.baseURL + self.path)!
-        }
-    }
-
-    
-    func asURLRequest() throws -> URLRequest {
-        var urlRequest = URLRequest.init(url: self.url)
-        urlRequest.httpMethod = httpMethod.rawValue
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        if httpMethod == .post{
-            if let parameters = parameters {
-                do {
-                    let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
-                    urlRequest.httpBody = jsonData
-                } catch (let error) {
-                    print("error:\(error)")
-                }
-            }
-        }
-        return urlRequest
-    }
     
 }
