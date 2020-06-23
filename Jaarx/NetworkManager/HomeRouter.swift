@@ -39,22 +39,5 @@ extension HomeRouter : APIRouter {
         }
     }
     
-    var url: URL {
-        if let urlPath = URL.init(string: baseURL + path){
-            return urlPath
-        } else {
-            return URL(fileURLWithPath: "")
-        }
-    }
-
-    
-    func asURLRequest() throws -> URLRequest {
-        var urlRequest = URLRequest.init(url: self.url)
-        urlRequest.httpMethod = httpMethod.rawValue
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        // Parameters
-        return urlRequest
-    }
-    
     
 }

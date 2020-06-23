@@ -55,13 +55,4 @@ extension RestaurantRouter : APIRouter {
         }
     }
     
-    var url: URL {
-        return URL.init(string: self.baseURL + self.path)!
-    }
-    
-    func asURLRequest() throws -> URLRequest {
-        return URLRequest.init(url: self.url)
-    }
-    
-    
 }
