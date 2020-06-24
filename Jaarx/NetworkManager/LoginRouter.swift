@@ -16,8 +16,16 @@ enum LoginRouter {
 }
 
 extension LoginRouter : APIRouter {
+    
     var parameters: Parameters? {
-        return["":""]
+        switch self {
+        case .signIn(let phoneNumber, let otp,let device_token):
+            return [Constants.LoginAPIParameter.phoneNumber : phoneNumber, Constants.LoginAPIParameter.otp : otp, Constants.LoginAPIParameter.deviceToken : device_token]
+        case .signUp(let phoneNumber,let otp,let device_token,let device_os,let firstName, let lastName,let email):
+            return [Constants.LoginAPIParameter.phoneNumber : phoneNumber, Constants.LoginAPIParameter.otp : otp, Constants.LoginAPIParameter.deviceToken : device_token, Constants.LoginAPIParameter.deviceOS : device_os, Constants.LoginAPIParameter.firstName : firstName, Constants.LoginAPIParameter.lastName : lastName, Constants.LoginAPIParameter.email : email]
+        case .requestOTP(let phoneNumber,let countrycode):
+            return [Constants.LoginAPIParameter.phoneNumber:phoneNumber,Constants.LoginAPIParameter.countryCode:countrycode]
+        }
     }
     
     var path: String {

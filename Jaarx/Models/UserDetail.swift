@@ -44,3 +44,18 @@ struct CartDetails : Codable {
         case cartId = "cart_id"
     }
 }
+
+struct Token : Codable {
+    let message : String?
+    let code : String?
+    let userTokenData : UserTokenData
+}
+
+struct UserTokenData : Codable {
+    let userId : String?
+    let token : String?
+    enum CodingKeys : String, CodingKey {
+        case userId = "user_id"
+        case token = "token"
+    }
+}

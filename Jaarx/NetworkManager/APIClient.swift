@@ -69,8 +69,32 @@ class APIClient {
             print(error)
         }
     }
+    
+    static func setFavoriteStatusForUser(userId : String, resId : String, status:Bool, completion:@escaping (AFResult<GenericResponse>) -> Void){
+        do {
+            let restaurantRouter = try RestaurantRouter.setFavorite(userId: userId, resId: resId, status: status).asURLRequest()
+            performRequest(route: restaurantRouter, completion:completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    
+    static func requestOTPForPhoneNumber(user : User, completion:@escaping (AFDataResponse<Data>) -> Void) {
+            do {
+                let requestOTPRouter = try LoginRouter.requestOTP(phoneNumber: user.phoneNumber, countrycode: "91").asURLRequest()
+                AF.request(requestOTPRouter).responseData(completionHandler: completion)
+            } catch (let error){
+                print(error)
+            }
+    }
+    
+    static func signUpWithPhoneNumber(user : User, completion:@escaping (AFResult<UserTokenData>) -> Void){
+        do {
+            let loginRouter = try LoginRouter.signUp(phoneNumber: user.phoneNumber, otp: user.otp, device_token: user.device_token, device_os: user.device_os, firstName: user.firstName, lastName: user.lastName, email: user.email).asURLRequest()
+            performRequest(route: loginRouter, completion: completion)
+        } catch (let error){
+            print(error)
+        }
+    }
 }
-
-
-
-

@@ -17,56 +17,73 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        APIClient.getHomeData { (homeResponse) in
-       //     print(homeResponse)
+        APIClient.signUpWithPhoneNumber(user: User()) { (response) in
+            print(response)
         }
-//        let parameters: [String: Any] = [
-//            "user_id" : "dda17e3d-fc66-49ae-a24d-1c832d9c71b4",
-//            "table_id" : 1,
-//            "food_items": [
-//                [
-//                    "food_id" : 1001,
-//                    "quantity": 7
-//                ],
-//                [
-//                    "food_id" : 1003,
-//                    "quantity": 4
-//                ]
-//            ]
+//        APIClient.requestOTPForPhoneNumber(user: User()) { (response) in
+//            if let code = response.response?.statusCode {
+//                
+//            } else {
+//
+//            }
+//        }
+//        APIClient.getHomeData { (homeResponse) in
+//       //     print(homeResponse)
+//        }
+////        let parameters: [String: Any] = [
+////            "user_id" : "dda17e3d-fc66-49ae-a24d-1c832d9c71b4",
+////            "table_id" : 1,
+////            "food_items": [
+////                [
+////                    "food_id" : 1001,
+////                    "quantity": 7
+////                ],
+////                [
+////                    "food_id" : 1003,
+////                    "quantity": 4
+////                ]
+////            ]
+////        ]
+//       let parameters: [String: Any] = [
+//            "user_id" : "ea5d6d15-b83e-4110-95a3-e049895ea7b9",
+//            "deviceToken"  : "dMLIHIE8TUuQhpDPd2UvA8:APA91bFcjfjyZW1OgFzyEyVw0QyxnMIkVKcMed5zBhvALm-o35t3pmCWwK_4elTseRdJ1lEhOeFphL2uFoymrT3EoCDDByd2veswkjhA18CWlO8FANt1OwHlk5eIDdDmNOnCbNHZRf-G",
+//            "deviceOS" : "iOS"
 //        ]
-       let parameters: [String: Any] = [
-            "user_id" : "ea5d6d15-b83e-4110-95a3-e049895ea7b9",
-            "deviceToken"  : "dMLIHIE8TUuQhpDPd2UvA8:APA91bFcjfjyZW1OgFzyEyVw0QyxnMIkVKcMed5zBhvALm-o35t3pmCWwK_4elTseRdJ1lEhOeFphL2uFoymrT3EoCDDByd2veswkjhA18CWlO8FANt1OwHlk5eIDdDmNOnCbNHZRf-G",
-            "deviceOS" : "iOS"
-        ]
-        APIClient.registerDeviceWith(params: parameters) { (response) in
-     //       print(response)
-        }
-        let bookTableParameters: [String: Any] = [
-            "date" : "12-12-1992",
-            "time" : "13:00",
-            "res_id" : 11,
-            "order_id" : 72,
-            "noOfPersons" : 5,
-            "user_id" : "81952a9e-7016-4e58-9e43-d4bb0900ee91"
-        ]
-        APIClient.bookTableWith(params: bookTableParameters){ (response) in
-  //      print(response)
-            
-        }
-        let updateBookingParameters: [String: Any] = [
-                   "status" : "accepted",
-                   "dineinTableId" : 1,
-                   "tableBookingId" : 10018
-               ]
-               APIClient.updateBookingWith(params: updateBookingParameters){ (response) in
-               print(response)
-               }
-        if let parameters = Helper.loadJson(filename: "AddOrder"){
-        APIClient.addOrderWith(params: parameters) { (addOrderResponse) in
-       //     print(addOrderResponse)
-        }
-        }
+//        APIClient.registerDeviceWith(params: parameters) { (response) in
+//     //       print(response)
+//        }
+//        let bookTableParameters: [String: Any] = [
+//            "date" : "12-12-1992",
+//            "time" : "13:00",
+//            "res_id" : 11,
+//            "order_id" : 72,
+//            "noOfPersons" : 5,
+//            "user_id" : "81952a9e-7016-4e58-9e43-d4bb0900ee91"
+//        ]
+//        APIClient.bookTableWith(params: bookTableParameters){ (response) in
+//  //      print(response)
+//            
+//        }
+//        let updateBookingParameters: [String: Any] = [
+//                   "status" : "accepted",
+//                   "dineinTableId" : 1,
+//                   "tableBookingId" : 10018
+//               ]
+//               APIClient.updateBookingWith(params: updateBookingParameters){ (response) in
+//               print(response)
+//               }
+//        if let parameters = Helper.loadJson(filename: "AddOrder"){
+//        APIClient.addOrderWith(params: parameters) { (addOrderResponse) in
+//       //     print(addOrderResponse)
+//        }
+//        }
+//        let favoriteBookingParameters: [String: Any] = [
+//            "user_id" : "cf576a22-8254-47e9-a906-d2a0e82c5b14",
+//            "res_id"  : 12,
+//            "status"  : true
+//        ]
+        
+        
         return true
     }
 
