@@ -11,7 +11,7 @@ import Alamofire
 class APIClient {
     @discardableResult
     private static func performRequest<T:Decodable>(route:URLRequestConvertible, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (AFResult<T>)->Void) -> DataRequest {
-        return AF.request(route).validate(statusCode: 200..<300)
+        return AF.request(route).validate(statusCode: 200..<410)
             .responseDecodable (decoder: decoder){ (response: AFDataResponse<T>) in
                 switch response.result {
                 case .success(_):
@@ -89,7 +89,7 @@ class APIClient {
             }
     }
     
-    static func signUpWithPhoneNumber(user : User, completion:@escaping (AFResult<UserTokenData>) -> Void){
+    static func signUpWithPhoneNumber(user : User, completion:@escaping (AFResult<Token>) -> Void){
         do {
             let loginRouter = try LoginRouter.signUp(phoneNumber: user.phoneNumber, otp: user.otp, device_token: user.device_token, device_os: user.device_os, firstName: user.firstName, lastName: user.lastName, email: user.email).asURLRequest()
             performRequest(route: loginRouter, completion: completion)
@@ -97,4 +97,14 @@ class APIClient {
             print(error)
         }
     }
+    
+    static func signInWithPhoneNumber(user : User,completion:@escaping (AFResult<Token>) -> Void){
+        do {
+            let signInRouter = try LoginRouter.signIn(phoneNumber: user.phoneNumber, otp: user.otp, device_token: user.device_token).asURLRequest()
+            performRequest(route: signInRouter, completion: completion)
+        } catch (let error) {
+            print(error)
+        }
+    }
 }
+

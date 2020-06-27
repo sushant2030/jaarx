@@ -47,8 +47,8 @@ struct CartDetails : Codable {
 
 struct Token : Codable {
     let message : String?
-    let code : String?
-    let userTokenData : UserTokenData
+    let code : Int?
+    let userTokenData : UserTokenData?
 }
 
 struct UserTokenData : Codable {

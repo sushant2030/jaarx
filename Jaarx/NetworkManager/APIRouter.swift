@@ -54,7 +54,8 @@ extension APIRouter {
        func asURLRequest() throws -> URLRequest {
            var urlRequest = URLRequest.init(url: self.url)
            urlRequest.httpMethod = httpMethod.rawValue
-           urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//           urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.headers = headers!
            if httpMethod == .post{
                if let parameters = parameters {
                    let jsonData = Helper.makeHttpBodyWithParameters(parameters)

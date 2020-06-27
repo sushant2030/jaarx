@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        APIClient.signUpWithPhoneNumber(user: User()) { (response) in
+        
+        APIClient.signInWithPhoneNumber(user: User()) { (response) in
             print(response)
         }
 //        APIClient.requestOTPForPhoneNumber(user: User()) { (response) in
