@@ -54,3 +54,18 @@ struct Helper {
         return nil
     }
 }
+
+extension UIButton {
+    func makeCornerRadiusWithRadi(radius:CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
+}
+
+extension UIView {
+    func makeViewCornerRadiusWithRadi(radius:CGFloat) {
+           self.layer.cornerRadius = radius
+           self.layer.masksToBounds = true
+    }
+}
+
