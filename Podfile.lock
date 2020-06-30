@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: 13c5096b399bd06c58b92f916b6cc6a1f39e9f12
+PODS:
+  - Alamofire (5.2.1)
+  - TextFieldEffects (1.6.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - TextFieldEffects
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - TextFieldEffects
+
+SPEC CHECKSUMS:
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
+
+PODFILE CHECKSUM: 918e28303c5cdbcae9ab5b18e6663528b5767b5f
 
 COCOAPODS: 1.9.3

@@ -6,7 +6,8 @@ target 'Jaarx' do
   use_frameworks!
 
   # Pods for Jaarx
-
+	pod 'Alamofire'
+  pod 'TextFieldEffects'
   target 'JaarxTests' do
     inherit! :search_paths
     # Pods for testing
