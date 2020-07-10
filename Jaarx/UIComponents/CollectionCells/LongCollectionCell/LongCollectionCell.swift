@@ -19,5 +19,10 @@ class LongCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func setRestData(restaurantData:RestaurantData) {
+        descriptionLabel.text = restaurantData.restaurantLocation ?? ""
+        titleLabel.text = restaurantData.restaurantName
+    }
 
 }

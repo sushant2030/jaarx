@@ -41,10 +41,12 @@ enum BucketType : String {
     case carousel       = "carousel"
     case banner         = "banner"
     case topPicks       = "topPicks"
-    case critics        = "critics"
-    case mostscanned    = "mostscanned"
-    case hotcuisins     = "hotcuisins"
-    case hashtags       = "hashtags"
+    case critics        = "criticsFavourites"
+    case mostscanned    = "mostScanned"
+    case hotcuisins     = "hotCuisines"
+    case hashtags       = "hashTags"
+    case scanAndOrder   = "scanAndOrder"
+    case newlyOpened    = "newlyOpened"
 }
 
 enum HTTPHeaderField: String {

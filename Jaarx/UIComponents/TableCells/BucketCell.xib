@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,29 +16,40 @@
                 <rect key="frame" x="0.0" y="0.0" width="332" height="179"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags To Choose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUb-F3-X3w">
-                        <rect key="frame" x="10" y="0.0" width="264" height="21"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handcrafted hashtags to Choose Fav Places" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMT-E4-OUi">
-                        <rect key="frame" x="10" y="22" width="322" height="12"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPh-t3-vSv">
-                        <rect key="frame" x="282" y="1" width="50" height="20"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPf-zZ-zum">
+                        <rect key="frame" x="0.0" y="0.0" width="332" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags To Choose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUb-F3-X3w">
+                                <rect key="frame" x="20" y="5" width="135.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handcrafted hashtags to Choose Fav Places" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMT-E4-OUi">
+                                <rect key="frame" x="20" y="31" width="213.5" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPh-t3-vSv">
+                                <rect key="frame" x="293" y="5" width="34" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="See All"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="hVz-YR-IQ2"/>
-                            <constraint firstAttribute="width" constant="50" id="oC0-IA-lhl"/>
+                            <constraint firstItem="hUb-F3-X3w" firstAttribute="leading" secondItem="IPf-zZ-zum" secondAttribute="leading" constant="20" id="P0z-Bv-r8c"/>
+                            <constraint firstAttribute="trailing" secondItem="QPh-t3-vSv" secondAttribute="trailing" constant="5" id="WEn-8V-9Qj"/>
+                            <constraint firstItem="HMT-E4-OUi" firstAttribute="leading" secondItem="IPf-zZ-zum" secondAttribute="leading" constant="20" id="ghh-jg-YrM"/>
+                            <constraint firstAttribute="height" constant="50" id="lBw-Bu-ggC"/>
+                            <constraint firstItem="hUb-F3-X3w" firstAttribute="top" secondItem="IPf-zZ-zum" secondAttribute="top" constant="5" id="lhf-26-Pr9"/>
+                            <constraint firstItem="HMT-E4-OUi" firstAttribute="top" secondItem="hUb-F3-X3w" secondAttribute="bottom" constant="5" id="mXJ-S6-rKp"/>
+                            <constraint firstItem="QPh-t3-vSv" firstAttribute="top" secondItem="IPf-zZ-zum" secondAttribute="top" constant="5" id="xee-yw-RxM"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <state key="normal" title="See All"/>
-                    </button>
+                    </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9Jm-5r-ac9">
-                        <rect key="frame" x="0.0" y="34" width="332" height="145"/>
+                        <rect key="frame" x="0.0" y="50" width="332" height="129"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k7f-dT-Emz">
                             <size key="itemSize" width="50" height="50"/>
@@ -49,25 +60,20 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="9Jm-5r-ac9" firstAttribute="top" secondItem="HMT-E4-OUi" secondAttribute="bottom" id="1GB-fC-Oag"/>
                     <constraint firstItem="9Jm-5r-ac9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1IC-dX-Hxl"/>
+                    <constraint firstItem="IPf-zZ-zum" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2lW-i3-c4C"/>
+                    <constraint firstItem="IPf-zZ-zum" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4Jm-v6-Ny3"/>
                     <constraint firstAttribute="trailing" secondItem="9Jm-5r-ac9" secondAttribute="trailing" id="53i-LI-dnx"/>
-                    <constraint firstItem="HMT-E4-OUi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="6U3-50-Lro"/>
-                    <constraint firstItem="QPh-t3-vSv" firstAttribute="leading" secondItem="hUb-F3-X3w" secondAttribute="trailing" constant="8" id="Hc5-t5-gJA"/>
-                    <constraint firstItem="hUb-F3-X3w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="N6v-jf-Lkr"/>
                     <constraint firstAttribute="bottom" secondItem="9Jm-5r-ac9" secondAttribute="bottom" id="QWk-wb-RbN"/>
-                    <constraint firstItem="HMT-E4-OUi" firstAttribute="top" secondItem="hUb-F3-X3w" secondAttribute="bottom" constant="1" id="axh-Wg-V5V"/>
-                    <constraint firstAttribute="trailing" secondItem="QPh-t3-vSv" secondAttribute="trailing" id="dWX-7I-sLl"/>
-                    <constraint firstItem="QPh-t3-vSv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="dfB-XD-vBg"/>
-                    <constraint firstAttribute="trailing" secondItem="HMT-E4-OUi" secondAttribute="trailing" id="iSC-Ih-us3"/>
-                    <constraint firstItem="hUb-F3-X3w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jas-FO-l0s"/>
-                    <constraint firstItem="HMT-E4-OUi" firstAttribute="top" secondItem="hUb-F3-X3w" secondAttribute="bottom" constant="1" id="rbf-qx-gz9"/>
+                    <constraint firstAttribute="trailing" secondItem="IPf-zZ-zum" secondAttribute="trailing" id="eQd-VH-Nht"/>
+                    <constraint firstItem="9Jm-5r-ac9" firstAttribute="top" secondItem="IPf-zZ-zum" secondAttribute="bottom" id="hK4-Eo-lN4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bucketDescriptionLabel" destination="HMT-E4-OUi" id="VgQ-0K-ZBv"/>
                 <outlet property="bucketTitleLabel" destination="hUb-F3-X3w" id="PL2-kO-le3"/>
+                <outlet property="bucketTitleViewHeight" destination="lBw-Bu-ggC" id="ADy-RB-fFs"/>
                 <outlet property="containerCollectionView" destination="9Jm-5r-ac9" id="bwJ-tM-pNh"/>
             </connections>
             <point key="canvasLocation" x="146.37681159420291" y="175.78125"/>

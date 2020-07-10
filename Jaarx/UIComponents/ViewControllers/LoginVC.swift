@@ -28,6 +28,8 @@ class LoginVC: UIViewController {
     
 // MARK: - IBActions
     @IBAction func actionOTP(_ sender: UIButton) {
+        let tabBarVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "JMainTabbarVC")
+        self.view.window?.rootViewController = tabBarVC
         
     }
     

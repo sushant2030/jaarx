@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		290D975F4799E2D9C2A8604B /* Pods_Jaarx_JaarxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A6CB78A280854C7E884C5EE /* Pods_Jaarx_JaarxUITests.framework */; };
+		5B2CA6FF24B8D5F600CDD824 /* JMainTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2CA6FE24B8D5F600CDD824 /* JMainTabbarVC.swift */; };
 		5B3D014824A0A38F002EFD89 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D014624A0A38F002EFD89 /* APIClient.swift */; };
 		5B3D014924A0A38F002EFD89 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D014724A0A38F002EFD89 /* APIRouter.swift */; };
 		5B3D014C24A0A586002EFD89 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D014B24A0A586002EFD89 /* HomeResponse.swift */; };
@@ -16,6 +17,9 @@
 		5B61329824A9350A0031448F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B61329724A9350A0031448F /* SignUpVC.swift */; };
 		5B61329B24A938BD0031448F /* JTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B61329924A938BD0031448F /* JTextFieldCell.swift */; };
 		5B61329C24A938BD0031448F /* JTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B61329A24A938BD0031448F /* JTextFieldCell.xib */; };
+		5B61329F24AD2B0C0031448F /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B61329E24AD2B0C0031448F /* Observer.swift */; };
+		5B6132A224AD2BA60031448F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6132A124AD2BA60031448F /* HomeViewModel.swift */; };
+		5B6132A524AE8B7F0031448F /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6132A424AE8B7F0031448F /* CellConfigurable.swift */; };
 		5B72E16F240ECFD40032F004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E16E240ECFD40032F004 /* AppDelegate.swift */; };
 		5B72E171240ECFD40032F004 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E170240ECFD40032F004 /* SceneDelegate.swift */; };
 		5B72E173240ECFD40032F004 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E172240ECFD40032F004 /* ViewController.swift */; };
@@ -43,6 +47,8 @@
 		5BA9E698241030CC0044CDBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BA9E697241030CC0044CDBF /* Main.storyboard */; };
 		5BA9E69B241033B00044CDBF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9E69A241033B00044CDBF /* HomeVC.swift */; };
 		5BA9E69E241035B80044CDBF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9E69D241035B80044CDBF /* DataSource.swift */; };
+		5BBC960224B7C3750044D193 /* HorizontalListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC960024B7C3750044D193 /* HorizontalListCollectionCell.swift */; };
+		5BBC960324B7C3750044D193 /* HorizontalListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC960124B7C3750044D193 /* HorizontalListCollectionCell.xib */; };
 		5BC0C70A24A27A1D0045782B /* FavoriteRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0C70824A27A1D0045782B /* FavoriteRestaurant.swift */; };
 		5BC0C70B24A27A1D0045782B /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0C70924A27A1D0045782B /* UserDetail.swift */; };
 		5BC0C70D24A3D4B80045782B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0C70C24A3D4B80045782B /* UserModel.swift */; };
@@ -88,6 +94,7 @@
 		25BCCE570FF89C9C1DDFCBFF /* Pods-Jaarx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jaarx.release.xcconfig"; path = "Target Support Files/Pods-Jaarx/Pods-Jaarx.release.xcconfig"; sourceTree = "<group>"; };
 		2670C3D9E2A8165F5E01BFFA /* Pods_Jaarx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jaarx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		367EF26E4B19F7ED29051596 /* Pods-JaarxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JaarxTests.release.xcconfig"; path = "Target Support Files/Pods-JaarxTests/Pods-JaarxTests.release.xcconfig"; sourceTree = "<group>"; };
+		5B2CA6FE24B8D5F600CDD824 /* JMainTabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMainTabbarVC.swift; sourceTree = "<group>"; };
 		5B3D014624A0A38F002EFD89 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		5B3D014724A0A38F002EFD89 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		5B3D014B24A0A586002EFD89 /* HomeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
@@ -96,6 +103,9 @@
 		5B61329724A9350A0031448F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		5B61329924A938BD0031448F /* JTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTextFieldCell.swift; sourceTree = "<group>"; };
 		5B61329A24A938BD0031448F /* JTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JTextFieldCell.xib; sourceTree = "<group>"; };
+		5B61329E24AD2B0C0031448F /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		5B6132A124AD2BA60031448F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5B6132A424AE8B7F0031448F /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
 		5B72E16B240ECFD40032F004 /* Jaarx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jaarx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B72E16E240ECFD40032F004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B72E170240ECFD40032F004 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +139,8 @@
 		5BA9E697241030CC0044CDBF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5BA9E69A241033B00044CDBF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5BA9E69D241035B80044CDBF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		5BBC960024B7C3750044D193 /* HorizontalListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListCollectionCell.swift; sourceTree = "<group>"; };
+		5BBC960124B7C3750044D193 /* HorizontalListCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalListCollectionCell.xib; sourceTree = "<group>"; };
 		5BC0C70824A27A1D0045782B /* FavoriteRestaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurant.swift; sourceTree = "<group>"; };
 		5BC0C70924A27A1D0045782B /* UserDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		5BC0C70C24A3D4B80045782B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -185,6 +197,30 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5B61329D24AD2AA60031448F /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				5B61329E24AD2B0C0031448F /* Observer.swift */,
+			);
+			path = Observer;
+			sourceTree = "<group>";
+		};
+		5B6132A024AD2B3A0031448F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5B6132A124AD2BA60031448F /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5B6132A324AE8B540031448F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5B6132A424AE8B7F0031448F /* CellConfigurable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		5B72E162240ECFD40032F004 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +246,9 @@
 		5B72E16D240ECFD40032F004 /* Jaarx */ = {
 			isa = PBXGroup;
 			children = (
+				5B6132A324AE8B540031448F /* Protocols */,
+				5B6132A024AD2B3A0031448F /* ViewModels */,
+				5B61329D24AD2AA60031448F /* Observer */,
 				D84D8C5924A2735D007F7EDA /* JsonFiles */,
 				5B3D014A24A0A564002EFD89 /* Models */,
 				5B8546E4249675210092743E /* Utils */,
@@ -259,6 +298,7 @@
 		5B72E1A2240ED02A0032F004 /* CollectionCells */ = {
 			isa = PBXGroup;
 			children = (
+				5BBC95FF24B7C3310044D193 /* HorizontalListCollectionCell */,
 				5B72E1AD240EED230032F004 /* SquareCollectionCell */,
 				5B72E1A8240EE7440032F004 /* LongCollectionCell */,
 				5B72E1A3240ED06C0032F004 /* Carousel */,
@@ -342,6 +382,7 @@
 				5B61328C24A8E41D0031448F /* LoginVC.swift */,
 				5B61328E24A8E8C70031448F /* JNavigationVC.swift */,
 				5B61329724A9350A0031448F /* SignUpVC.swift */,
+				5B2CA6FE24B8D5F600CDD824 /* JMainTabbarVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -352,6 +393,15 @@
 				5BA9E69D241035B80044CDBF /* DataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		5BBC95FF24B7C3310044D193 /* HorizontalListCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				5BBC960024B7C3750044D193 /* HorizontalListCollectionCell.swift */,
+				5BBC960124B7C3750044D193 /* HorizontalListCollectionCell.xib */,
+			);
+			path = HorizontalListCollectionCell;
 			sourceTree = "<group>";
 		};
 		96CB027606AD4598A29DE14B /* Pods */ = {
@@ -505,6 +555,7 @@
 				5B72E1B1240EED600032F004 /* SquareCollectionCell.xib in Resources */,
 				5B72E1AC240EE7CC0032F004 /* LongCollectionCell.xib in Resources */,
 				5B72E1B6240EF2B80032F004 /* BucketCell.xib in Resources */,
+				5BBC960324B7C3750044D193 /* HorizontalListCollectionCell.xib in Resources */,
 				5B61329C24A938BD0031448F /* JTextFieldCell.xib in Resources */,
 				5BC0C70F24A7CEB40045782B /* Login.storyboard in Resources */,
 			);
@@ -645,8 +696,11 @@
 				5B72E1AB240EE7CC0032F004 /* LongCollectionCell.swift in Sources */,
 				5BA9E69B241033B00044CDBF /* HomeVC.swift in Sources */,
 				5B61328D24A8E41D0031448F /* LoginVC.swift in Sources */,
+				5B2CA6FF24B8D5F600CDD824 /* JMainTabbarVC.swift in Sources */,
+				5BBC960224B7C3750044D193 /* HorizontalListCollectionCell.swift in Sources */,
 				5B61329824A9350A0031448F /* SignUpVC.swift in Sources */,
 				5B8546E3249502710092743E /* HomeRouter.swift in Sources */,
+				5B6132A224AD2BA60031448F /* HomeViewModel.swift in Sources */,
 				5BC0C70D24A3D4B80045782B /* UserModel.swift in Sources */,
 				5BA783392497E1B1007A4755 /* Helper.swift in Sources */,
 				5BC0C70B24A27A1D0045782B /* UserDetail.swift in Sources */,
@@ -655,6 +709,8 @@
 				5B72E173240ECFD40032F004 /* ViewController.swift in Sources */,
 				5B72E16F240ECFD40032F004 /* AppDelegate.swift in Sources */,
 				5B8546DD24942DAF0092743E /* RestaurantRouter.swift in Sources */,
+				5B61329F24AD2B0C0031448F /* Observer.swift in Sources */,
+				5B6132A524AE8B7F0031448F /* CellConfigurable.swift in Sources */,
 				5B72E171240ECFD40032F004 /* SceneDelegate.swift in Sources */,
 				5BA9E69E241035B80044CDBF /* DataSource.swift in Sources */,
 				5B8546DB24942D610092743E /* LoginRouter.swift in Sources */,

@@ -18,7 +18,7 @@ enum UserRouter {
 }
 
 extension UserRouter : APIRouter {
-
+    
     var path: String {
         switch self {
         case .userDetails:

@@ -11,9 +11,12 @@ import UIKit
 class HomeVC: UIViewController {
 
     @IBOutlet weak var homeTableView: UITableView!
+    var homeViewModel : HomeViewModel = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         registerDelegateAndDataSource()
+        homeViewModel.getHomeData()
+        bindData()
         // Do any additional setup after loading the view.
     }
     
@@ -22,12 +25,29 @@ class HomeVC: UIViewController {
         homeTableView.dataSource = self
         homeTableView.register(UINib.init(nibName: "BucketCell", bundle: nil), forCellReuseIdentifier: "BucketCell")
     }
+    
+    func bindData(){
+        homeViewModel.homeData.addObserver(fireNow: false) { [weak self] (homeResponse) in
+            DispatchQueue.main.async {
+                self?.homeTableView.reloadData()
+            }
+        }
+    }
 }
 
 //MARK: - UITableView DataSource
 extension HomeVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        let homeBucketData = homeViewModel.homeData.value[indexPath.row]
+        let bucketType = homeBucketData.bucketType
+        switch bucketType {
+        case .carousel,.banner,.scanAndOrder,.hotcuisins:
+            return 180
+        case .hashtags:
+            return 100
+        default:
+            return 250
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,11 +55,22 @@ extension HomeVC : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5;
+       let count = self.homeViewModel.homeData.value.count
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:BucketCell = tableView.dequeueReusableCell(withIdentifier: "BucketCell", for: indexPath) as! BucketCell
+        let homeBucketData = homeViewModel.homeData.value[indexPath.row]
+        cell.bucketType = homeBucketData.bucketType
+        switch cell.bucketType {
+        case .hotcuisins:
+            cell.backgroundColor = .blue
+        default:
+            cell.backgroundColor = .red
+        }
+        cell.setup(viewModel: homeBucketData)
+        cell.containerCollectionView.reloadData()
         return cell
     }
 }
