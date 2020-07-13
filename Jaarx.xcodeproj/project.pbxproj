@@ -54,6 +54,8 @@
 		5BC0C70D24A3D4B80045782B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0C70C24A3D4B80045782B /* UserModel.swift */; };
 		5BC0C70F24A7CEB40045782B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC0C70E24A7CEB40045782B /* Login.storyboard */; };
 		9E91BEC11DB656DD387951FE /* Pods_JaarxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */; };
+		D830CC2424BCAE0400CDC75A /* QRCodeScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CC2324BCAE0400CDC75A /* QRCodeScannerVC.swift */; };
+		D830CC2824BCAE5500CDC75A /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CC2724BCAE5500CDC75A /* QRScannerView.swift */; };
 		D84D8C5624A2495E007F7EDA /* AddOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = D84D8C5524A2495E007F7EDA /* AddOrder.json */; };
 		D84D8C5824A24B1E007F7EDA /* AddOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */; };
 		D84D8C5D24A2A6D2007F7EDA /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D8C5C24A2A6D1007F7EDA /* GenericResponse.swift */; };
@@ -150,6 +152,8 @@
 		9FEBE11E3D7CA881AAA1305F /* Pods-Jaarx-JaarxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jaarx-JaarxUITests.debug.xcconfig"; path = "Target Support Files/Pods-Jaarx-JaarxUITests/Pods-Jaarx-JaarxUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C88D9129F2CB3B3F88B93793 /* Pods-Jaarx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jaarx.debug.xcconfig"; path = "Target Support Files/Pods-Jaarx/Pods-Jaarx.debug.xcconfig"; sourceTree = "<group>"; };
 		D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JaarxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D830CC2324BCAE0400CDC75A /* QRCodeScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerVC.swift; sourceTree = "<group>"; };
+		D830CC2724BCAE5500CDC75A /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 		D84D8C5524A2495E007F7EDA /* AddOrder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AddOrder.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderResponse.swift; sourceTree = "<group>"; };
 		D84D8C5C24A2A6D1007F7EDA /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 		5B72E1A1240ECFF90032F004 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				D830CC2624BCAE2B00CDC75A /* UIViewComponents */,
 				5BA9E6992410333F0044CDBF /* ViewControllers */,
 				5B72E1B2240EEEF40032F004 /* TableCells */,
 				5B72E1A2240ED02A0032F004 /* CollectionCells */,
@@ -383,6 +388,7 @@
 				5B61328E24A8E8C70031448F /* JNavigationVC.swift */,
 				5B61329724A9350A0031448F /* SignUpVC.swift */,
 				5B2CA6FE24B8D5F600CDD824 /* JMainTabbarVC.swift */,
+				D830CC2324BCAE0400CDC75A /* QRCodeScannerVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -427,6 +433,14 @@
 				D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D830CC2624BCAE2B00CDC75A /* UIViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D830CC2724BCAE5500CDC75A /* QRScannerView.swift */,
+			);
+			path = UIViewComponents;
 			sourceTree = "<group>";
 		};
 		D84D8C5924A2735D007F7EDA /* JsonFiles */ = {
@@ -699,6 +713,7 @@
 				5B2CA6FF24B8D5F600CDD824 /* JMainTabbarVC.swift in Sources */,
 				5BBC960224B7C3750044D193 /* HorizontalListCollectionCell.swift in Sources */,
 				5B61329824A9350A0031448F /* SignUpVC.swift in Sources */,
+				D830CC2824BCAE5500CDC75A /* QRScannerView.swift in Sources */,
 				5B8546E3249502710092743E /* HomeRouter.swift in Sources */,
 				5B6132A224AD2BA60031448F /* HomeViewModel.swift in Sources */,
 				5BC0C70D24A3D4B80045782B /* UserModel.swift in Sources */,
@@ -712,6 +727,7 @@
 				5B61329F24AD2B0C0031448F /* Observer.swift in Sources */,
 				5B6132A524AE8B7F0031448F /* CellConfigurable.swift in Sources */,
 				5B72E171240ECFD40032F004 /* SceneDelegate.swift in Sources */,
+				D830CC2424BCAE0400CDC75A /* QRCodeScannerVC.swift in Sources */,
 				5BA9E69E241035B80044CDBF /* DataSource.swift in Sources */,
 				5B8546DB24942D610092743E /* LoginRouter.swift in Sources */,
 				5B72E1A6240ED16C0032F004 /* CarouselCell.swift in Sources */,
