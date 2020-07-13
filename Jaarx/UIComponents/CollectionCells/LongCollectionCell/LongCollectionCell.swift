@@ -23,6 +23,9 @@ class LongCollectionCell: UICollectionViewCell {
     func setRestData(restaurantData:RestaurantData) {
         descriptionLabel.text = restaurantData.restaurantLocation ?? ""
         titleLabel.text = restaurantData.restaurantName
+        if let imageDetails = restaurantData.imageDetails,imageDetails.count > 0,let img = imageDetails[0].imageUrl ,let imageUrl = URL.init(string:img){
+            squareImage.downloaded(from: imageUrl)
+        }
     }
 
 }

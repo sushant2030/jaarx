@@ -69,3 +69,39 @@ extension UIView {
     }
 }
 
+extension UIImageView {
+    func downloaded(from url: URL) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
+        let cache = URLCache.shared
+        let request = URLRequest.init(url: url)
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let data = cache.cachedResponse(for: request)?.data, let image = UIImage.init(data: data) {
+                DispatchQueue.main.async {
+                    self.image = image
+                }
+            } else {
+                URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    if let data = data, let image = UIImage.init(data: data) {
+                        let cachedData = CachedURLResponse.init(response: response!, data: data)
+                        cache.storeCachedResponse(cachedData, for: request)
+                        DispatchQueue.main.async {
+                             self.image = image
+                        }
+                    }
+                }.resume()
+            }
+        }
+//        URLSession.shared.dataTask(with: url) { data, response, error in
+//            guard
+//                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+//                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+//                let data = data, error == nil,
+//                let image = UIImage(data: data)
+//                else { return }
+//            DispatchQueue.main.async() { [weak self] in
+//                self?.image = image
+//            }
+//        }.resume()
+    }
+}
+

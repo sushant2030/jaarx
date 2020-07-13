@@ -16,4 +16,9 @@ class SquareCollectionCell: UICollectionViewCell {
         // Initialization code
     }
 
+    func setRestData(restaurantData:RestaurantData) {
+        if let imageUrl = URL.init(string:restaurantData.imageDetails![0].imageUrl!){
+            squareImageView.downloaded(from: imageUrl)
+        }
+    }
 }
