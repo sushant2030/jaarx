@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MrF-AB-pWI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MrF-AB-pWI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,59 +50,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8U-A3-fnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="448" y="136"/>
-        </scene>
-        <!--Code ScannerVC-->
-        <scene sceneID="4gR-8W-com">
-            <objects>
-                <viewController storyboardIdentifier="QRCodeScannerVC" id="R0a-kX-wtn" customClass="QRCodeScannerVC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BGq-O7-f4a">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxM-vp-a8o" customClass="QRScannerView" customModule="Jaarx" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="295.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter the QR code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ca7-pt-qx6">
-                                <rect key="frame" x="8" y="359.5" width="398" height="24"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0R-Um-0NS">
-                                <rect key="frame" x="0.0" y="383.5" width="406" height="1"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="F8W-sS-yxp"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Visits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqJ-g4-cuB">
-                                <rect key="frame" x="16" y="400.5" width="125.5" height="22.5"/>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="O0R-Um-0NS" firstAttribute="leading" secondItem="g46-jC-KzI" secondAttribute="leading" id="1Y3-Gn-rDe"/>
-                            <constraint firstItem="pxM-vp-a8o" firstAttribute="top" secondItem="g46-jC-KzI" secondAttribute="top" id="BOe-kg-BwB"/>
-                            <constraint firstItem="ZqJ-g4-cuB" firstAttribute="leading" secondItem="g46-jC-KzI" secondAttribute="leading" constant="16" id="HdJ-FP-H7g"/>
-                            <constraint firstItem="pxM-vp-a8o" firstAttribute="leading" secondItem="g46-jC-KzI" secondAttribute="leading" id="JQB-yc-2nR"/>
-                            <constraint firstItem="O0R-Um-0NS" firstAttribute="top" secondItem="Ca7-pt-qx6" secondAttribute="bottom" id="MWn-Rh-TLZ"/>
-                            <constraint firstItem="pxM-vp-a8o" firstAttribute="trailing" secondItem="g46-jC-KzI" secondAttribute="trailing" id="RsE-4o-Cb7"/>
-                            <constraint firstItem="ZqJ-g4-cuB" firstAttribute="top" secondItem="O0R-Um-0NS" secondAttribute="bottom" constant="16" id="TfN-PH-3Di"/>
-                            <constraint firstItem="pxM-vp-a8o" firstAttribute="height" secondItem="BGq-O7-f4a" secondAttribute="height" multiplier="0.33" id="acJ-z6-NU1"/>
-                            <constraint firstItem="Ca7-pt-qx6" firstAttribute="leading" secondItem="g46-jC-KzI" secondAttribute="leading" constant="8" id="f6G-Ol-3QK"/>
-                            <constraint firstAttribute="trailing" secondItem="Ca7-pt-qx6" secondAttribute="trailing" constant="8" id="nBC-uQ-eCl"/>
-                            <constraint firstItem="Ca7-pt-qx6" firstAttribute="top" secondItem="pxM-vp-a8o" secondAttribute="bottom" constant="20" id="oA4-cG-Zg9"/>
-                            <constraint firstItem="g46-jC-KzI" firstAttribute="trailing" secondItem="O0R-Um-0NS" secondAttribute="trailing" constant="8" id="wtk-vr-RDq"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="g46-jC-KzI"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XjG-RM-uim" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1146.376811594203" y="139.95535714285714"/>
         </scene>
     </scenes>
 </document>

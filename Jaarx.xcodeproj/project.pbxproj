@@ -42,7 +42,6 @@
 		5B8546E3249502710092743E /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8546E2249502710092743E /* HomeRouter.swift */; };
 		5B8546E62496754A0092743E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8546E52496754A0092743E /* Constants.swift */; };
 		5BA497B22413907600CED8EA /* Pods_Jaarx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA497B12413907600CED8EA /* Pods_Jaarx.framework */; };
-		5BA497B32413907600CED8EA /* Pods_Jaarx.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA497B12413907600CED8EA /* Pods_Jaarx.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5BA783392497E1B1007A4755 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA783382497E1B1007A4755 /* Helper.swift */; };
 		5BA9E698241030CC0044CDBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BA9E697241030CC0044CDBF /* Main.storyboard */; };
 		5BA9E69B241033B00044CDBF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9E69A241033B00044CDBF /* HomeVC.swift */; };
@@ -53,6 +52,7 @@
 		5BC0C70B24A27A1D0045782B /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0C70924A27A1D0045782B /* UserDetail.swift */; };
 		5BC0C70D24A3D4B80045782B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0C70C24A3D4B80045782B /* UserModel.swift */; };
 		5BC0C70F24A7CEB40045782B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC0C70E24A7CEB40045782B /* Login.storyboard */; };
+		5BF85E6C24BD0BA2004335E8 /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF85E6B24BD0BA2004335E8 /* Order.storyboard */; };
 		9E91BEC11DB656DD387951FE /* Pods_JaarxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */; };
 		D830CC2424BCAE0400CDC75A /* QRCodeScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CC2324BCAE0400CDC75A /* QRCodeScannerVC.swift */; };
 		D830CC2824BCAE5500CDC75A /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CC2724BCAE5500CDC75A /* QRScannerView.swift */; };
@@ -77,20 +77,6 @@
 			remoteInfo = Jaarx;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5BA497B42413907600CED8EA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5BA497B32413907600CED8EA /* Pods_Jaarx.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		25BCCE570FF89C9C1DDFCBFF /* Pods-Jaarx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jaarx.release.xcconfig"; path = "Target Support Files/Pods-Jaarx/Pods-Jaarx.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +133,7 @@
 		5BC0C70924A27A1D0045782B /* UserDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		5BC0C70C24A3D4B80045782B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5BC0C70E24A7CEB40045782B /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		5BF85E6B24BD0BA2004335E8 /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
 		7A6CB78A280854C7E884C5EE /* Pods_Jaarx_JaarxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jaarx_JaarxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB3A4093BD638660505246E /* Pods-Jaarx-JaarxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jaarx-JaarxUITests.release.xcconfig"; path = "Target Support Files/Pods-Jaarx-JaarxUITests/Pods-Jaarx-JaarxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9FEBE11E3D7CA881AAA1305F /* Pods-Jaarx-JaarxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jaarx-JaarxUITests.debug.xcconfig"; path = "Target Support Files/Pods-Jaarx-JaarxUITests/Pods-Jaarx-JaarxUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -376,6 +363,7 @@
 			children = (
 				5BA9E697241030CC0044CDBF /* Main.storyboard */,
 				5BC0C70E24A7CEB40045782B /* Login.storyboard */,
+				5BF85E6B24BD0BA2004335E8 /* Order.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -462,7 +450,6 @@
 				5B72E167240ECFD40032F004 /* Sources */,
 				5B72E168240ECFD40032F004 /* Frameworks */,
 				5B72E169240ECFD40032F004 /* Resources */,
-				5BA497B42413907600CED8EA /* Embed Frameworks */,
 				A2FFD4CD4208A4DE6740DFA8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -572,6 +559,7 @@
 				5BBC960324B7C3750044D193 /* HorizontalListCollectionCell.xib in Resources */,
 				5B61329C24A938BD0031448F /* JTextFieldCell.xib in Resources */,
 				5BC0C70F24A7CEB40045782B /* Login.storyboard in Resources */,
+				5BF85E6C24BD0BA2004335E8 /* Order.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,12 +888,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PE5G9AFFGE;
 				INFOPLIST_FILE = Jaarx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alone.Jaarx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smart.smartmusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -918,12 +907,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PE5G9AFFGE;
 				INFOPLIST_FILE = Jaarx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alone.Jaarx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smart.smartmusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -10,9 +10,10 @@ import UIKit
 
 class QRCodeScannerVC: UIViewController {
 
+    @IBOutlet weak var scanView: QRScannerView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        scanView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -27,4 +28,19 @@ class QRCodeScannerVC: UIViewController {
     }
     */
 
+}
+extension QRCodeScannerVC : QRScannerViewDelegate {
+    func qrScanningDidFail() {
+        
+    }
+    
+    func qrScanningSucceededWithCode(_ str: String?) {
+        
+    }
+    
+    func qrScanningDidStop() {
+        
+    }
+    
+    
 }
