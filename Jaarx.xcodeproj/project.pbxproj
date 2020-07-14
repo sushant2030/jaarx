@@ -56,6 +56,8 @@
 		9E91BEC11DB656DD387951FE /* Pods_JaarxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */; };
 		D830CC2424BCAE0400CDC75A /* QRCodeScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CC2324BCAE0400CDC75A /* QRCodeScannerVC.swift */; };
 		D830CC2824BCAE5500CDC75A /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CC2724BCAE5500CDC75A /* QRScannerView.swift */; };
+		D830CC2A24BD902300CDC75A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CC2924BD902300CDC75A /* Extensions.swift */; };
+		D830CC2E24BDDD8100CDC75A /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CC2D24BDDD8000CDC75A /* RestaurantViewModel.swift */; };
 		D84D8C5624A2495E007F7EDA /* AddOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = D84D8C5524A2495E007F7EDA /* AddOrder.json */; };
 		D84D8C5824A24B1E007F7EDA /* AddOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */; };
 		D84D8C5D24A2A6D2007F7EDA /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84D8C5C24A2A6D1007F7EDA /* GenericResponse.swift */; };
@@ -141,6 +143,8 @@
 		D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JaarxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D830CC2324BCAE0400CDC75A /* QRCodeScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerVC.swift; sourceTree = "<group>"; };
 		D830CC2724BCAE5500CDC75A /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		D830CC2924BD902300CDC75A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D830CC2D24BDDD8000CDC75A /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
 		D84D8C5524A2495E007F7EDA /* AddOrder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AddOrder.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderResponse.swift; sourceTree = "<group>"; };
 		D84D8C5C24A2A6D1007F7EDA /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				5B6132A124AD2BA60031448F /* HomeViewModel.swift */,
+				D830CC2D24BDDD8000CDC75A /* RestaurantViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 			children = (
 				5B8546E52496754A0092743E /* Constants.swift */,
 				5BA783382497E1B1007A4755 /* Helper.swift */,
+				D830CC2924BD902300CDC75A /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -690,6 +696,7 @@
 				5B72E179240ECFD40032F004 /* Jaarx.xcdatamodeld in Sources */,
 				5B3D014924A0A38F002EFD89 /* APIRouter.swift in Sources */,
 				5B3D014824A0A38F002EFD89 /* APIClient.swift in Sources */,
+				D830CC2E24BDDD8100CDC75A /* RestaurantViewModel.swift in Sources */,
 				5B8546E62496754A0092743E /* Constants.swift in Sources */,
 				5B72E1B5240EF2B80032F004 /* BucketCell.swift in Sources */,
 				5B8546DF249439A60092743E /* UserRouter.swift in Sources */,
@@ -706,6 +713,7 @@
 				5B6132A224AD2BA60031448F /* HomeViewModel.swift in Sources */,
 				5BC0C70D24A3D4B80045782B /* UserModel.swift in Sources */,
 				5BA783392497E1B1007A4755 /* Helper.swift in Sources */,
+				D830CC2A24BD902300CDC75A /* Extensions.swift in Sources */,
 				5BC0C70B24A27A1D0045782B /* UserDetail.swift in Sources */,
 				D84D8C5D24A2A6D2007F7EDA /* GenericResponse.swift in Sources */,
 				5B72E1B0240EED600032F004 /* SquareCollectionCell.swift in Sources */,

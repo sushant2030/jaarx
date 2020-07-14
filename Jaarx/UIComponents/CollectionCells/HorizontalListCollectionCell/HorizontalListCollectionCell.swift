@@ -16,3 +16,9 @@ class HorizontalListCollectionCell: UICollectionViewCell {
     }
 
 }
+
+extension HorizontalListCollectionCell:CellConfigurable
+{
+    func setup(viewModel: RowViewModel) {
+    }
+}

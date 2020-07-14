@@ -63,3 +63,11 @@ enum ContentType: String {
 
 
 let baseUrlPath = "http://ec2-3-134-99-218.us-east-2.compute.amazonaws.com:9444"
+let activityBackgroundViewTag = 475647
+
+enum BucketCellHeight : CGFloat
+{
+    case small =  100.0
+    case medium = 150.0
+    case large = 250.0
+}

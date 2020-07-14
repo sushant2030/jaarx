@@ -8,8 +8,9 @@
 
 import Foundation
 protocol CellConfigurable {
-    func setup(viewModel: RowViewModel) // Provide a generic function
+    func setup(viewModel: RowViewModel) // Provide a generic function for table row set up
 }
 protocol RowViewModel {
     
 }
+

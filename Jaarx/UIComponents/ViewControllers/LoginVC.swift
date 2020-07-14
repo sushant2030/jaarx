@@ -28,14 +28,16 @@ class LoginVC: UIViewController {
     
 // MARK: - IBActions
     @IBAction func actionOTP(_ sender: UIButton) {
-        let tabBarVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "JMainTabbarVC")
+        if let tabBarVC = UIStoryboard.tabBarVC(){
         self.view.window?.rootViewController = tabBarVC
+        }
         
     }
     
     @IBAction func actionSignUp(_ sender: UIButton) {
-        let signUpVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(identifier: "SignUpVC")
+        if let signUpVC = UIStoryboard.signUpVC(){
         self.present(signUpVC, animated: true, completion: nil)
+        }
     }
     /*
     // MARK: - Navigation

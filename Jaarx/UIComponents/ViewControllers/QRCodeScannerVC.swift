@@ -9,11 +9,12 @@
 import UIKit
 
 class QRCodeScannerVC: UIViewController {
-
-    @IBOutlet weak var scanView: QRScannerView!
+    
+    @IBOutlet weak var qrScannerView: QRScannerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        scanView.delegate = self
+        qrScannerView.delegate = self
         // Do any additional setup after loading the view.
     }
     

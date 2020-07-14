@@ -19,13 +19,11 @@ class JMainTabbarVC: UITabBarController {
     
     
     func setupViewControllers()  {
-        let homeVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "HomeVC")
-        let navigationVC = JNavigationVC.init(rootViewController: homeVC)
         
-        let qrCodeScannerVC = UIStoryboard.init(name: "Order", bundle: nil).instantiateViewController(identifier: "QRCodeScannerVC")
-        let navigationVC2 = JNavigationVC.init(rootViewController: qrCodeScannerVC)
-        
-        self.viewControllers = [navigationVC,navigationVC2]
+//        if let homeVC = UIStoryboard.homeVC(){
+//            let navigationVC = JNavigationVC.init(rootViewController: homeVC)
+//            self.viewControllers = [navigationVC]
+//        }
     }
 
     /*
