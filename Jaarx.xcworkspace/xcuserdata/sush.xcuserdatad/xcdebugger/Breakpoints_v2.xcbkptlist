@@ -5,87 +5,50 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
-         <BreakpointContent
-            uuid = "264A6AEC-0AD6-4103-BC82-2EDEF863EC14"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            uuid = "C43DEA76-80C6-4724-BDAE-805616D960A4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            breakpointStackSelectionBehavior = "1"
-            scope = "1"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E9956B20-1317-4C0D-A72E-1BB33C57E533"
+            uuid = "98AF2B9B-2EDE-4F4B-8154-25B6A202DAD6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/UIViewComponents/QRScannerView.swift"
+            filePath = "Jaarx/UIComponents/TableCells/CarouselTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "found(code:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "setup(viewModel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F04795F7-2D94-4740-B66A-5056A42EB2BA"
+            uuid = "A78FD461-5474-47B2-BDD6-C94615A1988F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/ViewControllers/QRCodeScannerVC.swift"
+            filePath = "Jaarx/UIComponents/TableCells/CarouselTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "qrScanningDidFail()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "setup(viewModel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A52A4CDC-856B-4166-BB94-E99F596CD644"
+            uuid = "58CC9084-DF53-43CA-B111-A61B02A99DD3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/ViewControllers/QRCodeScannerVC.swift"
+            filePath = "Jaarx/UIComponents/TableCells/CarouselTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "qrScanningSucceededWithCode(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5366A58D-644D-41BB-96E3-56F0C06CA848"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/ViewControllers/QRCodeScannerVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "qrScanningDidStop()"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "setup(viewModel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

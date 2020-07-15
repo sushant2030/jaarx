@@ -28,8 +28,6 @@
 		5B72E17E240ECFD70032F004 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B72E17C240ECFD70032F004 /* LaunchScreen.storyboard */; };
 		5B72E189240ECFD70032F004 /* JaarxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E188240ECFD70032F004 /* JaarxTests.swift */; };
 		5B72E194240ECFD70032F004 /* JaarxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E193240ECFD70032F004 /* JaarxUITests.swift */; };
-		5B72E1A6240ED16C0032F004 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E1A4240ED16C0032F004 /* CarouselCell.swift */; };
-		5B72E1A7240ED16C0032F004 /* CarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B72E1A5240ED16C0032F004 /* CarouselCell.xib */; };
 		5B72E1AB240EE7CC0032F004 /* LongCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E1A9240EE7CC0032F004 /* LongCollectionCell.swift */; };
 		5B72E1AC240EE7CC0032F004 /* LongCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B72E1AA240EE7CC0032F004 /* LongCollectionCell.xib */; };
 		5B72E1B0240EED600032F004 /* SquareCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E1AE240EED600032F004 /* SquareCollectionCell.swift */; };
@@ -53,6 +51,8 @@
 		5BC0C70D24A3D4B80045782B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0C70C24A3D4B80045782B /* UserModel.swift */; };
 		5BC0C70F24A7CEB40045782B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC0C70E24A7CEB40045782B /* Login.storyboard */; };
 		5BF85E6C24BD0BA2004335E8 /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF85E6B24BD0BA2004335E8 /* Order.storyboard */; };
+		5BF85E6F24BE4CEB004335E8 /* CarouselTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF85E6D24BE4CEB004335E8 /* CarouselTableCell.swift */; };
+		5BF85E7024BE4CEB004335E8 /* CarouselTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BF85E6E24BE4CEB004335E8 /* CarouselTableCell.xib */; };
 		9E91BEC11DB656DD387951FE /* Pods_JaarxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DDD1EEA0265FBFD28DDBBA /* Pods_JaarxTests.framework */; };
 		D830CC2424BCAE0400CDC75A /* QRCodeScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CC2324BCAE0400CDC75A /* QRCodeScannerVC.swift */; };
 		D830CC2824BCAE5500CDC75A /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CC2724BCAE5500CDC75A /* QRScannerView.swift */; };
@@ -110,8 +110,6 @@
 		5B72E18F240ECFD70032F004 /* JaarxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JaarxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B72E193240ECFD70032F004 /* JaarxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaarxUITests.swift; sourceTree = "<group>"; };
 		5B72E195240ECFD70032F004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B72E1A4240ED16C0032F004 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
-		5B72E1A5240ED16C0032F004 /* CarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselCell.xib; sourceTree = "<group>"; };
 		5B72E1A9240EE7CC0032F004 /* LongCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongCollectionCell.swift; sourceTree = "<group>"; };
 		5B72E1AA240EE7CC0032F004 /* LongCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongCollectionCell.xib; sourceTree = "<group>"; };
 		5B72E1AE240EED600032F004 /* SquareCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareCollectionCell.swift; sourceTree = "<group>"; };
@@ -136,6 +134,8 @@
 		5BC0C70C24A3D4B80045782B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5BC0C70E24A7CEB40045782B /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5BF85E6B24BD0BA2004335E8 /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
+		5BF85E6D24BE4CEB004335E8 /* CarouselTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTableCell.swift; sourceTree = "<group>"; };
+		5BF85E6E24BE4CEB004335E8 /* CarouselTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselTableCell.xib; sourceTree = "<group>"; };
 		7A6CB78A280854C7E884C5EE /* Pods_Jaarx_JaarxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jaarx_JaarxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB3A4093BD638660505246E /* Pods-Jaarx-JaarxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jaarx-JaarxUITests.release.xcconfig"; path = "Target Support Files/Pods-Jaarx-JaarxUITests/Pods-Jaarx-JaarxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9FEBE11E3D7CA881AAA1305F /* Pods-Jaarx-JaarxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jaarx-JaarxUITests.debug.xcconfig"; path = "Target Support Files/Pods-Jaarx-JaarxUITests/Pods-Jaarx-JaarxUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -298,18 +298,8 @@
 				5BBC95FF24B7C3310044D193 /* HorizontalListCollectionCell */,
 				5B72E1AD240EED230032F004 /* SquareCollectionCell */,
 				5B72E1A8240EE7440032F004 /* LongCollectionCell */,
-				5B72E1A3240ED06C0032F004 /* Carousel */,
 			);
 			path = CollectionCells;
-			sourceTree = "<group>";
-		};
-		5B72E1A3240ED06C0032F004 /* Carousel */ = {
-			isa = PBXGroup;
-			children = (
-				5B72E1A4240ED16C0032F004 /* CarouselCell.swift */,
-				5B72E1A5240ED16C0032F004 /* CarouselCell.xib */,
-			);
-			path = Carousel;
 			sourceTree = "<group>";
 		};
 		5B72E1A8240EE7440032F004 /* LongCollectionCell */ = {
@@ -337,6 +327,8 @@
 				5B72E1B4240EF2B80032F004 /* BucketCell.xib */,
 				5B61329924A938BD0031448F /* JTextFieldCell.swift */,
 				5B61329A24A938BD0031448F /* JTextFieldCell.xib */,
+				5BF85E6D24BE4CEB004335E8 /* CarouselTableCell.swift */,
+				5BF85E6E24BE4CEB004335E8 /* CarouselTableCell.xib */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -555,10 +547,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA9E698241030CC0044CDBF /* Main.storyboard in Resources */,
+				5BF85E7024BE4CEB004335E8 /* CarouselTableCell.xib in Resources */,
 				5B72E17E240ECFD70032F004 /* LaunchScreen.storyboard in Resources */,
 				D84D8C5624A2495E007F7EDA /* AddOrder.json in Resources */,
 				5B72E17B240ECFD70032F004 /* Assets.xcassets in Resources */,
-				5B72E1A7240ED16C0032F004 /* CarouselCell.xib in Resources */,
 				5B72E1B1240EED600032F004 /* SquareCollectionCell.xib in Resources */,
 				5B72E1AC240EE7CC0032F004 /* LongCollectionCell.xib in Resources */,
 				5B72E1B6240EF2B80032F004 /* BucketCell.xib in Resources */,
@@ -697,6 +689,7 @@
 				5B3D014924A0A38F002EFD89 /* APIRouter.swift in Sources */,
 				5B3D014824A0A38F002EFD89 /* APIClient.swift in Sources */,
 				D830CC2E24BDDD8100CDC75A /* RestaurantViewModel.swift in Sources */,
+				5BF85E6F24BE4CEB004335E8 /* CarouselTableCell.swift in Sources */,
 				5B8546E62496754A0092743E /* Constants.swift in Sources */,
 				5B72E1B5240EF2B80032F004 /* BucketCell.swift in Sources */,
 				5B8546DF249439A60092743E /* UserRouter.swift in Sources */,
@@ -726,7 +719,6 @@
 				D830CC2424BCAE0400CDC75A /* QRCodeScannerVC.swift in Sources */,
 				5BA9E69E241035B80044CDBF /* DataSource.swift in Sources */,
 				5B8546DB24942D610092743E /* LoginRouter.swift in Sources */,
-				5B72E1A6240ED16C0032F004 /* CarouselCell.swift in Sources */,
 				D84D8C5824A24B1E007F7EDA /* AddOrderResponse.swift in Sources */,
 				5BC0C70A24A27A1D0045782B /* FavoriteRestaurant.swift in Sources */,
 				5B61329024A8E8C70031448F /* JNavigationVC.swift in Sources */,

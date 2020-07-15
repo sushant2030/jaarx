@@ -21,7 +21,7 @@ class LongCollectionCell: UICollectionViewCell {
     }
     
     @IBAction func scanButtonAction(_ sender: Any) {
-       
+       restaurantCellVM?.scanBtnPressed?()
     }
     
 }

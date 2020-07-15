@@ -13,7 +13,7 @@ struct  HomeResponse : Codable {
     let data : [HomeData]?
 }
 
-struct HomeData : Codable, RowViewModel {
+struct HomeData : Codable {
     let imageUrl : String?
     let type : String?
     let description : String?
@@ -21,7 +21,7 @@ struct HomeData : Codable, RowViewModel {
     let data : [RestaurantData]?
 }
 
-struct  RestaurantData : Codable,RowViewModel {
+struct  RestaurantData : Codable {
     let categoryColor : String?
     let categoryId : String?
     let categoryName : String?

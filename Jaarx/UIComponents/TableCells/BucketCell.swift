@@ -29,7 +29,6 @@ class BucketCell: UITableViewCell{
     }
     
     func registerViews()  {
-        containerCollectionView.register(UINib.init(nibName: CarouselCell.cellIdentifier(), bundle: nil), forCellWithReuseIdentifier: CarouselCell.cellIdentifier())
         containerCollectionView.register(UINib.init(nibName: LongCollectionCell.cellIdentifier(), bundle: nil), forCellWithReuseIdentifier: LongCollectionCell.cellIdentifier())
         containerCollectionView.register(UINib.init(nibName: SquareCollectionCell.cellIdentifier(), bundle: nil), forCellWithReuseIdentifier: SquareCollectionCell.cellIdentifier())
         containerCollectionView.register(UINib.init(nibName: HorizontalListCollectionCell.cellIdentifier(), bundle: nil), forCellWithReuseIdentifier: HorizontalListCollectionCell.cellIdentifier())
@@ -51,7 +50,7 @@ extension BucketCell : CellConfigurable {
     
     func setup(viewModel: RowViewModel) {
         guard let viewModel = (viewModel as? HomeRowVM) else {return}
-        self.restaurantViewModel = RestaurantViewModel.init(homeBucketVM: viewModel)
+        self.restaurantViewModel = viewModel.restaurantViewModel
         bucketTitleViewHeight.constant = viewModel.bucketTitleViewHeight
         self.backgroundColor = viewModel.backgroundColor
         self.bucketTitleLabel.text = viewModel.title
@@ -62,21 +61,16 @@ extension BucketCell : CellConfigurable {
 
 extension BucketCell : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return restaurantViewModel?.numberOfCells ?? 0
+        return restaurantViewModel?.restaurantCollectionVM.value.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let restaurantVM = self.restaurantViewModel
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: (self.restaurantViewModel?.cellIdentifier())! , for: indexPath)
-        if let cell = cell as? CellConfigurable{
-            if (restaurantVM?.restaurantCollectionVM.count)!>0{
-                if let restaurantCellVM = restaurantVM?.restaurantCollectionVM[indexPath.row]{
+        if let cell = cell as? CellConfigurable {
+            if (restaurantVM?.restaurantCollectionVM.value.count)!>0 {
+                if let restaurantCellVM = restaurantVM?.restaurantCollectionVM.value[indexPath.row]{
                     cell.setup(viewModel: restaurantCellVM)
-                }
-            }
-            else{
-                if let homeRowVM = restaurantVM?.homeRowVM {
-                    cell.setup(viewModel:homeRowVM )
                 }
             }
         }
@@ -84,36 +78,14 @@ extension BucketCell : UICollectionViewDelegate, UICollectionViewDataSource,UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (self.bounds.width - 60) / 3
-        switch self.restaurantViewModel?.bucketType {
-        case .banner,.carousel,.scanAndOrder:
-            return CGSize.init(width: self.bounds.size.width - 30, height: self.bounds.size.height)
-        case .hotcuisins:
-            return CGSize.init(width: width, height: width)
-        case .hashtags:
-            return CGSize.init(width: 100, height: 50)
-        default:
-            return CGSize.init(width: width, height: (width * 2))
-        }
+        return (restaurantViewModel?.getGridSize(self.bounds))!
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        switch self.restaurantViewModel?.bucketType {
-        case .banner,.carousel,.scanAndOrder:
-            return 0
-        default:
-            return 20
-        }
+        return restaurantViewModel!.minimumLineSpace
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        switch self.restaurantViewModel?.bucketType {
-        case .banner,.carousel:
-            return UIEdgeInsets.init(top: 10, left: 15, bottom: 20, right: 15)
-        case .scanAndOrder:
-            return UIEdgeInsets.init(top: 20, left: 15, bottom: 10, right: 15)
-        default:
-            return UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 15)
-        }
+        return restaurantViewModel!.edgeInset
     }
 }

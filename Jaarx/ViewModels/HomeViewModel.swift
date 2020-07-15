@@ -13,7 +13,6 @@ import UIKit
 class HomeViewModel {
     var homeTableViewModel = Observable<[HomeRowVM]> (value: [])
     var isLoading = Observable<Bool> (value: true)
-    
     func getHomeData()  {
         APIClient.getHomeData { (homeResponse) in
             switch homeResponse{
@@ -29,12 +28,32 @@ class HomeViewModel {
     
     func buildViewModels(response:HomeResponse) {
         for homeData in response.data ?? [] {
-            var homeBuckets = HomeRowVM.init(imageUrl: homeData.imageUrl, type: homeData.type, description: homeData.description, title: homeData.title ?? "", data: homeData.data)
-            homeBuckets.bucketType = BucketType(rawValue: homeData.type ?? "banner") ?? .banner
-            self.homeTableViewModel.value.append(homeBuckets)
+            let restaurantCellVMs = buildRestaurantCellVMs(homeData.data)
+            let bucketType = BucketType(rawValue: homeData.type ?? "banner") ?? .banner
+            let restaurantViewModel = RestaurantViewModel.init(restaurantDataCollection : restaurantCellVMs,bucketType:bucketType)
+            let homeRowVM = HomeRowVM.init(imageUrl: homeData.imageUrl, type: homeData.type, description: homeData.description, title: homeData.title ?? "", restaurantViewModel: restaurantViewModel,bucketType: bucketType)
+           
+            self.homeTableViewModel.value.append(homeRowVM)
         }
     }
     
+    private func buildRestaurantCellVMs(_ restaurantArray:[RestaurantData]?) -> [RestaurantCellVM] {
+        var restaurantCellVMArray = [RestaurantCellVM] ()
+           for restaurant in restaurantArray ?? [] {
+            var restaurantVM = RestaurantCellVM.init(imageDetails: restaurant.imageDetails, location: restaurant.restaurantLocation ?? "", title: restaurant.restaurantName ?? "")
+               restaurantVM.scanBtnPressed = handleScanAction(viewModel: restaurantVM)
+            restaurantCellVMArray.append(restaurantVM)
+           }
+        return restaurantCellVMArray
+       }
+    
+    
+    // MARK: - User interaction
+    func handleScanAction(viewModel : RestaurantCellVM) -> (() -> Void) {
+        return { [viewModel] in
+            print(viewModel.location ?? "None")
+        }
+    }
 }
 
 struct HomeRowVM : RowViewModel{
@@ -42,7 +61,8 @@ struct HomeRowVM : RowViewModel{
     let type : String?
     let description : String?
     let title : String?
-    let data : [RestaurantData]?
+    let restaurantViewModel : RestaurantViewModel?
+        
     var  bucketTitleViewHeight : CGFloat{
         get{self.getBucketTitleViewHeight()}
     }
@@ -85,6 +105,16 @@ struct HomeRowVM : RowViewModel{
             rowHeight = BucketCellHeight.large.rawValue
         }
         return rowHeight
+    }
+    func cellIdentifier() -> String {
+        var cellIdentifier : String
+        switch self.bucketType {
+        case .banner,.carousel,.scanAndOrder:
+            cellIdentifier = CarouselTableCell.cellIdentifier()
+        default:
+            cellIdentifier = BucketCell.cellIdentifier()
+        }
+        return cellIdentifier
     }
     
 }

@@ -25,6 +25,7 @@ class HomeVC: UIViewController {
         homeTableView.delegate = self
         homeTableView.dataSource = self
         homeTableView.register(UINib.init(nibName: BucketCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: BucketCell.cellIdentifier())
+        homeTableView.register(UINib.init(nibName: CarouselTableCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: CarouselTableCell.cellIdentifier())
     }
     
     func bindData(){
@@ -65,8 +66,10 @@ extension HomeVC : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BucketCell.cellIdentifier(), for: indexPath)
+        
         let homeBucketData = homeViewModel.homeTableViewModel.value[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: homeBucketData.cellIdentifier(), for: indexPath)
+        
         if let cell = cell as? CellConfigurable{
         cell.setup(viewModel: homeBucketData)
         }

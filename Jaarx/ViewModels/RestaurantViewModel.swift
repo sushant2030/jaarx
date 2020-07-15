@@ -7,37 +7,58 @@
 //
 
 import Foundation
+import UIKit
 
 class RestaurantViewModel {
-    var restaurantCollectionVM = [RestaurantCellVM]()
-    var homeRowVM : RowViewModel?
+    var restaurantCollectionVM = Observable<[RestaurantCellVM]>(value: [])
     let bucketType:BucketType?
-    var numberOfCells : Int?
-    init(homeBucketVM:HomeRowVM) {
-        self.bucketType = homeBucketVM.bucketType
-        self.homeRowVM = homeBucketVM
-        self.setNumberOfCellsForSection(homeBucketVM: homeBucketVM)
-        self.buildViewModels(homeBucketVM: homeBucketVM)
+    var edgeInset : UIEdgeInsets {
+        get { getEdgeInsets() }
     }
-    private func buildViewModels(homeBucketVM:HomeRowVM) {
-        for restaurantData in homeBucketVM.data ?? [] {
-            let restaurantVM = RestaurantCellVM.init(imageDetails: restaurantData.imageDetails, location: restaurantData.restaurantLocation ?? "", title: restaurantData.restaurantName ?? "")
-            self.restaurantCollectionVM.append(restaurantVM )
-        }
+    var minimumLineSpace : CGFloat {
+        get { getMinimumLineSpace() }
     }
-    private func setNumberOfCellsForSection (homeBucketVM:HomeRowVM)  {
-        switch bucketType {
-        case .carousel,.banner,.scanAndOrder:
-            self.numberOfCells = 1
+    init(restaurantDataCollection:[RestaurantCellVM], bucketType:BucketType) {
+        self.bucketType = bucketType
+        restaurantCollectionVM.value = restaurantDataCollection
+    }
+    
+    func getGridSize(_ bounds:CGRect) -> CGSize {
+        let width = (bounds.width - 60) / 3
+        switch self.bucketType {
+        case .banner,.carousel,.scanAndOrder:
+            return CGSize.init(width: bounds.size.width - 30, height: bounds.size.height)
+        case .hotcuisins:
+            return CGSize.init(width: width, height: width)
+        case .hashtags:
+            return CGSize.init(width: 100, height: 50)
         default:
-            self.numberOfCells = homeBucketVM.data?.count ?? 0
+            return CGSize.init(width: width, height: (width * 2))
         }
     }
+    func getEdgeInsets() -> UIEdgeInsets {
+        switch self.bucketType {
+        case .banner,.carousel:
+            return UIEdgeInsets.init(top: 10, left: 15, bottom: 20, right: 15)
+        case .scanAndOrder:
+            return UIEdgeInsets.init(top: 20, left: 15, bottom: 10, right: 15)
+        default:
+            return UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 15)
+        }
+    }
+    
+    func getMinimumLineSpace() -> CGFloat {
+        switch self.bucketType {
+        case .banner,.carousel,.scanAndOrder:
+            return 0
+        default:
+            return 20
+        }
+    }
+
     func cellIdentifier() -> String {
         var cellIdentifier : String
         switch self.bucketType {
-        case .banner,.carousel,.scanAndOrder:
-            cellIdentifier = CarouselCell.cellIdentifier()
         case .critics,.mostscanned,.newlyOpened,.topPicks:
             cellIdentifier = LongCollectionCell.cellIdentifier()
         case .hotcuisins:
@@ -49,8 +70,8 @@ class RestaurantViewModel {
         }
         return cellIdentifier
     }
-    
 }
+
 struct RestaurantCellVM:RowViewModel {
     let imageDetails : [ImageDetail]?
     let location : String?
@@ -58,6 +79,7 @@ struct RestaurantCellVM:RowViewModel {
     var imageUrl : URL? {
         get{self.getImageUrl()}
     }
+    var scanBtnPressed: (() -> Void)?
     func getImageUrl() ->URL?{
         if let imageDetails = self.imageDetails,imageDetails.count > 0,let img = imageDetails[0].imageUrl{
             return URL.init(string:img)
