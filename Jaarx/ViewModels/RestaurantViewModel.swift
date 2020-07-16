@@ -55,7 +55,7 @@ class RestaurantViewModel {
             return 20
         }
     }
-
+    
     func cellIdentifier() -> String {
         var cellIdentifier : String
         switch self.bucketType {
@@ -72,14 +72,22 @@ class RestaurantViewModel {
     }
 }
 
-struct RestaurantCellVM:RowViewModel {
-    let imageDetails : [ImageDetail]?
-    let location : String?
+class RestaurantCellVM:RowViewModel {
+    let restaurantId : String?
     let title : String?
+    let location : String?
+    let imageDetails : [ImageDetail]?
     var imageUrl : URL? {
         get{self.getImageUrl()}
     }
-    var scanBtnPressed: (() -> Void)?
+    var scanBtnPressed: (() -> Void)? = nil
+    init(restaurantId : String?, imageDetails:[ImageDetail]?,location : String?,title : String?) {
+        self.restaurantId = restaurantId
+        self.imageDetails = imageDetails
+        self.location = location
+        self.title = title
+    }
+    
     func getImageUrl() ->URL?{
         if let imageDetails = self.imageDetails,imageDetails.count > 0,let img = imageDetails[0].imageUrl{
             return URL.init(string:img)

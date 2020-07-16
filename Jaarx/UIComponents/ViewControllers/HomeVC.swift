@@ -10,9 +10,10 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-
+    
     @IBOutlet weak var homeTableView: UITableView!
     var homeViewModel : HomeViewModel = HomeViewModel()
+    var scanButtonAction : (() -> Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
         registerDelegateAndDataSource()
@@ -29,10 +30,16 @@ class HomeVC: UIViewController {
     }
     
     func bindData(){
-        homeViewModel.homeTableViewModel.addObserver(fireNow: false) { [weak self] (homeResponse) in
+        homeViewModel.homeTableViewModel.addObserver(fireNow: false) { [weak self] (homeVMs) in
             DispatchQueue.main.async {
                 self?.homeTableView.reloadData()
                 self?.homeTableView.isHidden = false
+                for homeVM in homeVMs{
+                    let restaurantViewModel = homeVM.restaurantViewModel
+                    for restaurantCellVM in restaurantViewModel?.restaurantCollectionVM.value ?? []{
+                        restaurantCellVM.scanBtnPressed = self?.handleScanAction(viewModel: restaurantCellVM)
+                    }
+                }
             }
         }
         homeViewModel.isLoading.addObserver {[weak self] isLoading in
@@ -45,6 +52,19 @@ class HomeVC: UIViewController {
                     self?.view.activityStopAnimating()
                 }
             }
+        }
+    }
+    // MARK: - User interaction
+    func handleScanAction(viewModel : RestaurantCellVM) -> (() -> Void) {
+        return { [weak self, weak viewModel] in
+            if let restaurantId = viewModel?.restaurantId{
+                self?.navigateToQRCodeScannerVC(restaurantId:restaurantId )
+            }
+        }
+    }
+    func navigateToQRCodeScannerVC(restaurantId:String) {
+        if let qrCodeScannerVC = UIStoryboard.qrCodeScannerVC(){
+            self.navigationController?.pushViewController(qrCodeScannerVC, animated: true)
         }
     }
 }
@@ -61,17 +81,16 @@ extension HomeVC : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       let count = self.homeViewModel.homeTableViewModel.value.count
+        let count = self.homeViewModel.homeTableViewModel.value.count
         return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let homeBucketData = homeViewModel.homeTableViewModel.value[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: homeBucketData.cellIdentifier(), for: indexPath)
-        
+        let homeRowVM = homeViewModel.homeTableViewModel.value[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: homeRowVM.cellIdentifier(), for: indexPath)
         if let cell = cell as? CellConfigurable{
-        cell.setup(viewModel: homeBucketData)
+            cell.setup(viewModel: homeRowVM)
         }
         return cell
     }

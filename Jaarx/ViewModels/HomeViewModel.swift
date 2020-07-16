@@ -13,6 +13,7 @@ import UIKit
 class HomeViewModel {
     var homeTableViewModel = Observable<[HomeRowVM]> (value: [])
     var isLoading = Observable<Bool> (value: true)
+    var scanButtonPressed = Observable<RestaurantCellVM?>(value: nil)
     func getHomeData()  {
         APIClient.getHomeData { (homeResponse) in
             switch homeResponse{
@@ -32,37 +33,26 @@ class HomeViewModel {
             let bucketType = BucketType(rawValue: homeData.type ?? "banner") ?? .banner
             let restaurantViewModel = RestaurantViewModel.init(restaurantDataCollection : restaurantCellVMs,bucketType:bucketType)
             let homeRowVM = HomeRowVM.init(imageUrl: homeData.imageUrl, type: homeData.type, description: homeData.description, title: homeData.title ?? "", restaurantViewModel: restaurantViewModel,bucketType: bucketType)
-           
             self.homeTableViewModel.value.append(homeRowVM)
         }
     }
     
     private func buildRestaurantCellVMs(_ restaurantArray:[RestaurantData]?) -> [RestaurantCellVM] {
         var restaurantCellVMArray = [RestaurantCellVM] ()
-           for restaurant in restaurantArray ?? [] {
-            var restaurantVM = RestaurantCellVM.init(imageDetails: restaurant.imageDetails, location: restaurant.restaurantLocation ?? "", title: restaurant.restaurantName ?? "")
-               restaurantVM.scanBtnPressed = handleScanAction(viewModel: restaurantVM)
+        for restaurant in restaurantArray ?? [] {
+            let restaurantVM = RestaurantCellVM.init(restaurantId: restaurant.restaurantId, imageDetails: restaurant.imageDetails, location: restaurant.restaurantLocation ?? "", title: restaurant.restaurantName ?? "")
             restaurantCellVMArray.append(restaurantVM)
-           }
-        return restaurantCellVMArray
-       }
-    
-    
-    // MARK: - User interaction
-    func handleScanAction(viewModel : RestaurantCellVM) -> (() -> Void) {
-        return { [viewModel] in
-            print(viewModel.location ?? "None")
         }
+        return restaurantCellVMArray
     }
 }
 
-struct HomeRowVM : RowViewModel{
+class HomeRowVM : RowViewModel{
     let imageUrl : String?
     let type : String?
     let description : String?
     let title : String?
     let restaurantViewModel : RestaurantViewModel?
-        
     var  bucketTitleViewHeight : CGFloat{
         get{self.getBucketTitleViewHeight()}
     }
@@ -73,7 +63,14 @@ struct HomeRowVM : RowViewModel{
     var rowHeight : CGFloat {
         get{self.getRowHeight()}
     }
-    
+    init(imageUrl: String?, type: String?, description: String?, title: String?, restaurantViewModel: RestaurantViewModel?,bucketType: BucketType?) {
+        self.imageUrl = imageUrl
+        self.type = type
+        self.description = description
+        self.title = title
+        self.restaurantViewModel = restaurantViewModel
+        self.bucketType = bucketType
+    }
     func getBackgroundColor() -> UIColor {
         let bgColor : UIColor
         switch self.bucketType{
