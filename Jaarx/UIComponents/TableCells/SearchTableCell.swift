@@ -35,10 +35,11 @@ class SearchTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func actionScan(_ sender: UIButton) {
-        searchData?.actionOnCell?()
+        searchData?.actionOnCell?(.scan)
     }
     
     @IBAction func actionPreOrder(_ sender: UIButton) {
+        searchData?.actionOnCell?(.preOrder)
     }
 }
 

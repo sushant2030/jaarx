@@ -57,7 +57,6 @@ enum SearchResultType : String {
 enum CellAction {
     case preOrder
     case scan
-    case cell
 }
 
 enum HTTPHeaderField: String {

@@ -37,7 +37,7 @@ class SearchData : RowViewModel {
     let location: String?
     let type: SearchResultType?
     let typeId : Int?
-    var actionOnCell: (() -> Void)? = nil
+    var actionOnCell: ((CellAction) -> Void)? = nil
     init(id:String, restaurantName:String , location:String, type : SearchResultType, typeId : Int) {
         self.id = id
         self.restaurantName = restaurantName

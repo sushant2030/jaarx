@@ -39,12 +39,20 @@ class JSearchVC: UIViewController {
         }
     }
     
-    func handleSearchAction(searchVM : SearchData) -> (() -> Void)  {
-         return { [weak self, weak searchVM] in
-            self?.navigateToQRCodeScannerVC(restaurantId: searchVM?.id ?? "")
+    func handleSearchAction(searchVM : SearchData) -> ((CellAction) -> Void)  {
+        
+         return { [weak self] action in
+            switch action {
+            case .preOrder:
+                self?.navigateToQRCodeScannerVC(restaurantId: searchVM.id ?? "")
+            case .scan:
+                self?.navigateToQRCodeScannerVC(restaurantId: searchVM.id ?? "")
+        }
         }
         
     }
+    
+    
     
     func navigateToQRCodeScannerVC(restaurantId:String) {
         if let qrCodeScannerVC = UIStoryboard.qrCodeScannerVC(){
@@ -72,5 +80,8 @@ extension JSearchVC : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     
 }
