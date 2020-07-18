@@ -49,6 +49,17 @@ enum BucketType : String {
     case newlyOpened    = "newlyOpened"
 }
 
+enum SearchResultType : String {
+    case restaurant = "restaurant"
+    case food = "food"
+}
+
+enum CellAction {
+    case preOrder
+    case scan
+    case cell
+}
+
 enum HTTPHeaderField: String {
     case authentication = "Authorization"
     case contentType = "Content-Type"

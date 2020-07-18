@@ -20,6 +20,12 @@
 		5B61329F24AD2B0C0031448F /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B61329E24AD2B0C0031448F /* Observer.swift */; };
 		5B6132A224AD2BA60031448F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6132A124AD2BA60031448F /* HomeViewModel.swift */; };
 		5B6132A524AE8B7F0031448F /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6132A424AE8B7F0031448F /* CellConfigurable.swift */; };
+		5B6FBF4724C227D000C04D3E /* SearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBF4524C227D000C04D3E /* SearchTableCell.swift */; };
+		5B6FBF4824C227D000C04D3E /* SearchTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6FBF4624C227D000C04D3E /* SearchTableCell.xib */; };
+		5B6FBF4A24C235E200C04D3E /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBF4924C235E200C04D3E /* SearchRouter.swift */; };
+		5B6FBF4C24C250A600C04D3E /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBF4B24C250A600C04D3E /* SearchResponse.swift */; };
+		5B6FBF4E24C2529000C04D3E /* JSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBF4D24C2529000C04D3E /* JSearchVC.swift */; };
+		5B6FBF5024C2582100C04D3E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FBF4F24C2582100C04D3E /* SearchViewModel.swift */; };
 		5B72E16F240ECFD40032F004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E16E240ECFD40032F004 /* AppDelegate.swift */; };
 		5B72E171240ECFD40032F004 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E170240ECFD40032F004 /* SceneDelegate.swift */; };
 		5B72E173240ECFD40032F004 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72E172240ECFD40032F004 /* ViewController.swift */; };
@@ -96,6 +102,12 @@
 		5B61329E24AD2B0C0031448F /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		5B6132A124AD2BA60031448F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5B6132A424AE8B7F0031448F /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
+		5B6FBF4524C227D000C04D3E /* SearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableCell.swift; sourceTree = "<group>"; };
+		5B6FBF4624C227D000C04D3E /* SearchTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableCell.xib; sourceTree = "<group>"; };
+		5B6FBF4924C235E200C04D3E /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		5B6FBF4B24C250A600C04D3E /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		5B6FBF4D24C2529000C04D3E /* JSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSearchVC.swift; sourceTree = "<group>"; };
+		5B6FBF4F24C2582100C04D3E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		5B72E16B240ECFD40032F004 /* Jaarx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jaarx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B72E16E240ECFD40032F004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B72E170240ECFD40032F004 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +200,7 @@
 				D84D8C5724A24B1E007F7EDA /* AddOrderResponse.swift */,
 				D84D8C5C24A2A6D1007F7EDA /* GenericResponse.swift */,
 				5BC0C70C24A3D4B80045782B /* UserModel.swift */,
+				5B6FBF4B24C250A600C04D3E /* SearchResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +218,7 @@
 			children = (
 				5B6132A124AD2BA60031448F /* HomeViewModel.swift */,
 				D830CC2D24BDDD8000CDC75A /* RestaurantViewModel.swift */,
+				5B6FBF4F24C2582100C04D3E /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -329,6 +343,8 @@
 				5B61329A24A938BD0031448F /* JTextFieldCell.xib */,
 				5BF85E6D24BE4CEB004335E8 /* CarouselTableCell.swift */,
 				5BF85E6E24BE4CEB004335E8 /* CarouselTableCell.xib */,
+				5B6FBF4524C227D000C04D3E /* SearchTableCell.swift */,
+				5B6FBF4624C227D000C04D3E /* SearchTableCell.xib */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -352,6 +368,7 @@
 				5B8546DC24942DAF0092743E /* RestaurantRouter.swift */,
 				5B8546DE249439A60092743E /* UserRouter.swift */,
 				5B8546E2249502710092743E /* HomeRouter.swift */,
+				5B6FBF4924C235E200C04D3E /* SearchRouter.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -375,6 +392,7 @@
 				5B61329724A9350A0031448F /* SignUpVC.swift */,
 				5B2CA6FE24B8D5F600CDD824 /* JMainTabbarVC.swift */,
 				D830CC2324BCAE0400CDC75A /* QRCodeScannerVC.swift */,
+				5B6FBF4D24C2529000C04D3E /* JSearchVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -558,6 +576,7 @@
 				5B61329C24A938BD0031448F /* JTextFieldCell.xib in Resources */,
 				5BC0C70F24A7CEB40045782B /* Login.storyboard in Resources */,
 				5BF85E6C24BD0BA2004335E8 /* Order.storyboard in Resources */,
+				5B6FBF4824C227D000C04D3E /* SearchTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,10 +704,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6FBF4E24C2529000C04D3E /* JSearchVC.swift in Sources */,
 				5B72E179240ECFD40032F004 /* Jaarx.xcdatamodeld in Sources */,
 				5B3D014924A0A38F002EFD89 /* APIRouter.swift in Sources */,
 				5B3D014824A0A38F002EFD89 /* APIClient.swift in Sources */,
 				D830CC2E24BDDD8100CDC75A /* RestaurantViewModel.swift in Sources */,
+				5B6FBF4724C227D000C04D3E /* SearchTableCell.swift in Sources */,
 				5BF85E6F24BE4CEB004335E8 /* CarouselTableCell.swift in Sources */,
 				5B8546E62496754A0092743E /* Constants.swift in Sources */,
 				5B72E1B5240EF2B80032F004 /* BucketCell.swift in Sources */,
@@ -696,6 +717,7 @@
 				5B61329B24A938BD0031448F /* JTextFieldCell.swift in Sources */,
 				5B3D014C24A0A586002EFD89 /* HomeResponse.swift in Sources */,
 				5B72E1AB240EE7CC0032F004 /* LongCollectionCell.swift in Sources */,
+				5B6FBF4A24C235E200C04D3E /* SearchRouter.swift in Sources */,
 				5BA9E69B241033B00044CDBF /* HomeVC.swift in Sources */,
 				5B61328D24A8E41D0031448F /* LoginVC.swift in Sources */,
 				5B2CA6FF24B8D5F600CDD824 /* JMainTabbarVC.swift in Sources */,
@@ -718,7 +740,9 @@
 				5B72E171240ECFD40032F004 /* SceneDelegate.swift in Sources */,
 				D830CC2424BCAE0400CDC75A /* QRCodeScannerVC.swift in Sources */,
 				5BA9E69E241035B80044CDBF /* DataSource.swift in Sources */,
+				5B6FBF5024C2582100C04D3E /* SearchViewModel.swift in Sources */,
 				5B8546DB24942D610092743E /* LoginRouter.swift in Sources */,
+				5B6FBF4C24C250A600C04D3E /* SearchResponse.swift in Sources */,
 				D84D8C5824A24B1E007F7EDA /* AddOrderResponse.swift in Sources */,
 				5BC0C70A24A27A1D0045782B /* FavoriteRestaurant.swift in Sources */,
 				5B61329024A8E8C70031448F /* JNavigationVC.swift in Sources */,

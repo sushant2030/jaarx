@@ -53,9 +53,6 @@ class HomeRowVM : RowViewModel{
     let description : String?
     let title : String?
     let restaurantViewModel : RestaurantViewModel?
-    var  bucketTitleViewHeight : CGFloat{
-        get{self.getBucketTitleViewHeight()}
-    }
     var backgroundColor : UIColor {
         get{self.getBackgroundColor()}
     }
@@ -81,16 +78,7 @@ class HomeRowVM : RowViewModel{
         }
         return bgColor
     }
-    func getBucketTitleViewHeight() -> CGFloat {
-        var titleViewHeight = 0.0
-        switch self.bucketType{
-        case .banner,.carousel,.scanAndOrder:
-            titleViewHeight = 0.0
-        default:
-            titleViewHeight = 50.0
-        }
-        return CGFloat(titleViewHeight)
-    }
+
     func getRowHeight() -> CGFloat {
         var rowHeight = CGFloat(0.0)
         switch self.bucketType {

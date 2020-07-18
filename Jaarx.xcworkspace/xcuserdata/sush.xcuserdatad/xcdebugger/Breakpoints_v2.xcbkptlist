@@ -7,48 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "98AF2B9B-2EDE-4F4B-8154-25B6A202DAD6"
+            uuid = "BA4C98F2-EAAA-4453-AF9B-3C4398B64DCA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/TableCells/CarouselTableCell.swift"
+            filePath = "Jaarx/UIComponents/ViewControllers/JSearchVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "setup(viewModel:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "handleSearchAction(searchVM:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A78FD461-5474-47B2-BDD6-C94615A1988F"
+            uuid = "225F7344-E988-48CF-9387-97AA9CF063EB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/TableCells/CarouselTableCell.swift"
+            filePath = "Jaarx/UIComponents/ViewControllers/JSearchVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "setup(viewModel:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "58CC9084-DF53-43CA-B111-A61B02A99DD3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/TableCells/CarouselTableCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "setup(viewModel:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "navigateToQRCodeScannerVC(restaurantId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

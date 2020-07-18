@@ -51,7 +51,6 @@ extension BucketCell : CellConfigurable {
     func setup(viewModel: RowViewModel) {
         guard let viewModel = (viewModel as? HomeRowVM) else {return}
         self.restaurantViewModel = viewModel.restaurantViewModel
-        bucketTitleViewHeight.constant = viewModel.bucketTitleViewHeight
         self.backgroundColor = viewModel.backgroundColor
         self.bucketTitleLabel.text = viewModel.title
         reload()

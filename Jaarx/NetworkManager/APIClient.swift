@@ -106,5 +106,14 @@ class APIClient {
             print(error)
         }
     }
+    
+    static func searchDataWithText(text : String, completion:@escaping (AFResult<SearchReponse>) -> Void){
+        do {
+            let searchRouter = try SearchRouter.search(searchText: text).asURLRequest()
+            performRequest(route: searchRouter, completion: completion)
+        } catch (let error) {
+            print(error)
+        }
+    }
 }
 
