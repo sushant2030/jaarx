@@ -10,6 +10,8 @@ import UIKit
 
 class JSearchVC: UIViewController {
 
+
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     var searchViewModel = SearchViewModel()
     override func viewDidLoad() {
@@ -21,7 +23,13 @@ class JSearchVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     func registerViews() {
+        searchBar.delegate = self
         searchTableView.delegate = self
         searchTableView.dataSource = self
         searchTableView.register(UINib.init(nibName: SearchTableCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: SearchTableCell.cellIdentifier())
@@ -33,21 +41,21 @@ class JSearchVC: UIViewController {
                 self?.searchTableView.reloadData()
                 self?.searchTableView.isHidden = false
                 for searchVM in searchVMS{
-                    searchVM.actionOnCell = self?.handleSearchAction(searchVM: searchVM)
+                    searchVM.cellButtonAction = self?.handleCellButtonAction(searchVM: searchVM)
                 }
             }
         }
     }
     
-    func handleSearchAction(searchVM : SearchData) -> ((CellAction) -> Void)  {
+    func handleCellButtonAction(searchVM : SearchData) -> ((CellAction) -> Void)  {
         
-         return { [weak self] action in
+         return { [weak self, weak searchVM] action in
             switch action {
             case .preOrder:
-                self?.navigateToQRCodeScannerVC(restaurantId: searchVM.id ?? "")
+                self?.navigateToQRCodeScannerVC(restaurantId: searchVM?.id ?? "")
             case .scan:
-                self?.navigateToQRCodeScannerVC(restaurantId: searchVM.id ?? "")
-        }
+                self?.navigateToQRCodeScannerVC(restaurantId: searchVM?.id ?? "")
+            }
         }
         
     }
@@ -59,14 +67,12 @@ class JSearchVC: UIViewController {
             self.navigationController?.pushViewController(qrCodeScannerVC, animated: true)
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        searchViewModel.getSearchData(searchText: "paneer")
-    }
+
 
 }
 
 extension JSearchVC : UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchViewModel.searchData.value.count
     }
@@ -82,6 +88,17 @@ extension JSearchVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return searchViewModel.rowHeight
+    }
+    
+}
+
+extension JSearchVC : UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchViewModel.getSearchData(searchText: searchBar.text ?? "")
     }
     
 }

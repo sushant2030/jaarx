@@ -43,7 +43,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RFf-Jq-JVP">
-                                <rect key="frame" x="0.0" y="104" width="414" height="709"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="689"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Za7-Fl-7RF">
@@ -60,7 +60,7 @@
                             <constraint firstItem="RFf-Jq-JVP" firstAttribute="bottom" secondItem="fWj-Om-BNL" secondAttribute="bottom" id="8Zb-w4-ruN"/>
                             <constraint firstItem="RFf-Jq-JVP" firstAttribute="leading" secondItem="fWj-Om-BNL" secondAttribute="leading" id="Gz9-W3-CKo"/>
                             <constraint firstItem="IJU-ws-cDH" firstAttribute="leading" secondItem="fWj-Om-BNL" secondAttribute="leading" id="iA9-0Q-ILb"/>
-                            <constraint firstItem="RFf-Jq-JVP" firstAttribute="top" secondItem="IJU-ws-cDH" secondAttribute="bottom" id="pfy-ai-YUF"/>
+                            <constraint firstItem="RFf-Jq-JVP" firstAttribute="top" secondItem="IJU-ws-cDH" secondAttribute="bottom" constant="20" id="pfy-ai-YUF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fWj-Om-BNL"/>
                     </view>
@@ -68,7 +68,8 @@
                         <color key="badgeColor" red="0.1152827781" green="0.55560259570000003" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="searchTableView" destination="RFf-Jq-JVP" id="dDS-mV-lE5"/>
+                        <outlet property="searchBar" destination="fVI-yw-0fd" id="4hg-YU-J8a"/>
+                        <outlet property="searchTableView" destination="RFf-Jq-JVP" id="TaT-Sy-l2L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dto-Pq-trE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

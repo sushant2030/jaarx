@@ -14,9 +14,9 @@
             filePath = "Jaarx/UIComponents/ViewControllers/JSearchVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "handleSearchAction(searchVM:)"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "handleCellButtonAction(searchVM:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -30,9 +30,25 @@
             filePath = "Jaarx/UIComponents/ViewControllers/JSearchVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "navigateToQRCodeScannerVC(restaurantId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8BF3CE3-7A2C-467C-9EB1-2ED671ED514E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jaarx/Utils/Extensions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "navigateToQRCodeScannerVC(restaurantId:)"
+            landmarkName = "downloaded(from:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -24,9 +24,16 @@ class SearchTableCell: UITableViewCell {
     }
     
     func setupUI() {
-        holderView.layer.borderColor = UIColor.green.cgColor
-        btnScan.layer.cornerRadius = 15.0
-        btnPreOrder.layer.cornerRadius = 15.0
+        holderView.layer.borderColor = UIColor.gray.cgColor
+        holderView.layer.cornerRadius = 15.0
+        holderView.layer.masksToBounds = true
+        btnScan.layer.borderColor = UIColor.blue.cgColor
+        btnScan.layer.borderWidth = 1.0
+        btnPreOrder.layer.borderColor = UIColor.blue.cgColor
+        btnPreOrder.layer.borderWidth = 1.0
+        holderView.layer.borderWidth = 1.0
+        btnScan.layer.cornerRadius = btnScan.bounds.size.height / 2
+        btnPreOrder.layer.cornerRadius =  btnScan.bounds.size.height / 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,11 +42,11 @@ class SearchTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func actionScan(_ sender: UIButton) {
-        searchData?.actionOnCell?(.scan)
+        searchData?.cellButtonAction?(.scan)
     }
     
     @IBAction func actionPreOrder(_ sender: UIButton) {
-        searchData?.actionOnCell?(.preOrder)
+        searchData?.cellButtonAction?(.preOrder)
     }
 }
 
@@ -49,6 +56,11 @@ extension SearchTableCell : CellConfigurable {
             self.searchData = searchVM
             lblDescription.text = searchVM.location
             lblRestaurantTitle.text = searchVM.restaurantName
+            if searchVM.type == .restaurant {
+                if let imagePathURL = searchVM.getImageUrl(){
+                    searchedImageView.downloaded(from: imagePathURL)
+                }
+            }
         }
     }
     

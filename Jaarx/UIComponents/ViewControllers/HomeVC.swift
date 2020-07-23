@@ -37,7 +37,7 @@ class HomeVC: UIViewController {
                 for homeVM in homeVMs{
                     let restaurantViewModel = homeVM.restaurantViewModel
                     for restaurantCellVM in restaurantViewModel?.restaurantCollectionVM.value ?? []{
-                        restaurantCellVM.scanBtnPressed = self?.handleScanAction(viewModel: restaurantCellVM)
+                        restaurantCellVM.cellButtonAction = self?.handleCellButtonAction(viewModel: restaurantCellVM)
                     }
                 }
             }
@@ -55,11 +55,17 @@ class HomeVC: UIViewController {
         }
     }
     // MARK: - User interaction
-    func handleScanAction(viewModel : RestaurantCellVM) -> (() -> Void) {
-        return { [weak self, weak viewModel] in
-            if let restaurantId = viewModel?.restaurantId{
-                self?.navigateToQRCodeScannerVC(restaurantId:restaurantId )
+    func handleCellButtonAction(viewModel : RestaurantCellVM) -> ((CellAction) -> Void) {
+        return { [weak self, weak viewModel] action in
+            switch action {
+            case .preOrder:
+                print("")
+            case . scan:
+                if let restaurantId = viewModel?.restaurantId{
+                    self?.navigateToQRCodeScannerVC(restaurantId:restaurantId )
+                }
             }
+            
         }
     }
     func navigateToQRCodeScannerVC(restaurantId:String) {

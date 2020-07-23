@@ -17,6 +17,7 @@ struct SearchRestaurantData : Codable {
     let restaurantId : String!
     let restaurantName : String!
     let restaurantLocation : String?
+    let thumbnailImage:String?
     let type : String!
     let typeId : Int!
     
@@ -25,6 +26,7 @@ struct SearchRestaurantData : Codable {
         case restaurantId = "id"
         case restaurantName = "restaurant_name"
         case restaurantLocation = "location"
+        case thumbnailImage = "thumbnail_img"
         case type = "type"
         case typeId = "type_id"
     }

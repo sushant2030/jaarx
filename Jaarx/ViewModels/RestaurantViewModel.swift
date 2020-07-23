@@ -80,7 +80,7 @@ class RestaurantCellVM:RowViewModel {
     var imageUrl : URL? {
         get{self.getImageUrl()}
     }
-    var scanBtnPressed: (() -> Void)? = nil
+    var cellButtonAction: ((CellAction) -> Void)? = nil
     init(restaurantId : String?, imageDetails:[ImageDetail]?,location : String?,title : String?) {
         self.restaurantId = restaurantId
         self.imageDetails = imageDetails

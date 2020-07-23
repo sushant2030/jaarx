@@ -20,8 +20,12 @@ class LongCollectionCell: UICollectionViewCell {
         // Initialization code
     }
     
-    @IBAction func scanButtonAction(_ sender: Any) {
-       restaurantCellVM?.scanBtnPressed?()
+    @IBAction func actionScan(_ sender: Any) {
+        restaurantCellVM?.cellButtonAction?(.scan)
+    }
+    
+    @IBAction func actionPreOrder(_ sender: UIButton) {
+        restaurantCellVM?.cellButtonAction?(.preOrder)
     }
     
 }
