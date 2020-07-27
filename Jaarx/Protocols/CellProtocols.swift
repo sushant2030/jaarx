@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 protocol CellConfigurable {
     func setup(viewModel: RowViewModel) // Provide a generic function for table row set up
 }
 protocol RowViewModel {
-    
 }
-
+protocol ViewModelPressible {
+    var cellPressed: (()->Void)? { get set }
+}

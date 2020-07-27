@@ -72,7 +72,7 @@ class RestaurantViewModel {
     }
 }
 
-class RestaurantCellVM:RowViewModel {
+class RestaurantCellVM:RowViewModel,ViewModelPressible {
     let restaurantId : String?
     let title : String?
     let location : String?
@@ -81,6 +81,7 @@ class RestaurantCellVM:RowViewModel {
         get{self.getImageUrl()}
     }
     var cellButtonAction: ((CellAction) -> Void)? = nil
+    var cellPressed: (() -> Void)? = nil
     init(restaurantId : String?, imageDetails:[ImageDetail]?,location : String?,title : String?) {
         self.restaurantId = restaurantId
         self.imageDetails = imageDetails

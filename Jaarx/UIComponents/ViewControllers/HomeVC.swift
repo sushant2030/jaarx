@@ -38,6 +38,12 @@ class HomeVC: UIViewController {
                     let restaurantViewModel = homeVM.restaurantViewModel
                     for restaurantCellVM in restaurantViewModel?.restaurantCollectionVM.value ?? []{
                         restaurantCellVM.cellButtonAction = self?.handleCellButtonAction(viewModel: restaurantCellVM)
+                        restaurantCellVM.cellPressed = {
+                            if let restaurantId = restaurantCellVM.restaurantId{
+                            self?.navigateToRestaurantDetailVC(restaurantId:restaurantId)
+                            }
+                                
+                        }
                     }
                 }
             }
@@ -45,7 +51,7 @@ class HomeVC: UIViewController {
         homeViewModel.isLoading.addObserver {[weak self] isLoading in
             DispatchQueue.main.async {
                 if (isLoading){
-                    self?.view.activityStartAnimating(activityColor: UIColor.white, backgroundColor: UIColor.black.withAlphaComponent(0.5))
+                    self?.view.activityStartAnimating(activityColor: UIColor.white, backgroundColor: UIColor.black.withAlphaComponent(0.3))
                     self?.homeTableView.isHidden = true
                 }
                 else{
@@ -71,6 +77,11 @@ class HomeVC: UIViewController {
     func navigateToQRCodeScannerVC(restaurantId:String) {
         if let qrCodeScannerVC = UIStoryboard.qrCodeScannerVC(){
             self.navigationController?.pushViewController(qrCodeScannerVC, animated: true)
+        }
+    }
+    func navigateToRestaurantDetailVC(restaurantId:String) {
+        if let restaurantDetailVC = UIStoryboard.restaurantDetailVCWithRestaurant(id: restaurantId){
+            self.navigationController?.pushViewController(restaurantDetailVC, animated: true)
         }
     }
 }

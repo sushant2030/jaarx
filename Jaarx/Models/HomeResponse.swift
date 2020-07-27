@@ -44,20 +44,6 @@ struct  RestaurantData : Codable {
     
 }
 
-struct RestaurantCategory : Codable {
-    let isHashtag : String?
-    let restaurantCategoryColor : String?
-    let restaurantCategoryId : String?
-    let restaurantCategoryName : String?
-    
-    enum CodingKeys : String, CodingKey {
-        case isHashtag = "is_hashtag"
-        case restaurantCategoryColor = "res_category_color"
-        case restaurantCategoryId = "res_category_id"
-        case restaurantCategoryName = "res_category_name"
-    }
-}
-
 struct ImageDetail : Codable {
     let imageId :String?
     let imageUrl : String?

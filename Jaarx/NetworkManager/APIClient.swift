@@ -14,8 +14,8 @@ class APIClient {
         return AF.request(route).validate(statusCode: 200..<410)
             .responseDecodable (decoder: decoder){ (response: AFDataResponse<T>) in
                 switch response.result {
-                case .success(_):
-                    print("Response is successful")
+                case .success(let response):
+                    print("Response is successful = \(response) for url \(String(describing: route.urlRequest?.url!))")
                 case .failure(let error):
                     print(error)
                 }
@@ -112,6 +112,15 @@ class APIClient {
             let searchRouter = try SearchRouter.search(searchText: text).asURLRequest()
             performRequest(route: searchRouter, completion: completion)
         } catch (let error) {
+            print(error)
+        }
+    }
+    static func getRestaurantDetailFor(resId : String, completion:@escaping (AFResult<RestaurantDetailResponse>)->Void){
+        do {
+            let restaurantRouter = try RestaurantRouter.getRestaurantDetailFor(id: resId).asURLRequest()
+            performRequest(route: restaurantRouter, completion: completion)
+        }
+        catch (let error){
             print(error)
         }
     }

@@ -76,6 +76,15 @@ extension BucketCell : UICollectionViewDelegate, UICollectionViewDataSource,UICo
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let restaurantVM = self.restaurantViewModel
+        if (restaurantVM?.restaurantCollectionVM.value.count)!>0 {
+            if let restaurantCellVM = restaurantVM?.restaurantCollectionVM.value[indexPath.row] {
+                restaurantCellVM.cellPressed?()
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return (restaurantViewModel?.getGridSize(self.bounds))!
     }

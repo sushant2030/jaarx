@@ -15,13 +15,13 @@ class HomeViewModel {
     var isLoading = Observable<Bool> (value: true)
     var scanButtonPressed = Observable<RestaurantCellVM?>(value: nil)
     func getHomeData()  {
-        APIClient.getHomeData { (homeResponse) in
+        APIClient.getHomeData {[weak self]  (homeResponse) in
             switch homeResponse{
             case .success(let homeResponse):
-                self.isLoading.value = false
-                self.buildViewModels(response: homeResponse)
+                self?.isLoading.value = false
+                self?.buildViewModels(response: homeResponse)
             case .failure(let error):
-                self.isLoading.value = false
+                self?.isLoading.value = false
                 print(error)
             }
         }
