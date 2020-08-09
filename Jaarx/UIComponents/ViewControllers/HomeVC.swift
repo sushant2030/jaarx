@@ -59,7 +59,9 @@ class HomeVC: UIViewController {
         return { [weak self, weak viewModel] action in
             switch action {
             case .preOrder:
-                print("")
+                if let restaurantId = viewModel?.restaurantId{
+                    self?.navigateToPreOrder(restaurantId:restaurantId )
+                }
             case . scan:
                 if let restaurantId = viewModel?.restaurantId{
                     self?.navigateToQRCodeScannerVC(restaurantId:restaurantId )
@@ -73,6 +75,12 @@ class HomeVC: UIViewController {
             self.navigationController?.pushViewController(qrCodeScannerVC, animated: true)
         }
     }
+    
+    func navigateToPreOrder(restaurantId:String) {
+           if let preOrderVC = UIStoryboard.preOrderVC(){
+               self.navigationController?.pushViewController(preOrderVC, animated: true)
+           }
+       }
 }
 
 //MARK: - UITableView DataSource

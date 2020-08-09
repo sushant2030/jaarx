@@ -28,6 +28,9 @@ extension UIStoryboard {
     static func qrCodeScannerVC() -> QRCodeScannerVC? {
         return orderStoryboard().instantiateViewController(withIdentifier: "QRCodeScannerVC") as? QRCodeScannerVC
     }
+    static func preOrderVC() -> PreOrderVC? {
+        return orderStoryboard().instantiateViewController(identifier: "PreOrderVC") as? PreOrderVC
+    }
 }
 
 extension UIButton {
