@@ -16,6 +16,11 @@ extension UIStoryboard {
     static func homeVC() -> HomeVC? {
         return mainStoryboard().instantiateViewController(withIdentifier: "HomeVC") as? HomeVC
     }
+    static func restaurantDetailVCWithRestaurant(id : String) -> RestaurantDetailVC? {
+        let restaurantVC = mainStoryboard().instantiateViewController(withIdentifier: "RestaurantDetailVC") as? RestaurantDetailVC
+        restaurantVC?.restaurantId = id
+        return restaurantVC
+    }
     static func tabBarVC() -> JMainTabbarVC? {
         return mainStoryboard().instantiateViewController(withIdentifier: "JMainTabbarVC") as? JMainTabbarVC
     }
@@ -98,6 +103,16 @@ extension UIView{
         }
         self.isUserInteractionEnabled = true
     }
+    func dropShadow(scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.25
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 4
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+
 }
 
 extension UITableViewCell {
@@ -113,3 +128,4 @@ extension UICollectionViewCell {
         return String(describing: self)
     }
 }
+

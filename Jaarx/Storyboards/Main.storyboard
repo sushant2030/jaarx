@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Avn-Eu-mka">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Avn-Eu-mka">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -124,6 +124,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8U-A3-fnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1357.9710144927537" y="135.9375"/>
+        </scene>
+        <!--Restaurant DetailVC-->
+        <scene sceneID="707-n6-I0B">
+            <objects>
+                <viewController storyboardIdentifier="RestaurantDetailVC" id="U8l-tR-Ptz" customClass="RestaurantDetailVC" customModule="Jaarx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tkz-zN-3Oo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Y8X-O8-aYC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Y8X-O8-aYC" firstAttribute="trailing" secondItem="khg-rF-HMC" secondAttribute="trailing" id="5Ch-1N-DBJ"/>
+                            <constraint firstItem="Y8X-O8-aYC" firstAttribute="top" secondItem="khg-rF-HMC" secondAttribute="top" id="XgF-F6-NXS"/>
+                            <constraint firstAttribute="bottom" secondItem="Y8X-O8-aYC" secondAttribute="bottom" id="mTa-Ay-Bi7"/>
+                            <constraint firstItem="Y8X-O8-aYC" firstAttribute="leading" secondItem="khg-rF-HMC" secondAttribute="leading" id="vs1-Yb-yNv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="khg-rF-HMC"/>
+                    </view>
+                    <connections>
+                        <outlet property="restaurantDetailTableView" destination="Y8X-O8-aYC" id="KuS-sX-kUC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M4X-fg-FMZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900.0000000000002" y="794.86607142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fct-Ux-tbI">

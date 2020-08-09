@@ -18,7 +18,7 @@ struct Helper {
             if let dictFromJSON = decoded as? [String:String] {
             print(dictFromJSON)
             let jsonString = dictFromJSON.reduce("") { "\($0)\($1.0)=\($1.1)&" }
-                return jsonString
+                return String(jsonString.dropLast())
             } else {
                 return ""
             }

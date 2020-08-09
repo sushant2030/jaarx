@@ -58,6 +58,10 @@ enum CellAction {
     case preOrder
     case scan
 }
+enum RestaurantDetailCellType {
+    case ScanNOrder
+    case ReserveNOrder
+}
 
 enum HTTPHeaderField: String {
     case authentication = "Authorization"
@@ -81,3 +85,8 @@ enum BucketCellHeight : CGFloat
     case medium = 150.0
     case large = 250.0
 }
+
+let RestaurantDetailTextRowHeight = 114.0
+let RestaurantDetailPickaBooRowHeight = 136.0
+let RestaurantDetailHeaderHeight = 431.0
+let RestaurantDetailSectionViewHeight = 80.0

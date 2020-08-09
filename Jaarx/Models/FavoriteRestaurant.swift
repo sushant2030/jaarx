@@ -18,29 +18,11 @@ struct FavoriteData : Codable {
     let id:String
     let userId:String
     let resId:String
-    let restaurantDetails : [RestaurantDetails]
+    let restaurantDetails : [RestaurantDetail]
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case userId = "user_id"
         case resId = "res_id"
         case restaurantDetails = "restaurant_details"
     }
-}
-
-struct RestaurantDetails : Codable {
-    let resId : String
-    let resName : String
-    let resAddress:String
-    let resRating : String
-    let resLocation : String
-    let imageDetails : [ImageDetail]?
-    
-    enum CodingKeys: String, CodingKey {
-           case resId = "res_id"
-           case resName = "res_name"
-           case resAddress = "res_address"
-           case resRating = "res_rating"
-           case resLocation = "res_location"
-           case imageDetails = "image_details"
-       }
 }
