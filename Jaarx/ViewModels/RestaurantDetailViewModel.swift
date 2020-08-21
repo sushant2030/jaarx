@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 class RestaurantDetailViewModel{
     var sectionVMs = Observable<[SectionViewModel]> (value: [])
     var restaurantHeaderVM = Observable<HeaderViewModel?> (value: nil)
@@ -44,12 +44,12 @@ class RestaurantDetailViewModel{
             case "Picka Boo":
                 self.sectionVMs.value.append(SectionViewModel.init(rowViewModels:[RestaurantPickaBooVM.init(resImageDetails: restaurantDetail.resImageDetails)], headerTitle:sectionTitle, headerViewModel: nil, sectionHeight: Float(RestaurantDetailSectionViewHeight), rowHeightForSection: Float(RestaurantDetailPickaBooRowHeight)))
             case "In Words":
-                self.sectionVMs.value.append(SectionViewModel.init(rowViewModels:[RestaurantInWordsVM.init(descriptionText: restaurantDetail.resDescription)], headerTitle: sectionTitle, headerViewModel: nil, sectionHeight: Float(RestaurantDetailSectionViewHeight), rowHeightForSection: Float(RestaurantDetailPickaBooRowHeight)))
+                self.sectionVMs.value.append(SectionViewModel.init(rowViewModels:[RestaurantInWordsVM.init(descriptionText: restaurantDetail.resDescription)], headerTitle: sectionTitle, headerViewModel: nil, sectionHeight: Float(RestaurantDetailSectionViewHeight), rowHeightForSection: Float(UITableView.automaticDimension)))
             case "CriticsScore":
-                ""
+                self.sectionVMs.value.append(SectionViewModel.init(rowViewModels: [RestaurantRatingVM.init(ratingArray: nil)], headerTitle: sectionTitle, headerViewModel: nil, sectionHeight: Float(RestaurantDetailSectionViewHeight), rowHeightForSection: Float(RestaurantDetailRatingsRowHeight)))
                 //TODO: Get the proper and create VM and Cell
             default:
-                ""
+                break
             }
         }
         
@@ -75,6 +75,8 @@ class RestaurantDetailViewModel{
             return RestaurantPickaBooCell.cellIdentifier()
         case is RestaurantInWordsVM:
         return RestaurantInWordsCell.cellIdentifier()
+        case is RestaurantRatingVM:
+            return RestaurantCriticsScoreCell.cellIdentifier()
         default:
             fatalError("Unexpected view model type: \(viewModel)")
         }
@@ -89,11 +91,12 @@ struct SectionViewModel {
     let sectionHeight : Float
     let rowHeightForSection : Float
 }
-struct RestaurantTextVM:RowViewModel {
+struct RestaurantTextVM:RowViewModel,ViewModelPressible {
     let titleText : String?
     let descriptionText : String?
     var cellType : RestaurantDetailCellType?
     let rowHeight = RestaurantDetailTextRowHeight
+    var cellPressed: (() -> Void)? = nil
 }
 struct RestaurantPickaBooVM:RowViewModel {
     let resImageDetails : [ImageDetail]?
@@ -111,7 +114,11 @@ struct RestaurantPickaBooVM:RowViewModel {
 }
 struct RestaurantInWordsVM:RowViewModel {
     let descriptionText : String?
-    let rowHeight = RestaurantDetailTextRowHeight
+    let rowHeight = UITableView.automaticDimension
+}
+struct RestaurantRatingVM:RowViewModel {
+    let ratingArray : [String]?
+    let rowHeight = RestaurantDetailRatingsRowHeight
 }
 struct HeaderViewModel {
     let imageUrlString : String?
