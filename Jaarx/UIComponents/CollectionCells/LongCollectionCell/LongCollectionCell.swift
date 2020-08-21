@@ -21,8 +21,7 @@ class LongCollectionCell: UICollectionViewCell {
     }
     override func prepareForReuse() {
         super.prepareForReuse()
-        restaurantCellVM?.cellPressed = nil
-        restaurantCellVM?.cellButtonAction = nil
+ 
     }
     @IBAction func actionScan(_ sender: Any) {
         restaurantCellVM?.cellButtonAction?(.scan)

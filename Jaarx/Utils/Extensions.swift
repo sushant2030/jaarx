@@ -45,13 +45,6 @@ extension UIButton {
     }
 }
 
-extension UIView {
-    func makeViewCornerRadiusWithRadi(radius:CGFloat) {
-        self.layer.cornerRadius = radius
-        self.layer.masksToBounds = true
-    }
-}
-
 extension UIImageView {
     func downloaded(from url: URL) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
         let cache = URLCache.shared
@@ -113,6 +106,15 @@ extension UIView{
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
 
+    func makeViewCornerRadiusWithRadi(radius:CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
+    
+    func makeAppThemeColorBorder()  {
+        self.layer.borderColor = UIColor.link.cgColor
+        self.layer.borderWidth = 1.0
+    }
 }
 
 extension UITableViewCell {
@@ -127,5 +129,47 @@ extension UICollectionViewCell {
     public static func cellIdentifier() -> String {
         return String(describing: self)
     }
+}
+
+extension Date {
+    public static func getDateInString(date : Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let dateString = dateFormatter.string(from: date)
+        let dateObj = dateFormatter.date(from: dateString)
+
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let finalString = dateFormatter.string(from: dateObj!)
+        return finalString
+    }
+    
+    public static func getSpelledDate(date : Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MMM-yyyy"
+        let dateString = dateFormatter.string(from: date)
+        let dateObj = dateFormatter.date(from: dateString)
+
+        dateFormatter.dateFormat = "dd-MMM-yyyy"
+        let finalString = dateFormatter.string(from: dateObj!)
+        return finalString
+    }
+    
+    public static func getDateFromString(dateInString : String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let date = dateFormatter.date(from: dateInString)
+        return date ?? Date()
+    }
+    
+    public static func getFormatedDate(formatedDate: Date) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let date = dateFormatter.string(from: formatedDate)
+        let requiredDate = dateFormatter.date(from: date)
+        return requiredDate ?? Date()
+    }
+    
+    
+    
 }
 

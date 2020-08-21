@@ -17,6 +17,16 @@ class RoundCollectionCell: UICollectionViewCell {
         // Initialization code
     }
     
+    func setDate(date : Day) {
+        lblNumber.text = "\(date.day)"
+        lblDay.text = date.dayTitle
+    }
+    
+    func setTableNumber(tableNumber : Int)  {
+        lblNumber.text = "\(tableNumber)"
+        lblDay.text = ""
+    }
+    
     func setup() {
         self.layer.cornerRadius = self.bounds.size.height / 2
         self.backgroundColor = .white
@@ -36,5 +46,6 @@ class RoundCollectionCell: UICollectionViewCell {
     }
 
 }
+
 
 
