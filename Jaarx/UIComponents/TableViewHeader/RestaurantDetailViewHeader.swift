@@ -10,8 +10,7 @@ import UIKit
 
 class RestaurantDetailViewHeader: UITableViewHeaderFooterView {
     @IBOutlet weak var restaurantImageView: UIImageView!
-    @IBOutlet weak var ratingContainerView: UIView!
-    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var ratingContainerView: RatingContainerView!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var restaurantLocationLabel: UILabel!
     @IBOutlet weak var restaurantCuisineLabel: UILabel!
@@ -31,24 +30,17 @@ class RestaurantDetailViewHeader: UITableViewHeaderFooterView {
         registerViews()
     
     }
-    override func layoutSubviews() {
-        configureRatingContainerView()
-    }
     func registerViews()  {
         tagCollectionView.register(UINib.init(nibName:TagCollectionCell.cellIdentifier(), bundle: nil), forCellWithReuseIdentifier: TagCollectionCell.cellIdentifier())
         tagCollectionView.dataSource = self
     }
-    func configureRatingContainerView(){
-        ratingContainerView.dropShadow()
-        ratingContainerView.layer.cornerRadius = 10
-        ratingContainerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
-    }
+    
     func configureHeaderViewWith(headerVM:HeaderViewModel) {
         if let imageUrl = headerVM.imageUrl{
         self.restaurantImageView.downloaded(from:imageUrl)
         }
         self.tagCollection = headerVM.tagCollection
-        self.ratingLabel.text = headerVM.rating
+        self.ratingContainerView.ratingLabel.text = headerVM.rating
         self.restaurantNameLabel.text = headerVM.restaurantName
         self.restaurantLocationLabel.text = headerVM.restaurantLocationText
         self.restaurantCuisineLabel.text = headerVM.restaurantCuisineText

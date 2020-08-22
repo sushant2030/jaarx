@@ -20,22 +20,11 @@
                         <constraint firstAttribute="width" secondItem="QqM-1f-Pve" secondAttribute="height" multiplier="25:9" id="TtR-ad-Gx4"/>
                     </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mk-vJ-5Ib">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mk-vJ-5Ib" customClass="RatingContainerView" customModule="Jaarx" customModuleProvider="target">
                     <rect key="frame" x="349" y="126.5" width="45" height="45"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8P-ON-iCC">
-                            <rect key="frame" x="9" y="13.5" width="27" height="18.5"/>
-                            <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="15"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.37254901960784315" green="1" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="58d-kQ-9RT"/>
-                        <constraint firstItem="h8P-ON-iCC" firstAttribute="centerX" secondItem="9mk-vJ-5Ib" secondAttribute="centerX" id="5YV-nL-ioL"/>
                         <constraint firstAttribute="width" constant="45" id="63A-kW-ybA"/>
-                        <constraint firstItem="h8P-ON-iCC" firstAttribute="centerY" secondItem="9mk-vJ-5Ib" secondAttribute="centerY" id="bEc-XH-rV7"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Union Bar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTD-oz-1D3">
@@ -192,8 +181,7 @@
             <connections>
                 <outlet property="openDaysLabel" destination="I9p-ys-bhg" id="saB-CZ-ocb"/>
                 <outlet property="priceRangeLabel" destination="1w3-Bg-2VW" id="7ui-dq-53V"/>
-                <outlet property="ratingContainerView" destination="9mk-vJ-5Ib" id="Tz2-sf-X0v"/>
-                <outlet property="ratingLabel" destination="h8P-ON-iCC" id="wkY-4b-Ixs"/>
+                <outlet property="ratingContainerView" destination="9mk-vJ-5Ib" id="Ngu-tm-JG4"/>
                 <outlet property="restaurantCuisineLabel" destination="XIU-Il-NCc" id="5bU-ge-qgh"/>
                 <outlet property="restaurantImageView" destination="QqM-1f-Pve" id="5zA-9i-bYy"/>
                 <outlet property="restaurantLocationLabel" destination="Sdh-pH-H54" id="D5f-LY-5rN"/>

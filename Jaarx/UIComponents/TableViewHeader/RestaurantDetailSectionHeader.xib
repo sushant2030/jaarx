@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKw-Y8-zHX">
-                    <rect key="frame" x="162" y="30" width="90.5" height="40"/>
+                    <rect key="frame" x="162" y="20" width="90.5" height="50"/>
                     <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="30"/>
                     <color key="textColor" red="0.0" green="0.61960784310000006" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -23,7 +23,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nKw-Y8-zHX" secondAttribute="bottom" constant="10" id="JMr-vm-uh7"/>
-                <constraint firstItem="nKw-Y8-zHX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="OAl-bi-Y9K"/>
+                <constraint firstItem="nKw-Y8-zHX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="OAl-bi-Y9K"/>
                 <constraint firstItem="nKw-Y8-zHX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fOR-8t-g1K"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

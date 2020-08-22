@@ -29,16 +29,41 @@ class RestaurantDetailVC : UIViewController{
         restaurantDetailTableView.register(UINib.init(nibName: RestaurantDetailTextCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: RestaurantDetailTextCell.cellIdentifier())
         restaurantDetailTableView.register(UINib.init(nibName: RestaurantPickaBooCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: RestaurantPickaBooCell.cellIdentifier())
         restaurantDetailTableView.register(UINib.init(nibName: RestaurantInWordsCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: RestaurantInWordsCell.cellIdentifier())
+        restaurantDetailTableView.register(UINib.init(nibName: RestaurantCriticsScoreCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: RestaurantCriticsScoreCell.cellIdentifier())
         
         
     }
     func bindData(){
-        restaurantDetailVM!.restaurantHeaderVM.addObserver(fireNow: false) { [weak self] (homeVMs) in
+        restaurantDetailVM!.restaurantHeaderVM.addObserver(fireNow: false) { [weak self] (restaurantHeaderVM) in
             DispatchQueue.main.async {
                 self?.restaurantDetailTableView.reloadData()
                 self?.restaurantDetailTableView.isHidden = false
             }
         }
+//        restaurantDetailVM!.sectionVMs.addObserver(fireNow: false, {[weak self] (sectionVMs) in
+//            for sectionVM in sectionVMs{
+//                let rowVMs = sectionVM.rowViewModels
+//                for rowVM in rowVMs
+//                {
+//                    if rowVM is RestaurantTextVM{
+//                        var restTextVM = rowVM as! RestaurantTextVM
+//                        restTextVM.cellPressed = {
+//                            if let restID = self?.restaurantId{
+//                                switch restTextVM.cellType {
+//                                case .ScanNOrder :
+//                                    self?.navigateToQRCodeScannerVC(restaurantId: restID)
+//                                case .ReserveNOrder :
+//                                    self?.navigateToPreOrder(restaurantId: restID)
+//                                case .none:
+//                                    break
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//            }
+//        )
         restaurantDetailVM!.isLoading.addObserver {[weak self] isLoading in
             DispatchQueue.main.async {
                 if (isLoading){
@@ -50,6 +75,16 @@ class RestaurantDetailVC : UIViewController{
                     self?.restaurantDetailTableView.isHidden = false
                 }
             }
+        }
+    }
+    func navigateToQRCodeScannerVC(restaurantId:String) {
+        if let qrCodeScannerVC = UIStoryboard.qrCodeScannerVC(){
+            self.navigationController?.pushViewController(qrCodeScannerVC, animated: true)
+        }
+    }
+    func navigateToPreOrder(restaurantId:String) {
+        if let preOrderVC = UIStoryboard.preOrderVC(){
+            self.navigationController?.pushViewController(preOrderVC, animated: true)
         }
     }
     
@@ -95,7 +130,7 @@ extension RestaurantDetailVC: UITableViewDelegate {
             return view
         }
         else{
-             let view = RestaurantDetailSectionHeader.instanceFromNib()
+            let view = RestaurantDetailSectionHeader.instanceFromNib()
             if let sectionTitle = sectionViewModel.headerTitle{
                 view.sectionTitleLabel.text = sectionTitle
             }
@@ -105,6 +140,24 @@ extension RestaurantDetailVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    heightForHeaderInSection section: Int) -> CGFloat {
         return  CGFloat(self.restaurantDetailVM!.sectionVMs.value[section].sectionHeight)
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sectionViewModel = self.restaurantDetailVM!.sectionVMs.value[indexPath.section]
+        let rowModel = sectionViewModel.rowViewModels[indexPath.row]
+        if let rowModel = rowModel as? RestaurantTextVM
+        {
+            if let restID = self.restaurantId{
+                switch rowModel.cellType {
+                case .ScanNOrder :
+                    self.navigateToQRCodeScannerVC(restaurantId: restID)
+                case .ReserveNOrder :
+                    self.navigateToPreOrder(restaurantId: restID)
+                case .none:
+                    break
+                }
+            }
+
+        }
     }
 }
 

@@ -93,5 +93,7 @@ enum BucketCellHeight : CGFloat
 
 let RestaurantDetailTextRowHeight = 114.0
 let RestaurantDetailPickaBooRowHeight = 136.0
+let RestaurantDetailRatingsRowHeight = 84.0
 let RestaurantDetailHeaderHeight = 431.0
-let RestaurantDetailSectionViewHeight = 80.0
+let RestaurantDetailSectionViewHeight = 70.0
+let defaultRating = "4.2"
