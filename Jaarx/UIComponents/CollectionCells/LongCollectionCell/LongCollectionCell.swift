@@ -14,9 +14,11 @@ class LongCollectionCell: UICollectionViewCell {
     @IBOutlet weak var btnScan: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var squareImage: UIImageView!
+    @IBOutlet weak var shadowView: UIView!
     var restaurantCellVM : RestaurantCellVM?
     override func awakeFromNib() {
         super.awakeFromNib()
+        shadowView.dropShadow()
         // Initialization code
     }
     override func prepareForReuse() {

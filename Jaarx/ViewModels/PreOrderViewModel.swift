@@ -19,6 +19,7 @@ struct PreOrderViewModel : RowViewModel {
     var startDate = Date()
     var requiredDates = Observable<[Day]> (value: [])
     var timeMode : TimeMode = Helper.getCurrentTimeMode()
+    var tableImage = Observable<String> (value: "2table")
     
     func getNumberOfTables() -> Int {
         return 10
@@ -33,6 +34,21 @@ struct PreOrderViewModel : RowViewModel {
         time = date.changeUTCToLocal(date: date)
         updateTime()
         
+    }
+    
+    mutating func setNumberOfPeopleWith(tableNo : Int) {
+        numberOfPeople = tableNo
+        if tableNo < 3 {
+            tableImage.value = "\(2)table"
+        } else if tableNo < 5 {
+            tableImage.value = "\(4)table"
+        } else if tableNo < 7 {
+            tableImage.value = "\(6)table"
+        } else if tableNo < 9 {
+            tableImage.value = "\(8)table"
+        } else {
+            tableImage.value = "\(10)table"
+        }
     }
     
     mutating func changeTimeMode(mode : TimeMode) {

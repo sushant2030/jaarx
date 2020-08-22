@@ -23,6 +23,7 @@ class LoginVC: UIViewController {
         btnOtp.makeCornerRadiusWithRadi(radius: 15.0)
         containerView.makeViewCornerRadiusWithRadi(radius: 15.0)
         tfMobile.borderColor = .clear
+        containerView.dropShadow()
         // Do any additional setup after loading the view.
     }
     

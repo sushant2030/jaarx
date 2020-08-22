@@ -114,6 +114,7 @@ extension HomeVC : UITableViewDataSource {
         
         let homeRowVM = homeViewModel.homeTableViewModel.value[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: homeRowVM.cellIdentifier(), for: indexPath)
+        cell.selectionStyle = .none
         if let cell = cell as? CellConfigurable{
             cell.setup(viewModel: homeRowVM)
         }
@@ -123,6 +124,12 @@ extension HomeVC : UITableViewDataSource {
 
 //MARK: - UITableView Delegate
 extension HomeVC : UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let homeRowVM = homeViewModel.homeTableViewModel.value[indexPath.row]
+        if homeRowVM.bucketType == .scanAndOrder {
+            let scanVC = UIStoryboard.qrCodeScannerVC()
+            self.navigationController?.pushViewController(scanVC!, animated: true)
+        }
+    }
 }
 

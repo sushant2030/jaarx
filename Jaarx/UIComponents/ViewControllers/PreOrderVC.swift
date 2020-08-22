@@ -86,6 +86,12 @@ class PreOrderVC: UIViewController {
             }
             
         }
+        
+        preOrderVM.tableImage.addObserver(fireNow: true) { [weak self] (imageName) in
+            DispatchQueue.main.async {
+                self?.tableImageView.image = UIImage.init(named: imageName)
+            }
+        }
     }
     /*
     // MARK: - Navigation
@@ -159,6 +165,8 @@ extension PreOrderVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RoundCollectionCell.cellIdentifier(), for: indexPath) as! RoundCollectionCell
         if collectionView == peopleCollectionView {
             cell.setTableNumber(tableNumber: indexPath.row + 1)
+            
+            
         } else {
             let dateDetails = preOrderVM.requiredDates.value[indexPath.row]
             cell.setDate(date: dateDetails)
@@ -175,7 +183,7 @@ extension PreOrderVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         if collectionView == dayCollectionView {
             preOrderVM.bookingDate = Date.getDateInString(date: preOrderVM.requiredDates.value[indexPath.row].date)
         } else {
-            preOrderVM.numberOfPeople = indexPath.row + 1
+            preOrderVM.setNumberOfPeopleWith(tableNo: indexPath.row + 1)
         }
         
     }

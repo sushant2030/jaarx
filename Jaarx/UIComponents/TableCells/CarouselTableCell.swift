@@ -26,10 +26,12 @@ class CarouselTableCell: UITableViewCell {
 
 extension CarouselTableCell : CellConfigurable {
     func setup(viewModel: RowViewModel) {
-//        guard let viewModel = (viewModel as? HomeRowVM) else {
-//            return
-//        }
-        if let imageURL = URL.init(string: "https://www.bootstrapdash.com/wp-content/uploads/2019/09/best-selling-restaurant-website-templates-1.gif") {
+        guard let viewModel = (viewModel as? HomeRowVM) else {
+            return
+        }
+        if viewModel.bucketType == .scanAndOrder {
+            carouselImageView.image = UIImage.init(named: "scanBanner")
+        } else if let imageURL = URL.init(string: "https://www.bootstrapdash.com/wp-content/uploads/2019/09/best-selling-restaurant-website-templates-1.gif") {
             carouselImageView.downloaded(from: imageURL)
         }
         
