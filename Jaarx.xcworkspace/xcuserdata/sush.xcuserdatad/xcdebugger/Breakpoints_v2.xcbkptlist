@@ -39,140 +39,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7313987D-FB94-4A07-B565-523BCDA444E7"
+            uuid = "864A415D-52E5-412B-BEC5-494CB12CFCC5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Jaarx/UIComponents/ViewControllers/PreOrderVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "350D9DF3-45D5-4EFF-800B-E730CBF723BB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/ViewControllers/PreOrderVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "PreOrderVC"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "350D9DF3-45D5-4EFF-800B-E730CBF723BB - a992a0ff4c8b2b07"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Jaarx.PreOrderVC.btnDate.getter : Swift.Optional&lt;__C.UIButton&gt;"
-                  moduleName = "Jaarx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/UIComponents/ViewControllers/PreOrderVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  uuid = "350D9DF3-45D5-4EFF-800B-E730CBF723BB - 326b6ed119117b13"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Jaarx.PreOrderVC.btnDate.setter : Swift.Optional&lt;__C.UIButton&gt;"
-                  moduleName = "Jaarx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/UIComponents/ViewControllers/PreOrderVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "155">
-               </Location>
-               <Location
-                  uuid = "350D9DF3-45D5-4EFF-800B-E730CBF723BB - af961e1152f27700"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Jaarx.PreOrderVC.btnDate.modify : Swift.Optional&lt;__C.UIButton&gt;"
-                  moduleName = "Jaarx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/UIComponents/ViewControllers/PreOrderVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "65">
-               </Location>
-               <Location
-                  uuid = "350D9DF3-45D5-4EFF-800B-E730CBF723BB - f0b5a12a32bdbea0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Jaarx.PreOrderVC.btnDate.modify : Swift.Optional&lt;__C.UIButton&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Jaarx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/UIComponents/ViewControllers/PreOrderVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "80">
-               </Location>
-               <Location
-                  uuid = "350D9DF3-45D5-4EFF-800B-E730CBF723BB - 56c468ce45cb7fb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Jaarx.PreOrderVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Jaarx.PreOrderVC"
-                  moduleName = "Jaarx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/UIComponents/ViewControllers/PreOrderVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "997">
-               </Location>
-               <Location
-                  uuid = "350D9DF3-45D5-4EFF-800B-E730CBF723BB - b9529b7238567b88"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Jaarx.PreOrderVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Jaarx.PreOrderVC&gt;"
-                  moduleName = "Jaarx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/UIComponents/ViewControllers/PreOrderVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "948">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C1AA2486-97C5-4664-9EF0-903124356DCA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/ViewControllers/PreOrderVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "registerViews()"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "actionReserve(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

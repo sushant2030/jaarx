@@ -32,6 +32,7 @@ class RoundCollectionCell: UICollectionViewCell {
         self.backgroundColor = .white
         self.layer.borderColor = UIColor.link.cgColor
         self.layer.borderWidth = 1.0
+        dropShadow()
     }
     func deSelect()  {
         lblDay.textColor = .link

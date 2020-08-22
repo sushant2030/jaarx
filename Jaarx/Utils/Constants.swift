@@ -75,6 +75,11 @@ enum ContentType: String {
     case urlEncoded = "application/x-www-form-urlencoded"
 }
 
+enum TimeMode : String {
+    case am = "AM"
+    case pm = "PM"
+}
+
 
 let baseUrlPath = "http://ec2-3-134-99-218.us-east-2.compute.amazonaws.com:9444"
 let activityBackgroundViewTag = 475647

@@ -29,8 +29,35 @@ class PreOrderVC: UIViewController {
         super.viewDidLoad()
         registerViews()
         bindDate()
-        preOrderVM.changeStartDate(date: Date())
+        setInitials()
         // Do any additional setup after loading the view.
+    }
+    
+    func setInitials()  {
+        preOrderVM.changeStartDate(date: Date())
+        preOrderVM.pickBookingTime(date: picker.date)
+        
+        let height = btnMinute.frame.size.height / 2
+        btnMinute.makeViewCornerRadiusWithRadi(radius: height)
+        btnMinute.makeAppThemeColorBorder()
+        btnMinute.dropShadow()
+        btnHour.makeViewCornerRadiusWithRadi(radius: height)
+        btnHour.makeAppThemeColorBorder()
+        btnHour.dropShadow()
+        
+        btnAM.makeViewCornerRadiusWithRadi(radius: btnAM.frame.size.height / 2)
+        btnAM.makeAppThemeColorBorder()
+        btnAM.dropShadow()
+        btnPM.makeViewCornerRadiusWithRadi(radius: btnAM.frame.size.height / 2)
+        btnPM.makeAppThemeColorBorder()
+        btnPM.dropShadow()
+        
+        btnHour.setTitle(preOrderVM.time!.components(separatedBy: ":")[0], for: .normal)
+        btnMinute.setTitle(preOrderVM.time!.components(separatedBy: ":")[1], for: .normal)
+        
+        pickerHoldingView.makeAppThemeColorBorder()
+        pickerHoldingView.dropShadow()
+        pickerHoldingView.makeViewCornerRadiusWithRadi(radius: 15.0)
     }
     
     func registerViews()  {
@@ -43,23 +70,12 @@ class PreOrderVC: UIViewController {
         pickerHoldingView.makeViewCornerRadiusWithRadi(radius: 5)
         pickerHoldingView.isHidden = true
         
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        btnMinute.makeViewCornerRadiusWithRadi(radius: btnMinute.frame.size.height / 2)
-        btnMinute.makeAppThemeColorBorder()
-        
-        btnHour.makeViewCornerRadiusWithRadi(radius: btnMinute.frame.size.height / 2)
-        btnHour.makeAppThemeColorBorder()
-        
-        
-        btnAM.makeViewCornerRadiusWithRadi(radius: 25/2)
-        btnAM.makeAppThemeColorBorder()
-        
-        btnPM.makeViewCornerRadiusWithRadi(radius: 25/2)
-        btnPM.makeAppThemeColorBorder()
     }
     
     func bindDate()  {
@@ -80,17 +96,44 @@ class PreOrderVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    // MARK: - IBOutlets
+
+    @IBAction func actionTime(_ sender: UIButton) {
+        picker.datePickerMode = .time
+        pickerHoldingView.isHidden = false
+    }
     
     @IBAction func actionDateChange(_ sender: UIButton) {
+        picker.datePickerMode = .date
         pickerHoldingView.isHidden = false
         
     }
     @IBAction func actionReserve(_ sender: UIButton) {
+        
     }
-    // MARK: - IBOutlets
+    @IBAction func actionPM(_ sender: UIButton) {
+        preOrderVM.changeTimeMode(mode: .pm)
+        btnPM.backgroundColor = .link
+        btnAM.backgroundColor = .white
+        btnPM.isSelected = true
+        btnAM.isSelected = false
+        
+    }
+    @IBAction func actionAm(_ sender: UIButton) {
+        preOrderVM.changeTimeMode(mode: .am)
+        btnAM.backgroundColor = .link
+        btnPM.backgroundColor = .white
+        btnAM.isSelected = true
+        btnPM.isSelected = false
+    }
     
     @IBAction func actionPicker(_ sender: UIButton) {
-        preOrderVM.changeStartDate(date: picker.date)
+        switch picker.datePickerMode  {
+        case .date:
+            preOrderVM.changeStartDate(date: picker.date)
+        default:
+            preOrderVM.pickBookingTime(date: picker.date)
+        }
         pickerHoldingView.isHidden = true
     }
     
@@ -132,7 +175,7 @@ extension PreOrderVC : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         if collectionView == dayCollectionView {
             preOrderVM.bookingDate = Date.getDateInString(date: preOrderVM.requiredDates.value[indexPath.row].date)
         } else {
-            
+            preOrderVM.numberOfPeople = indexPath.row + 1
         }
         
     }

@@ -53,4 +53,14 @@ struct Helper {
         }
         return nil
     }
+    
+    static func getCurrentTimeMode() -> TimeMode  {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "H:mm"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "a"
+        let date = dateFormatter.string(from: Date())
+        return TimeMode.init(rawValue: date)!
+    }
 }

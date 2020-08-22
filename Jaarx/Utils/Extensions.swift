@@ -100,7 +100,7 @@ extension UIView{
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.25
-        layer.shadowOffset = .zero
+        layer.shadowOffset = .init(width: 1, height: 1)
         layer.shadowRadius = 4
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
@@ -161,12 +161,21 @@ extension Date {
         return date ?? Date()
     }
     
-    public static func getFormatedDate(formatedDate: Date) -> Date {
+    public static func getFormattedDate(formatedDate: Date) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let date = dateFormatter.string(from: formatedDate)
         let requiredDate = dateFormatter.date(from: date)
         return requiredDate ?? Date()
+    }
+    
+    func changeUTCToLocal(date:Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "H:mm"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "h:mm"
+        return dateFormatter.string(from: date)
     }
     
     
