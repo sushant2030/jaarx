@@ -31,7 +31,7 @@ class RestaurantViewModel {
         case .hotcuisins:
             return CGSize.init(width: width, height: width)
         case .hashtags:
-            return CGSize.init(width: 100, height: 50)
+            return CGSize.init(width: 117, height: 42)
         default:
             return CGSize.init(width: width, height: (width * 2))
         }
@@ -43,7 +43,7 @@ class RestaurantViewModel {
         case .scanAndOrder:
             return UIEdgeInsets.init(top: 20, left: 15, bottom: 10, right: 15)
         default:
-            return UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 15)
+            return UIEdgeInsets.init(top: 4, left: 15, bottom: 4, right: 15)
         }
     }
     
@@ -51,6 +51,8 @@ class RestaurantViewModel {
         switch self.bucketType {
         case .banner,.carousel,.scanAndOrder:
             return 0
+        case .hashtags:
+            return 5
         default:
             return 20
         }
@@ -64,7 +66,7 @@ class RestaurantViewModel {
         case .hotcuisins:
             cellIdentifier = SquareCollectionCell.cellIdentifier()
         case .hashtags:
-            cellIdentifier = HorizontalListCollectionCell.cellIdentifier()
+            cellIdentifier = TagCollectionCell.cellIdentifier()
         default:
             cellIdentifier = LongCollectionCell.cellIdentifier()
         }
@@ -77,16 +79,21 @@ class RestaurantCellVM:RowViewModel,ViewModelPressible {
     let title : String?
     let location : String?
     let imageDetails : [ImageDetail]?
+    let categoryName : String?
+    let categoryColor : String?
     var imageUrl : URL? {
         get{self.getImageUrl()}
     }
     var cellButtonAction: ((CellAction) -> Void)? = nil
     var cellPressed: (() -> Void)? = nil
-    init(restaurantId : String?, imageDetails:[ImageDetail]?,location : String?,title : String?) {
+    init(restaurantId : String?, imageDetails:[ImageDetail]?,location : String?,title : String?,categoryName : String?,categoryColor : String?) {
         self.restaurantId = restaurantId
         self.imageDetails = imageDetails
         self.location = location
         self.title = title
+        self.categoryName = categoryName
+        self.categoryColor = categoryColor
+        
     }
     
     func getImageUrl() ->URL?{

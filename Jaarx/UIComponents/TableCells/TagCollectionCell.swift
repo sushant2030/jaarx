@@ -9,11 +9,23 @@
 import UIKit
 
 class TagCollectionCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var tagLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    override func layoutSubviews() {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.frame.height/2
+    }
+}
+extension TagCollectionCell:CellConfigurable
+{
+    func setup(viewModel: RowViewModel) {
+        guard let viewModel = (viewModel as? RestaurantCellVM) else {return}
+        if let categoryName = viewModel.categoryName{
+            self.tagLabel.text = categoryName
+        }
+    }
 }
