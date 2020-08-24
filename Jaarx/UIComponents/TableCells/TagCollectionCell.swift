@@ -16,8 +16,7 @@ class TagCollectionCell: UICollectionViewCell {
         // Initialization code
     }
     override func layoutSubviews() {
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = self.frame.height/2
+        self.makeViewCornerRadiusWithRadi(radius: self.frame.height/2)
     }
 }
 extension TagCollectionCell:CellConfigurable
