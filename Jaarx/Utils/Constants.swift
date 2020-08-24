@@ -86,9 +86,9 @@ let activityBackgroundViewTag = 475647
 
 enum BucketCellHeight : CGFloat
 {
-    case small =  100.0
+    case small =  90.0
     case medium = 150.0
-    case large = 250.0
+    case large = 270.0
 }
 
 let RestaurantDetailTextRowHeight = 114.0

@@ -18,7 +18,12 @@ class LongCollectionCell: UICollectionViewCell {
     var restaurantCellVM : RestaurantCellVM?
     override func awakeFromNib() {
         super.awakeFromNib()
-        shadowView.dropShadow()
+//        shadowView.dropShadow()
+        btnScan.makeViewCornerRadiusWithRadi(radius: btnScan.frame.size.height / 2)
+        btnScan.makeAppThemeColorBorder()
+        btnPreOrder.makeViewCornerRadiusWithRadi(radius: btnScan.frame.size.height / 2)
+        btnPreOrder.makeAppThemeColorBorder()
+        btnPreOrder.dropShadow()
         // Initialization code
     }
     override func prepareForReuse() {

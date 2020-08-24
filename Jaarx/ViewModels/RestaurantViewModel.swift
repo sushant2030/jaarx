@@ -63,8 +63,6 @@ class RestaurantViewModel {
             cellIdentifier = LongCollectionCell.cellIdentifier()
         case .hotcuisins:
             cellIdentifier = SquareCollectionCell.cellIdentifier()
-        case .hashtags:
-            cellIdentifier = HorizontalListCollectionCell.cellIdentifier()
         default:
             cellIdentifier = LongCollectionCell.cellIdentifier()
         }

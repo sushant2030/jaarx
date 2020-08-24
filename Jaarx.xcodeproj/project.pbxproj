@@ -51,8 +51,6 @@
 		5BA9E698241030CC0044CDBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BA9E697241030CC0044CDBF /* Main.storyboard */; };
 		5BA9E69B241033B00044CDBF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9E69A241033B00044CDBF /* HomeVC.swift */; };
 		5BA9E69E241035B80044CDBF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9E69D241035B80044CDBF /* DataSource.swift */; };
-		5BBC960224B7C3750044D193 /* HorizontalListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC960024B7C3750044D193 /* HorizontalListCollectionCell.swift */; };
-		5BBC960324B7C3750044D193 /* HorizontalListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC960124B7C3750044D193 /* HorizontalListCollectionCell.xib */; };
 		5BC0C70A24A27A1D0045782B /* FavoriteRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0C70824A27A1D0045782B /* FavoriteRestaurant.swift */; };
 		5BC0C70B24A27A1D0045782B /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0C70924A27A1D0045782B /* UserDetail.swift */; };
 		5BC0C70D24A3D4B80045782B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0C70C24A3D4B80045782B /* UserModel.swift */; };
@@ -163,8 +161,6 @@
 		5BA9E697241030CC0044CDBF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5BA9E69A241033B00044CDBF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5BA9E69D241035B80044CDBF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		5BBC960024B7C3750044D193 /* HorizontalListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListCollectionCell.swift; sourceTree = "<group>"; };
-		5BBC960124B7C3750044D193 /* HorizontalListCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalListCollectionCell.xib; sourceTree = "<group>"; };
 		5BC0C70824A27A1D0045782B /* FavoriteRestaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurant.swift; sourceTree = "<group>"; };
 		5BC0C70924A27A1D0045782B /* UserDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		5BC0C70C24A3D4B80045782B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -363,7 +359,6 @@
 				5BECC6F524CCE1950025B4BC /* CircularCollectionCell */,
 				D8EFB7BC24CD2CB5000D72AF /* TagCollectionCell.swift */,
 				D8EFB7BD24CD2CB5000D72AF /* TagCollectionCell.xib */,
-				5BBC95FF24B7C3310044D193 /* HorizontalListCollectionCell */,
 				5B72E1AD240EED230032F004 /* SquareCollectionCell */,
 				5B72E1A8240EE7440032F004 /* LongCollectionCell */,
 			);
@@ -460,15 +455,6 @@
 				5BA9E69D241035B80044CDBF /* DataSource.swift */,
 			);
 			path = DataSource;
-			sourceTree = "<group>";
-		};
-		5BBC95FF24B7C3310044D193 /* HorizontalListCollectionCell */ = {
-			isa = PBXGroup;
-			children = (
-				5BBC960024B7C3750044D193 /* HorizontalListCollectionCell.swift */,
-				5BBC960124B7C3750044D193 /* HorizontalListCollectionCell.xib */,
-			);
-			path = HorizontalListCollectionCell;
 			sourceTree = "<group>";
 		};
 		5BECC6F524CCE1950025B4BC /* CircularCollectionCell */ = {
@@ -670,7 +656,6 @@
 				5B72E1AC240EE7CC0032F004 /* LongCollectionCell.xib in Resources */,
 				5B72E1B6240EF2B80032F004 /* BucketCell.xib in Resources */,
 				D8EFB7C624CDC8E2000D72AF /* RestaurantPickaBooCell.xib in Resources */,
-				5BBC960324B7C3750044D193 /* HorizontalListCollectionCell.xib in Resources */,
 				5B61329C24A938BD0031448F /* JTextFieldCell.xib in Resources */,
 				5BC0C70F24A7CEB40045782B /* Login.storyboard in Resources */,
 				5BF85E6C24BD0BA2004335E8 /* Order.storyboard in Resources */,
@@ -831,7 +816,6 @@
 				5B61328D24A8E41D0031448F /* LoginVC.swift in Sources */,
 				5BECC6F424CCC7500025B4BC /* PreOrderVC.swift in Sources */,
 				5B2CA6FF24B8D5F600CDD824 /* JMainTabbarVC.swift in Sources */,
-				5BBC960224B7C3750044D193 /* HorizontalListCollectionCell.swift in Sources */,
 				5B61329824A9350A0031448F /* SignUpVC.swift in Sources */,
 				D830CC2824BCAE5500CDC75A /* QRScannerView.swift in Sources */,
 				5B8546E3249502710092743E /* HomeRouter.swift in Sources */,
