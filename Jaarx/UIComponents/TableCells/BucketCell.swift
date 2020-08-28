@@ -31,6 +31,7 @@ class BucketCell: UITableViewCell{
     func registerViews()  {
         containerCollectionView.register(UINib.init(nibName: LongCollectionCell.cellIdentifier(), bundle: nil), forCellWithReuseIdentifier: LongCollectionCell.cellIdentifier())
         containerCollectionView.register(UINib.init(nibName: SquareCollectionCell.cellIdentifier(), bundle: nil), forCellWithReuseIdentifier: SquareCollectionCell.cellIdentifier())
+        containerCollectionView.register(UINib.init(nibName: TagCollectionCell.cellIdentifier(), bundle: nil), forCellWithReuseIdentifier: TagCollectionCell.cellIdentifier())
         containerCollectionView.delegate = self
         containerCollectionView.dataSource = self
     }

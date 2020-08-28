@@ -40,7 +40,7 @@ class HomeViewModel {
     private func buildRestaurantCellVMs(_ restaurantArray:[RestaurantData]?) -> [RestaurantCellVM] {
         var restaurantCellVMArray = [RestaurantCellVM] ()
         for restaurant in restaurantArray ?? [] {
-            let restaurantVM = RestaurantCellVM.init(restaurantId: restaurant.restaurantId, imageDetails: restaurant.imageDetails, location: restaurant.restaurantLocation ?? "", title: restaurant.restaurantName ?? "")
+            let restaurantVM = RestaurantCellVM.init(restaurantId: restaurant.restaurantId, imageDetails: restaurant.imageDetails, location: restaurant.restaurantLocation ?? "", title: restaurant.restaurantName ?? "", categoryName: restaurant.categoryName, categoryColor: restaurant.categoryColor)
             restaurantCellVMArray.append(restaurantVM)
         }
         return restaurantCellVMArray
@@ -60,7 +60,7 @@ class HomeRowVM : RowViewModel{
     var rowHeight : CGFloat {
         get{self.getRowHeight()}
     }
-    init(imageUrl: String?, type: String?, description: String?, title: String?, restaurantViewModel: RestaurantViewModel?,bucketType: BucketType?) {
+    init(imageUrl: String?, type: String?, description: String?, title: String?, restaurantViewModel: RestaurantViewModel?,bucketType: BucketType?){
         self.imageUrl = imageUrl
         self.type = type
         self.description = description
