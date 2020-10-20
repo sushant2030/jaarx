@@ -16,6 +16,10 @@ extension UIStoryboard {
     static func homeVC() -> HomeVC? {
         return mainStoryboard().instantiateViewController(withIdentifier: "HomeVC") as? HomeVC
     }
+    static func editCartVC() -> JEditCartVC? {
+        return orderStoryboard().instantiateViewController(identifier: "JEditCartVC") as? JEditCartVC
+    }
+    
     static func restaurantDetailVCWithRestaurant(id : String) -> RestaurantDetailVC? {
         let restaurantVC = mainStoryboard().instantiateViewController(withIdentifier: "RestaurantDetailVC") as? RestaurantDetailVC
         restaurantVC?.restaurantId = id
@@ -35,6 +39,10 @@ extension UIStoryboard {
     }
     static func preOrderVC() -> PreOrderVC? {
         return orderStoryboard().instantiateViewController(identifier: "PreOrderVC") as? PreOrderVC
+    }
+    
+    static func menuVC() -> JRestaurantMenuVC? {
+        return orderStoryboard().instantiateViewController(identifier: "JRestaurantMenuVC") as? JRestaurantMenuVC
     }
 }
 

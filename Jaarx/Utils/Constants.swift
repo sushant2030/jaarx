@@ -26,6 +26,8 @@ struct Constants {
         static let resId = "res_id"
         static let review = "review"
         static let status = "status"
+        static let restaurantId = "restaurantId"
+        static let restaurantFoodItems = "fooditems"
     }
     struct UserAPIParameter{
         static let userId = "userId"
@@ -52,6 +54,11 @@ enum BucketType : String {
 enum SearchResultType : String {
     case restaurant = "restaurant"
     case food = "food"
+}
+
+enum MenuCollectionType {
+    case header
+    case menu
 }
 
 enum CellAction {

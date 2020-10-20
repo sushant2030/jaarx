@@ -55,6 +55,7 @@ extension APIRouter {
        func asURLRequest() throws -> URLRequest {
            var urlRequest = URLRequest.init(url: self.url)
            urlRequest.httpMethod = httpMethod.rawValue
+//            urlRequest.timeoutInterval = 120
 //           urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
             urlRequest.headers = headers!
            if httpMethod == .post{

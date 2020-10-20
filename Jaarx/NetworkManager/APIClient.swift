@@ -124,5 +124,25 @@ class APIClient {
             print(error)
         }
     }
+    
+    static func getRestaurantDetailMenuFor(resId : String, completion:@escaping (AFResult<MenuResponse>)->Void){
+        do {
+            let restaurantRouter = try RestaurantRouter.getMenu(id: resId).asURLRequest()
+            performRequest(route: restaurantRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    
+    static func addCartForRestaurantWithDetail(foodItems : [String:[[String:Int]]], completion:@escaping (AFResult<GenericResponse>)-> Void) {
+        do {
+            let restaurantRouter = try RestaurantRouter.addCart(params: foodItems).asURLRequest()
+            performRequest(route: restaurantRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
 }
 

@@ -11,12 +11,14 @@ import Alamofire
 
 enum RestaurantRouter {
     case add(id : Int)
+    case addCart(params : [String:[[String:Int]]])
     case getFavorites(userId : String)
     case addReviews(resId : String , review : String)
     case setFavorite(userId : String, resId : String , status : Bool)
     case bookTableWith(params : [String:Any])
     case updateBookingWith(params : [String:Any])
     case getRestaurantDetailFor(id : String)
+    case getMenu(id : String)
 }
 
 extension RestaurantRouter : APIRouter {
@@ -25,6 +27,8 @@ extension RestaurantRouter : APIRouter {
         switch self {
         case .add:
             return "order/add"
+        case .addCart:
+            return "/cart/add_bulk"
         case .getFavorites:
             return "/restaurant/favorites"
         case .addReviews:
@@ -36,15 +40,15 @@ extension RestaurantRouter : APIRouter {
         case .updateBookingWith:
             return "/book/update"
         case .getRestaurantDetailFor:
-            return "/user/restaurantDetails?"
+            return "/user/restaurantDetails"
+        case .getMenu:
+            return "/menu/items"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getFavorites:
-            return .get
-        case .getRestaurantDetailFor:
+        case .getFavorites,.getRestaurantDetailFor,.getMenu:
             return .get
         default:
             return .post
@@ -66,6 +70,10 @@ extension RestaurantRouter : APIRouter {
             return params
         case .getRestaurantDetailFor(let id):
             return [Constants.RestaurantAPIParameter.id : id]
+        case .getMenu(let id):
+            return [Constants.RestaurantAPIParameter.restaurantId : id]
+        case .addCart(let params):
+            return [Constants.RestaurantAPIParameter.restaurantFoodItems : params]
         default:
             return nil
         }

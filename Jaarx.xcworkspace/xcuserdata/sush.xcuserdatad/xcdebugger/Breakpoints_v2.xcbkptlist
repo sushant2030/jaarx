@@ -5,66 +5,215 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
          <BreakpointContent
-            uuid = "BA4C98F2-EAAA-4453-AF9B-3C4398B64DCA"
+            uuid = "C7C75E03-3988-45BA-B6F6-91CE7900BF09"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            uuid = "2AAC59FE-2F6B-4051-8C5F-CC6D26D0C693"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/ViewControllers/JSearchVC.swift"
+            breakpointStackSelectionBehavior = "1"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23A5ED1E-A716-4A29-A4D6-70B12B3F3ED7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jaarx/UIComponents/ViewControllers/JRestaurantMenuVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "handleCellButtonAction(searchVM:)"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "collectionView(_:didDeselectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "225F7344-E988-48CF-9387-97AA9CF063EB"
+            uuid = "22E3D7E8-38DB-4911-ADD7-84F79D8A7ADE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/ViewControllers/JSearchVC.swift"
+            filePath = "Jaarx/UIComponents/TableCells/EditCart/EditCartCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "navigateToQRCodeScannerVC(restaurantId:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "actionAdd(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "864A415D-52E5-412B-BEC5-494CB12CFCC5"
+            uuid = "4E341F8B-CB46-4B97-B523-BD27151A62D1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/ViewControllers/PreOrderVC.swift"
+            filePath = "Jaarx/UIComponents/TableCells/EditCart/EditCartCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "actionReserve(_:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "actionRemove(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5B60F46B-9FBE-46D5-9ADC-C1B30BD8F888"
+            uuid = "FE19B823-07E8-4699-88D9-80ED47067A7B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jaarx/ViewModels/PreOrderViewModel.swift"
+            filePath = "Jaarx/ViewModels/CartDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "setNumberOfPeopleWith(tableNo:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "addCart()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4F27492-E83D-484B-AD87-8D24A306D721"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jaarx/NetworkManager/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "performRequest(route:decoder:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C4F27492-E83D-484B-AD87-8D24A306D721 - 6724ec3c710c0779"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;A, Alamofire.AFError&gt;) -&gt; () in static Jaarx.APIClient.(performRequest in _C5BF10DA7294F5EA21802BE612F5300E)&lt;A where A: Swift.Decodable&gt;(route: Alamofire.URLRequestConvertible, decoder: Foundation.JSONDecoder, completion: (Swift.Result&lt;A, Alamofire.AFError&gt;) -&gt; ()) -&gt; Alamofire.DataRequest"
+                  moduleName = "Jaarx"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/NetworkManager/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "750">
+               </Location>
+               <Location
+                  uuid = "C4F27492-E83D-484B-AD87-8D24A306D721 - 6724ec3c710c0779"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;A, Alamofire.AFError&gt;) -&gt; () in static Jaarx.APIClient.(performRequest in _C5BF10DA7294F5EA21802BE612F5300E)&lt;A where A: Swift.Decodable&gt;(route: Alamofire.URLRequestConvertible, decoder: Foundation.JSONDecoder, completion: (Swift.Result&lt;A, Alamofire.AFError&gt;) -&gt; ()) -&gt; Alamofire.DataRequest"
+                  moduleName = "Jaarx"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/NetworkManager/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "788">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5EF4B328-A511-4BB4-96DF-48FBD24B17C7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jaarx/ViewModels/CartDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "addCart()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5EF4B328-A511-4BB4-96DF-48FBD24B17C7 - ea6a0ebee910e454"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Jaarx.CartDataSource.addCart() -&gt; ()"
+                  moduleName = "Jaarx"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/ViewModels/CartDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "543">
+               </Location>
+               <Location
+                  uuid = "5EF4B328-A511-4BB4-96DF-48FBD24B17C7 - 8a0a017def2d7c8d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Result&lt;Jaarx.GenericResponse, Alamofire.AFError&gt;) -&gt; () in Jaarx.CartDataSource.addCart() -&gt; ()"
+                  moduleName = "Jaarx"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/ViewModels/CartDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F32AB7AB-56CC-4778-8B20-FA481B74D170"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jaarx/NetworkManager/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "addCartForRestaurantWithDetail(foodItems:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9DB1586B-2B3B-4FB7-BF7A-ED563FCB6CE0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jaarx/NetworkManager/APIRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "asURLRequest()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
