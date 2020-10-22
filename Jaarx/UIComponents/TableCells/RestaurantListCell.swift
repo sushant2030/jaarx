@@ -8,14 +8,14 @@
 
 import UIKit
 
-class SearchTableCell: UITableViewCell {
+class RestaurantListCell: UITableViewCell {
 
     @IBOutlet weak var holderView: UIView!
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var lblRestaurantTitle: UILabel!
     @IBOutlet weak var btnPreOrder: UIButton!
     @IBOutlet weak var btnScan: UIButton!
-    @IBOutlet weak var searchedImageView: UIImageView!
+    @IBOutlet weak var restaurantImageView: UIImageView!
     var searchData:SearchData?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,7 +50,7 @@ class SearchTableCell: UITableViewCell {
     }
 }
 
-extension SearchTableCell : CellConfigurable {
+extension RestaurantListCell : CellConfigurable {
     func setup(viewModel: RowViewModel) {
         if let searchVM = (viewModel as? SearchData) {
             self.searchData = searchVM
@@ -58,8 +58,15 @@ extension SearchTableCell : CellConfigurable {
             lblRestaurantTitle.text = searchVM.restaurantName
             if searchVM.type == .restaurant {
                 if let imagePathURL = searchVM.getImageUrl(){
-                    searchedImageView.downloaded(from: imagePathURL)
+                    restaurantImageView.downloaded(from: imagePathURL)
                 }
+            }
+        } else if let viewModel = (viewModel as? RestaurantCellVM) {
+            lblDescription.text = viewModel.location ?? ""
+            lblRestaurantTitle.text = viewModel.title ?? ""
+            if let imagePathURL = viewModel.imageDetails{
+                //TODO
+//                restaurantImageView.downloaded(from: imagePathURL)
             }
         }
     }

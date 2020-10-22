@@ -80,6 +80,16 @@ class APIClient {
         }
     }
     
+    static func getFavoriteRestaurantsForUser(userId : String, completion:@escaping (AFResult<FavoriteRestaurantList>) -> Void){
+           do {
+            let restaurantRouter = try RestaurantRouter.getFavorites(userId: userId).asURLRequest()
+               performRequest(route: restaurantRouter, completion:completion)
+           }
+           catch (let error){
+               print(error)
+           }
+       }
+    
     static func requestOTPForPhoneNumber(user : User, completion:@escaping (AFDataResponse<Data>) -> Void) {
             do {
                 let requestOTPRouter = try LoginRouter.requestOTP(phoneNumber: user.phoneNumber, countrycode: "91").asURLRequest()
@@ -119,6 +129,66 @@ class APIClient {
         do {
             let restaurantRouter = try RestaurantRouter.getRestaurantDetailFor(id: resId).asURLRequest()
             performRequest(route: restaurantRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    
+    static func getRestaurantDetailMenuFor(resId : String, completion:@escaping (AFResult<MenuResponse>)->Void){
+        do {
+            let restaurantRouter = try RestaurantRouter.getMenu(id: resId).asURLRequest()
+            performRequest(route: restaurantRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    
+    static func addCartForRestaurantWithDetail(foodItems : [String:Any], completion:@escaping (AFResult<GenericResponse>)-> Void) {
+        do {
+            let restaurantRouter = try RestaurantRouter.addCart(params: foodItems).asOrderURLRequest()
+            performRequest(route: restaurantRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    
+    static func addOrderForRestaurantWithDetail(foodItems : [String:Any], completion:@escaping (AFResult<GenericResponse>)-> Void) {
+        do {
+            let restaurantRouter = try RestaurantRouter.addOrder(params: foodItems).asOrderURLRequest()
+            performRequest(route: restaurantRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    
+    static func getUserDetails(completion:@escaping (AFResult<UserDetail>) -> Void) {
+        do {
+            let userRouter = try UserRouter.userDetails(userId: UserDataSource.sharedInstance.user?.user_id ?? "").asURLRequest()
+            performRequest(route: userRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    
+    static func getCartDetails(completion:@escaping (AFResult<CartCheckoutResponse>) -> Void) {
+        do {
+            let userRouter = try UserRouter.getCartDetails(userId: UserDataSource.sharedInstance.user?.user_id ?? "").asURLRequest()
+            performRequest(route: userRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    
+    static func getOrderDetails(completion:@escaping (AFResult<OrderCheckoutResponse>) -> Void) {
+        do {
+            let userRouter = try UserRouter.getOrderDetails(orderId: UserDataSource.sharedInstance.user.orderId ?? 0).asURLRequest()
+            performRequest(route: userRouter, completion: completion)
         }
         catch (let error){
             print(error)

@@ -29,9 +29,32 @@ class LoginVC: UIViewController {
     
 // MARK: - IBActions
     @IBAction func actionOTP(_ sender: UIButton) {
-        if let tabBarVC = UIStoryboard.tabBarVC(){
-        self.view.window?.rootViewController = tabBarVC
+        APIClient.signInWithPhoneNumber(user: User()) { (response) in
+            print(response)
+            let user = User()
+            switch response {
+            case .success(let tokenDetails):
+                user.token = tokenDetails.userTokenData?.token ?? ""
+                user.user_id = tokenDetails.userTokenData?.userId ?? ""
+                UserDataSource.sharedInstance.setUser(user: user)
+                UserDataSource.sharedInstance.getUserDetails { (isSuccess) in
+                    if isSuccess {
+                        if let tabBarVC = UIStoryboard.tabBarVC(){
+                            self.view.window?.rootViewController = tabBarVC
+                        }
+                    } else {
+                        //SHOW ERROR
+                    }
+                }
+                
+            case .failure(_):
+                print("Some Went Wrong")
+            }
+            
+            
+            
         }
+
         
     }
     

@@ -19,9 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //    
         
-        APIClient.signInWithPhoneNumber(user: User()) { (response) in
-            print(response)
-        }
+        
 //        APIClient.requestOTPForPhoneNumber(user: User()) { (response) in
 //            if let code = response.response?.statusCode {
 //                

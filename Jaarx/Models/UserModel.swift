@@ -8,14 +8,17 @@
 
 import Foundation
 
-struct User {
+class User {
     var user_id : String = ""
-    let phoneNumber : String = "8452856876"
-    let otp : String = "1111"
+    let phoneNumber : String = "8433911553"
+    let otp : String = "4444"
     var device_token : String = ""
     let device_os : String = "iOS"
-    let firstName : String = "Sumit"
-    let lastName : String = "Kumar"
-    let email : String = "sumitkr110@gmail.com"
+    let firstName : String = "Sushant"
+    let lastName : String = "Alone"
+    let email : String = "alonesushant30@gmail.com"
     var token : String = ""
+    var cartId : String = ""
+    var orderId : Int?
+    var tableId : Int = 1
 }

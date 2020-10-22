@@ -18,6 +18,11 @@ class RestaurantDetailVC : UIViewController{
         self.restaurantDetailVM = RestaurantDetailViewModel.init(restaurantId: self.restaurantId!)
         self.bindData()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+//        CartDataSource.sharedCart = nil
+    }
     func registerDelegateAndDataSource() {
         self.restaurantDetailTableView.delegate = self
         self.restaurantDetailTableView.dataSource = self
@@ -40,30 +45,6 @@ class RestaurantDetailVC : UIViewController{
                 self?.restaurantDetailTableView.isHidden = false
             }
         }
-//        restaurantDetailVM!.sectionVMs.addObserver(fireNow: false, {[weak self] (sectionVMs) in
-//            for sectionVM in sectionVMs{
-//                let rowVMs = sectionVM.rowViewModels
-//                for rowVM in rowVMs
-//                {
-//                    if rowVM is RestaurantTextVM{
-//                        var restTextVM = rowVM as! RestaurantTextVM
-//                        restTextVM.cellPressed = {
-//                            if let restID = self?.restaurantId{
-//                                switch restTextVM.cellType {
-//                                case .ScanNOrder :
-//                                    self?.navigateToQRCodeScannerVC(restaurantId: restID)
-//                                case .ReserveNOrder :
-//                                    self?.navigateToPreOrder(restaurantId: restID)
-//                                case .none:
-//                                    break
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//            }
-//        )
         restaurantDetailVM!.isLoading.addObserver {[weak self] isLoading in
             DispatchQueue.main.async {
                 if (isLoading){
@@ -83,8 +64,12 @@ class RestaurantDetailVC : UIViewController{
         }
     }
     func navigateToPreOrder(restaurantId:String) {
-        if let preOrderVC = UIStoryboard.preOrderVC(){
-            self.navigationController?.pushViewController(preOrderVC, animated: true)
+//        if let preOrderVC = UIStoryboard.preOrderVC(){
+//            self.navigationController?.pushViewController(preOrderVC, animated: true)
+//        }
+        if let menuVC = UIStoryboard.menuVC() {
+            menuVC.setRestaurantId(resId: restaurantId)
+            self.navigationController?.pushViewController(menuVC, animated: true)
         }
     }
     
