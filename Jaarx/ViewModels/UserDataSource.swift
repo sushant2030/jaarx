@@ -24,8 +24,8 @@ class Cart : RowViewModel {
     }
 }
 
-class CartDataSource {
-    static var sharedCart = CartDataSource()
+class UserDataSource {
+    static var sharedInstance = UserDataSource()
     var user : User!
     var carts = Observable<[FoodDetails]> (value: [])
     var userFlow : UserFlow = .preOrder
@@ -94,7 +94,7 @@ class CartDataSource {
                 switch response {
                 case .success(let responseData):
                     if !(responseData.message?.contains("not"))!{
-                        CartDataSource.sharedCart.user.orderId = responseData.order_id
+                        UserDataSource.sharedInstance.user.orderId = responseData.order_id
                         completion(true)
                     } else {
                     completion(false)
@@ -107,9 +107,4 @@ class CartDataSource {
         }
         
     }
-    
-//    func destroy()  {
-//        CartDataSource.sharedCart = nil
-//    }
-    
 }

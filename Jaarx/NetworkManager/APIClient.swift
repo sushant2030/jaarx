@@ -157,7 +157,7 @@ class APIClient {
     
     static func getUserDetails(completion:@escaping (AFResult<UserDetail>) -> Void) {
         do {
-            let userRouter = try UserRouter.userDetails(userId: CartDataSource.sharedCart.user?.user_id ?? "").asURLRequest()
+            let userRouter = try UserRouter.userDetails(userId: UserDataSource.sharedInstance.user?.user_id ?? "").asURLRequest()
             performRequest(route: userRouter, completion: completion)
         }
         catch (let error){
@@ -167,7 +167,7 @@ class APIClient {
     
     static func getCartDetails(completion:@escaping (AFResult<CartCheckoutResponse>) -> Void) {
         do {
-            let userRouter = try UserRouter.getCartDetails(userId: CartDataSource.sharedCart.user?.user_id ?? "").asURLRequest()
+            let userRouter = try UserRouter.getCartDetails(userId: UserDataSource.sharedInstance.user?.user_id ?? "").asURLRequest()
             performRequest(route: userRouter, completion: completion)
         }
         catch (let error){
@@ -177,7 +177,7 @@ class APIClient {
     
     static func getOrderDetails(completion:@escaping (AFResult<OrderCheckoutResponse>) -> Void) {
         do {
-            let userRouter = try UserRouter.getOrderDetails(orderId: CartDataSource.sharedCart.user.orderId ?? 0).asURLRequest()
+            let userRouter = try UserRouter.getOrderDetails(orderId: UserDataSource.sharedInstance.user.orderId ?? 0).asURLRequest()
             performRequest(route: userRouter, completion: completion)
         }
         catch (let error){

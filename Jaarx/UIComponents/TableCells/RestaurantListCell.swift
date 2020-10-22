@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchTableCell: UITableViewCell {
+class RestaurantListCell: UITableViewCell {
 
     @IBOutlet weak var holderView: UIView!
     @IBOutlet weak var lblDescription: UILabel!
@@ -50,7 +50,7 @@ class SearchTableCell: UITableViewCell {
     }
 }
 
-extension SearchTableCell : CellConfigurable {
+extension RestaurantListCell : CellConfigurable {
     func setup(viewModel: RowViewModel) {
         if let searchVM = (viewModel as? SearchData) {
             self.searchData = searchVM

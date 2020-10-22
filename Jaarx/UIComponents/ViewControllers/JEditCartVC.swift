@@ -51,10 +51,10 @@ class JEditCartVC: UIViewController {
     }
     
     @IBAction func actionPlaceOrder(_ sender: UIButton) {
-        CartDataSource.sharedCart.userFlow = .scan
-        switch CartDataSource.sharedCart.userFlow {
+        UserDataSource.sharedInstance.userFlow = .scan
+        switch UserDataSource.sharedInstance.userFlow {
         case .preOrder:
-            CartDataSource.sharedCart.addCart { (isSuccess) in
+            UserDataSource.sharedInstance.addCart { (isSuccess) in
                 if isSuccess {
                     if let checkoutVC = UIStoryboard.checkOutVC() {
                         checkoutVC.modalPresentationStyle = .fullScreen
@@ -65,7 +65,7 @@ class JEditCartVC: UIViewController {
                 }
             }
         default:
-            CartDataSource.sharedCart.addOrder { (isSuccess) in
+            UserDataSource.sharedInstance.addOrder { (isSuccess) in
                 if isSuccess {
                     if let checkoutVC = UIStoryboard.checkOutVC() {
                         checkoutVC.modalPresentationStyle = .fullScreen
@@ -93,7 +93,7 @@ class JEditCartVC: UIViewController {
 
 extension JEditCartVC : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = CartDataSource.sharedCart.carts.value.count
+        let count = UserDataSource.sharedInstance.carts.value.count
         return count
     }
     

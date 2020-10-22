@@ -9,7 +9,7 @@
 import Foundation
 
 class EditCartViewModel {
-    var carts = Observable<[FoodDetails]> (value: CartDataSource.sharedCart.carts.value)
+    var carts = Observable<[FoodDetails]> (value: UserDataSource.sharedInstance.carts.value)
     
     func getEditCartIdentifier() -> String {
         return EditCartCell.cellIdentifier()

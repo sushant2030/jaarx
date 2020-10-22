@@ -45,12 +45,12 @@ class MenuTableCell: UITableViewCell {
     @IBAction func actionMenu(_ sender: UIButton) {
         if let foodVM = foodDetailVM {
 //            let cart = Cart.init(withFoodId: Int(foodVM.foodId ?? "0") ?? 0, quantity: 1, dishName: foodVM.dishName ?? "", description: foodVM.dishDescription ?? "", price: foodVM.dishPrice ?? "0")
-            CartDataSource.sharedCart.carts.value.append(foodVM)
+            UserDataSource.sharedInstance.carts.value.append(foodVM)
         }
         showQuantityButton()
     }
     @IBAction func actionRemoveQuantity(_ sender: UIButton) {
-        let modifyingItem : [FoodDetails] = CartDataSource.sharedCart.carts.value.filter{ $0.foodId! == foodDetailVM.foodId! }
+        let modifyingItem : [FoodDetails] = UserDataSource.sharedInstance.carts.value.filter{ $0.foodId! == foodDetailVM.foodId! }
         if modifyingItem.count > 0 {
             let cart = modifyingItem[0]
             cart.cartQuantity -= 1
@@ -59,7 +59,7 @@ class MenuTableCell: UITableViewCell {
     }
     
     @IBAction func actionAddQuantity(_ sender: UIButton) {
-        let modifyingItem : [FoodDetails] = CartDataSource.sharedCart.carts.value.filter{ $0.dishName! == foodDetailVM.dishName! }
+        let modifyingItem : [FoodDetails] = UserDataSource.sharedInstance.carts.value.filter{ $0.dishName! == foodDetailVM.dishName! }
 //        if modifyingItem.count > 0 {
             let cart = modifyingItem[0]
             cart.cartQuantity += 1
@@ -70,7 +70,7 @@ class MenuTableCell: UITableViewCell {
     
     
     func showQuantityButton() {
-         let modifyingItem : [FoodDetails] = CartDataSource.sharedCart.carts.value.filter{ $0.dishName! == foodDetailVM.dishName! }
+         let modifyingItem : [FoodDetails] = UserDataSource.sharedInstance.carts.value.filter{ $0.dishName! == foodDetailVM.dishName! }
         let cart = modifyingItem[0]
         cart.cartQuantity += 1
         lblQuantity.text = "\(cart.cartQuantity)"

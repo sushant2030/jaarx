@@ -198,15 +198,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Y8X-O8-aYC">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AyZ-lM-6w5">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vgK-9E-HzR">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1Q-oD-tLt">
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="60"/>
+                                                <state key="normal" title="Like">
+                                                    <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBx-up-CL5">
+                                                <rect key="frame" x="83" y="0.0" width="82.5" height="60"/>
+                                                <state key="normal" title="Menu">
+                                                    <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5w-EM-T0B">
+                                                <rect key="frame" x="165.5" y="0.0" width="83" height="60"/>
+                                                <state key="normal" title="Navigate">
+                                                    <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cy6-Tx-nxw">
+                                                <rect key="frame" x="248.5" y="0.0" width="82.5" height="60"/>
+                                                <state key="normal" title="Review">
+                                                    <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AM-Q5-Ihn">
+                                                <rect key="frame" x="331" y="0.0" width="83" height="60"/>
+                                                <state key="normal" title="Share">
+                                                    <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6bu-BW-OFc"/>
+                                    <constraint firstItem="vgK-9E-HzR" firstAttribute="top" secondItem="AyZ-lM-6w5" secondAttribute="top" id="IBa-Xi-YXQ"/>
+                                    <constraint firstItem="vgK-9E-HzR" firstAttribute="leading" secondItem="AyZ-lM-6w5" secondAttribute="leading" id="POS-Zx-GFh"/>
+                                    <constraint firstAttribute="bottom" secondItem="vgK-9E-HzR" secondAttribute="bottom" id="QeC-Ad-or2"/>
+                                    <constraint firstAttribute="trailing" secondItem="vgK-9E-HzR" secondAttribute="trailing" id="Tjc-sc-yVE"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Y8X-O8-aYC" firstAttribute="trailing" secondItem="khg-rF-HMC" secondAttribute="trailing" id="5Ch-1N-DBJ"/>
+                            <constraint firstItem="AyZ-lM-6w5" firstAttribute="top" secondItem="Y8X-O8-aYC" secondAttribute="bottom" id="GpC-aw-BJT"/>
+                            <constraint firstItem="AyZ-lM-6w5" firstAttribute="top" secondItem="Y8X-O8-aYC" secondAttribute="bottom" id="Iho-Kw-PMr"/>
+                            <constraint firstItem="AyZ-lM-6w5" firstAttribute="trailing" secondItem="khg-rF-HMC" secondAttribute="trailing" id="J2e-Ud-xZi"/>
+                            <constraint firstItem="khg-rF-HMC" firstAttribute="bottom" secondItem="AyZ-lM-6w5" secondAttribute="bottom" id="MGo-E5-Yyg"/>
                             <constraint firstItem="Y8X-O8-aYC" firstAttribute="top" secondItem="khg-rF-HMC" secondAttribute="top" id="XgF-F6-NXS"/>
-                            <constraint firstAttribute="bottom" secondItem="Y8X-O8-aYC" secondAttribute="bottom" id="mTa-Ay-Bi7"/>
+                            <constraint firstItem="AyZ-lM-6w5" firstAttribute="leading" secondItem="khg-rF-HMC" secondAttribute="leading" id="n8x-DA-LCw"/>
                             <constraint firstItem="Y8X-O8-aYC" firstAttribute="leading" secondItem="khg-rF-HMC" secondAttribute="leading" id="vs1-Yb-yNv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="khg-rF-HMC"/>
@@ -217,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4X-fg-FMZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580" y="798"/>
+            <point key="canvasLocation" x="579.71014492753625" y="797.54464285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fct-Ux-tbI">

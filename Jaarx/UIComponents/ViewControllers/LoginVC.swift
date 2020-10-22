@@ -36,8 +36,8 @@ class LoginVC: UIViewController {
             case .success(let tokenDetails):
                 user.token = tokenDetails.userTokenData?.token ?? ""
                 user.user_id = tokenDetails.userTokenData?.userId ?? ""
-                CartDataSource.sharedCart.setUser(user: user)
-                CartDataSource.sharedCart.getUserDetails { (isSuccess) in
+                UserDataSource.sharedInstance.setUser(user: user)
+                UserDataSource.sharedInstance.getUserDetails { (isSuccess) in
                     if isSuccess {
                         if let tabBarVC = UIStoryboard.tabBarVC(){
                             self.view.window?.rootViewController = tabBarVC

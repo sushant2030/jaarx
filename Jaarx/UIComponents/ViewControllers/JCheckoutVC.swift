@@ -25,7 +25,7 @@ class JCheckoutVC: UIViewController {
     let checkoutVM = CheckoutVM()
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkoutVM.setUserFlow(withMode: CartDataSource.sharedCart.userFlow)
+        checkoutVM.setUserFlow(withMode: UserDataSource.sharedInstance.userFlow)
         checkoutVM.getDetails()
         bindData()
         installView()

@@ -41,8 +41,8 @@ extension QRCodeScannerVC : QRScannerViewDelegate {
             if paramArray.count > 1 {
                 let resId = paramArray[0]
                 let tableId = paramArray[1]
-                CartDataSource.sharedCart.user.tableId = Int(tableId)!
-                CartDataSource.sharedCart.userFlow = .scan
+                UserDataSource.sharedInstance.user.tableId = Int(tableId)!
+                UserDataSource.sharedInstance.userFlow = .scan
                 if let menuVC = UIStoryboard.menuVC() {
                     menuVC.setRestaurantId(resId: resId)
                     self.navigationController?.pushViewController(menuVC, animated: true)

@@ -32,7 +32,7 @@ class JSearchVC: UIViewController {
         searchBar.delegate = self
         searchTableView.delegate = self
         searchTableView.dataSource = self
-        searchTableView.register(UINib.init(nibName: SearchTableCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: SearchTableCell.cellIdentifier())
+        searchTableView.register(UINib.init(nibName: RestaurantListCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: RestaurantListCell.cellIdentifier())
     }
     
     func bindData() {
@@ -78,7 +78,7 @@ extension JSearchVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableCell.cellIdentifier(), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantListCell.cellIdentifier(), for: indexPath)
         let searchData = searchViewModel.searchData.value[indexPath.row]
         if let cell = cell as? CellConfigurable {
             cell.setup(viewModel: searchData)

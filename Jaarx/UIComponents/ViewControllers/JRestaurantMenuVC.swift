@@ -43,7 +43,7 @@ class JRestaurantMenuVC: UIViewController {
                 self.headerCollectionView.reloadData()
             }
         }
-        CartDataSource.sharedCart.carts.addObserver(fireNow: false) { [weak self] (carts) in
+        UserDataSource.sharedInstance.carts.addObserver(fireNow: false) { [weak self] (carts) in
             DispatchQueue.main.async {
                 self?.lblItemCount.text = "\(carts.count) Items"
                 let count = carts.reduce(0) { (result, cart)  in

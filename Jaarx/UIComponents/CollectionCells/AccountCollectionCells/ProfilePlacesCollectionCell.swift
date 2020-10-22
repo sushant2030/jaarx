@@ -20,7 +20,7 @@ class ProfilePlacesCollectionCell: UICollectionViewCell {
     func registerViews() {
            profileTableView.delegate = self
            profileTableView.dataSource = self
-           profileTableView.register(UINib.init(nibName: SearchTableCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: SearchTableCell.cellIdentifier())
+           profileTableView.register(UINib.init(nibName: RestaurantListCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: RestaurantListCell.cellIdentifier())
        }
 
 }
@@ -32,7 +32,7 @@ extension ProfilePlacesCollectionCell : UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableCell.cellIdentifier(), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantListCell.cellIdentifier(), for: indexPath)
         return cell
     }
     
