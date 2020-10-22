@@ -16,6 +16,10 @@ extension UIStoryboard {
     static func homeVC() -> HomeVC? {
         return mainStoryboard().instantiateViewController(withIdentifier: "HomeVC") as? HomeVC
     }
+    static func editCartVC() -> JEditCartVC? {
+        return orderStoryboard().instantiateViewController(identifier: "JEditCartVC") as? JEditCartVC
+    }
+    
     static func restaurantDetailVCWithRestaurant(id : String) -> RestaurantDetailVC? {
         let restaurantVC = mainStoryboard().instantiateViewController(withIdentifier: "RestaurantDetailVC") as? RestaurantDetailVC
         restaurantVC?.restaurantId = id
@@ -35,6 +39,17 @@ extension UIStoryboard {
     }
     static func preOrderVC() -> PreOrderVC? {
         return orderStoryboard().instantiateViewController(identifier: "PreOrderVC") as? PreOrderVC
+    }
+    
+    static func menuVC() -> JRestaurantMenuVC? {
+        return orderStoryboard().instantiateViewController(identifier: "JRestaurantMenuVC") as? JRestaurantMenuVC
+    }
+    
+    static func checkOutVC() -> JCheckoutVC? {
+        return orderStoryboard().instantiateViewController(identifier: "JCheckoutVC") as? JCheckoutVC
+    }
+    static func paymentVC() -> JPaymentVC? {
+        return orderStoryboard().instantiateViewController(identifier: "JPaymentVC") as? JPaymentVC
     }
 }
 
@@ -182,3 +197,42 @@ extension Date {
     
 }
 
+extension Collection {
+    func json() -> String? {
+        guard let data = try? JSONSerialization.data(withJSONObject: self, options: []) else {
+            return nil
+        }
+        return String(data: data, encoding: String.Encoding.utf8)
+    }
+    func jsonData() -> Data? {
+        guard let data = try? JSONSerialization.data(withJSONObject: self, options: []) else {
+            return nil
+        }
+        return data
+    }
+    
+}
+
+extension UIColor {
+    public func getHexColor(hex: String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+
+        if ((cString.count) != 6) {
+            return .clear
+        }
+
+        var rgbValue:UInt64 = 0
+        Scanner(string: cString).scanHexInt64(&rgbValue)
+
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+}

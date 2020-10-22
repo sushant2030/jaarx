@@ -18,6 +18,11 @@ class RestaurantDetailVC : UIViewController{
         self.restaurantDetailVM = RestaurantDetailViewModel.init(restaurantId: self.restaurantId!)
         self.bindData()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+//        CartDataSource.sharedCart = nil
+    }
     func registerDelegateAndDataSource() {
         self.restaurantDetailTableView.delegate = self
         self.restaurantDetailTableView.dataSource = self
@@ -59,8 +64,12 @@ class RestaurantDetailVC : UIViewController{
         }
     }
     func navigateToPreOrder(restaurantId:String) {
-        if let preOrderVC = UIStoryboard.preOrderVC(){
-            self.navigationController?.pushViewController(preOrderVC, animated: true)
+//        if let preOrderVC = UIStoryboard.preOrderVC(){
+//            self.navigationController?.pushViewController(preOrderVC, animated: true)
+//        }
+        if let menuVC = UIStoryboard.menuVC() {
+            menuVC.setRestaurantId(resId: restaurantId)
+            self.navigationController?.pushViewController(menuVC, animated: true)
         }
     }
     

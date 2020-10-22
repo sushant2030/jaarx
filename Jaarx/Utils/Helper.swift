@@ -15,9 +15,9 @@ struct Helper {
                               
             let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
             let decoded = try JSONSerialization.jsonObject(with: jsonData, options: [])
-            if let dictFromJSON = decoded as? [String:String] {
+            if let dictFromJSON = decoded as? [String:Any] {
             print(dictFromJSON)
-            let jsonString = dictFromJSON.reduce("") { "\($0)\($1.0)=\($1.1)&" }
+            let jsonString = dictFromJSON.reduce("?") { "\($0)\($1.0)=\($1.1)&" }
                 return String(jsonString.dropLast())
             } else {
                 return ""

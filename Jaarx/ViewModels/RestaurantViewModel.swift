@@ -33,7 +33,7 @@ class RestaurantViewModel {
         case .hashtags:
             return CGSize.init(width: 117, height: 42)
         default:
-            return CGSize.init(width: width, height: (width * 2))
+            return CGSize.init(width: width, height: bounds.height)
         }
     }
     func getEdgeInsets() -> UIEdgeInsets {

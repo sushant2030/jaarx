@@ -16,7 +16,8 @@ class TagCollectionCell: UICollectionViewCell {
         // Initialization code
     }
     override func layoutSubviews() {
-        self.makeViewCornerRadiusWithRadi(radius: self.frame.height/2)
+        makeViewCornerRadiusWithRadi(radius: self.frame.height/2)
+        dropShadow()
     }
 }
 extension TagCollectionCell:CellConfigurable
@@ -25,6 +26,9 @@ extension TagCollectionCell:CellConfigurable
         guard let viewModel = (viewModel as? RestaurantCellVM) else {return}
         if let categoryName = viewModel.categoryName{
             self.tagLabel.text = categoryName
+        }
+        if let categoryColor = viewModel.categoryColor {
+            self.backgroundColor = UIColor().getHexColor(hex: categoryColor)
         }
     }
 }

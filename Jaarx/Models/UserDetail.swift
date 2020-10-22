@@ -23,6 +23,7 @@ struct UserData : Codable {
     let roleId: String?
     let resId: String?
     let cartDetails : CartDetails?
+    let roleDetails : RoleDetails?
     
     enum CodingKeys : String, CodingKey {
         case userId = "user_id"
@@ -33,9 +34,17 @@ struct UserData : Codable {
         case userEmail = "user_email"
         case roleId = "role_id"
         case resId = "res_id"
-        case cartDetails = "cart_details"
-       }
+        case cartDetails = "cartDetails"
+        case roleDetails = "role_details"
+    }
     
+}
+
+struct RoleDetails : Codable {
+    let roleName : String?
+    enum CodingKeys : String, CodingKey {
+        case roleName = "role_name"
+    }
 }
 
 struct CartDetails : Codable {

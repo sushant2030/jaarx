@@ -26,6 +26,9 @@ struct Constants {
         static let resId = "res_id"
         static let review = "review"
         static let status = "status"
+        static let restaurantId = "restaurantId"
+        static let restaurantFoodItems = "fooditems"
+        static let orderId = "orderId"
     }
     struct UserAPIParameter{
         static let userId = "userId"
@@ -54,13 +57,28 @@ enum SearchResultType : String {
     case food = "food"
 }
 
+enum MenuCollectionType {
+    case header
+    case menu
+}
+
 enum CellAction {
+    case preOrder
+    case scan
+}
+
+enum UserFlow {
     case preOrder
     case scan
 }
 enum RestaurantDetailCellType {
     case ScanNOrder
     case ReserveNOrder
+}
+
+enum PaymentMode {
+    case cash
+    case online
 }
 
 enum HTTPHeaderField: String {
@@ -86,7 +104,7 @@ let activityBackgroundViewTag = 475647
 
 enum BucketCellHeight : CGFloat
 {
-    case small =  100.0
+    case small =  90.0
     case medium = 150.0
     case large = 250.0
 }

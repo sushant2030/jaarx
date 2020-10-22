@@ -19,6 +19,11 @@ class LongCollectionCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         shadowView.dropShadow()
+        btnScan.makeViewCornerRadiusWithRadi(radius: btnScan.frame.size.height / 2)
+        btnScan.makeAppThemeColorBorder()
+        btnPreOrder.makeViewCornerRadiusWithRadi(radius: btnScan.frame.size.height / 2)
+        btnPreOrder.makeAppThemeColorBorder()
+        btnPreOrder.dropShadow()
         // Initialization code
     }
     override func prepareForReuse() {
