@@ -11,7 +11,8 @@ import Alamofire
 
 enum RestaurantRouter {
     case add(id : Int)
-    case addCart(params : [String:[[String:Int]]])
+    case addCart(params : [String:Any])
+    case addOrder(params : [String:Any])
     case getFavorites(userId : String)
     case addReviews(resId : String , review : String)
     case setFavorite(userId : String, resId : String , status : Bool)
@@ -43,6 +44,8 @@ extension RestaurantRouter : APIRouter {
             return "/user/restaurantDetails"
         case .getMenu:
             return "/menu/items"
+        case .addOrder:
+            return "/order/add"
         }
     }
     
@@ -73,10 +76,26 @@ extension RestaurantRouter : APIRouter {
         case .getMenu(let id):
             return [Constants.RestaurantAPIParameter.restaurantId : id]
         case .addCart(let params):
-            return [Constants.RestaurantAPIParameter.restaurantFoodItems : params]
+            return params
+        case .addOrder(let params):
+            return params
         default:
             return nil
         }
+    }
+    
+    func asOrderURLRequest() throws -> URLRequest {
+        var urlRequest = URLRequest.init(url: self.url)
+        urlRequest.httpMethod = httpMethod.rawValue
+        urlRequest.headers = headers!
+        if httpMethod == .post {
+            if let parameters = parameters, parameters.count > 0 {
+                if let jsonObject = parameters.jsonData() {
+                    urlRequest.httpBody = jsonObject
+                }
+            }
+        }
+        return urlRequest
     }
     
 }

@@ -28,7 +28,7 @@ extension TagCollectionCell:CellConfigurable
             self.tagLabel.text = categoryName
         }
         if let categoryColor = viewModel.categoryColor {
-            self.backgroundColor = UIColor.init(hex: categoryColor)
+            self.backgroundColor = UIColor().getHexColor(hex: categoryColor)
         }
     }
 }

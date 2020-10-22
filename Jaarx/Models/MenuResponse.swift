@@ -55,6 +55,7 @@ class FoodDetails : Codable , RowViewModel {
     let vegan : Bool?
     let foodImage : String?
     var cartQuantity = 0
+    let status : String?
     
     func getImageUrl() ->URL?{
         if let image = self.foodImage {
@@ -75,6 +76,7 @@ class FoodDetails : Codable , RowViewModel {
         case quantityDescription = "quantity_description"
         case vegan = "vegan"
         case foodImage = "food_image"
+        case status = "status"
     }
 }
 

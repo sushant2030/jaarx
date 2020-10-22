@@ -28,6 +28,7 @@ struct Constants {
         static let status = "status"
         static let restaurantId = "restaurantId"
         static let restaurantFoodItems = "fooditems"
+        static let orderId = "orderId"
     }
     struct UserAPIParameter{
         static let userId = "userId"
@@ -65,9 +66,19 @@ enum CellAction {
     case preOrder
     case scan
 }
+
+enum UserFlow {
+    case preOrder
+    case scan
+}
 enum RestaurantDetailCellType {
     case ScanNOrder
     case ReserveNOrder
+}
+
+enum PaymentMode {
+    case cash
+    case online
 }
 
 enum HTTPHeaderField: String {

@@ -135,10 +135,50 @@ class APIClient {
         }
     }
     
-    static func addCartForRestaurantWithDetail(foodItems : [String:[[String:Int]]], completion:@escaping (AFResult<GenericResponse>)-> Void) {
+    static func addCartForRestaurantWithDetail(foodItems : [String:Any], completion:@escaping (AFResult<GenericResponse>)-> Void) {
         do {
-            let restaurantRouter = try RestaurantRouter.addCart(params: foodItems).asURLRequest()
+            let restaurantRouter = try RestaurantRouter.addCart(params: foodItems).asOrderURLRequest()
             performRequest(route: restaurantRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    
+    static func addOrderForRestaurantWithDetail(foodItems : [String:Any], completion:@escaping (AFResult<GenericResponse>)-> Void) {
+        do {
+            let restaurantRouter = try RestaurantRouter.addOrder(params: foodItems).asOrderURLRequest()
+            performRequest(route: restaurantRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    
+    static func getUserDetails(completion:@escaping (AFResult<UserDetail>) -> Void) {
+        do {
+            let userRouter = try UserRouter.userDetails(userId: CartDataSource.sharedCart.user?.user_id ?? "").asURLRequest()
+            performRequest(route: userRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    
+    static func getCartDetails(completion:@escaping (AFResult<CartCheckoutResponse>) -> Void) {
+        do {
+            let userRouter = try UserRouter.getCartDetails(userId: CartDataSource.sharedCart.user?.user_id ?? "").asURLRequest()
+            performRequest(route: userRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
+    
+    static func getOrderDetails(completion:@escaping (AFResult<OrderCheckoutResponse>) -> Void) {
+        do {
+            let userRouter = try UserRouter.getOrderDetails(orderId: CartDataSource.sharedCart.user.orderId ?? 0).asURLRequest()
+            performRequest(route: userRouter, completion: completion)
         }
         catch (let error){
             print(error)

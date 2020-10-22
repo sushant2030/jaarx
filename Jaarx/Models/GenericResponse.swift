@@ -10,4 +10,5 @@ import Foundation
 struct GenericResponse : Codable {
     let message : String?
     let code : String?
+    let order_id : Int?
 }

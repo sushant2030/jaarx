@@ -45,10 +45,16 @@ extension EditCartCell : CellConfigurable {
     func setup(viewModel: RowViewModel) {
         if let viewModel = viewModel as? FoodDetails {
             cartItemModel = viewModel
-            lblFoodCount.text = "\(viewModel.quantity!)"
             lblTitle.text = viewModel.dishName
             lblDescription.text = viewModel.dishDescription
-            lblFoodCount.text = "\(viewModel.cartQuantity)"
+            lblFoodCount.text = "x \(viewModel.cartQuantity)"
+            lblPrice.text = "₹\(viewModel.dishPrice ?? "")"
+            self.backgroundColor = .clear
+            if let imageUrl = viewModel.foodImage {
+                if let imageUrl = URL.init(string: imageUrl){
+                    dishImageView.downloaded(from: imageUrl)
+                }
+            }
         }
     }
 }

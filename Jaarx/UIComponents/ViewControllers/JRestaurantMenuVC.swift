@@ -107,16 +107,17 @@ extension JRestaurantMenuVC : UICollectionViewDelegate, UICollectionViewDataSour
             model.isSelected = true
             cell.setSelection(isSelected:true)
         }
+        self.headerCollectionView.reloadData()
         
     }
                       
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if let cell  = collectionView.cellForItem(at: indexPath) as? MenuHeaderCell {
-            let model = self.menuViewModel.cuisineCategories.value[indexPath.item]
-            model.isSelected = false
-            cell.setSelection(isSelected:false)
+
+         let model = self.menuViewModel.cuisineCategories.value.filter({ $0.isSelected == true})
+        if model.count > 0 {
+            model[0].isSelected = false
         }
-        
+            
         
     }
     
