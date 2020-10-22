@@ -80,6 +80,16 @@ class APIClient {
         }
     }
     
+    static func getFavoriteRestaurantsForUser(userId : String, completion:@escaping (AFResult<FavoriteRestaurantList>) -> Void){
+           do {
+            let restaurantRouter = try RestaurantRouter.getFavorites(userId: userId).asOrderURLRequest()
+               performRequest(route: restaurantRouter, completion:completion)
+           }
+           catch (let error){
+               print(error)
+           }
+       }
+    
     static func requestOTPForPhoneNumber(user : User, completion:@escaping (AFDataResponse<Data>) -> Void) {
             do {
                 let requestOTPRouter = try LoginRouter.requestOTP(phoneNumber: user.phoneNumber, countrycode: "91").asURLRequest()

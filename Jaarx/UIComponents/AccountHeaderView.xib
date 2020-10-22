@@ -176,8 +176,11 @@
             </subviews>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="emailLabel" destination="l1e-B5-VYF" id="TIy-Ie-SA0"/>
                 <outlet property="likedPlaceHighlightView" destination="nYI-qG-nXm" id="aDl-Jd-nMf"/>
                 <outlet property="likedPlacesButton" destination="9X9-Yh-Jjo" id="fmS-u4-Rnu"/>
+                <outlet property="nameLabel" destination="PrQ-0q-OZX" id="yw3-FR-8fS"/>
+                <outlet property="phoneNumberLabel" destination="ZCV-X0-0fq" id="DmP-Nj-Q0N"/>
                 <outlet property="settingButton" destination="WGN-ms-nF4" id="zzs-rK-OUf"/>
                 <outlet property="settingHighlightView" destination="dxw-ln-ogJ" id="Wi3-b3-gEK"/>
                 <outlet property="visitedPlaceHighlightView" destination="mrN-Kq-Tx0" id="Si7-Hn-VLJ"/>

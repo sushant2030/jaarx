@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -103,7 +102,7 @@
                 <outlet property="holderView" destination="fhN-0U-4Nu" id="kFE-OH-kGi"/>
                 <outlet property="lblDescription" destination="yrm-vn-QHN" id="kol-hs-Ojb"/>
                 <outlet property="lblRestaurantTitle" destination="gmZ-lr-5ip" id="DpB-gg-CyI"/>
-                <outlet property="searchedImageView" destination="1rq-AY-byf" id="aJZ-JP-nll"/>
+                <outlet property="restaurantImageView" destination="1rq-AY-byf" id="aJZ-JP-nll"/>
             </connections>
             <point key="canvasLocation" x="264.49275362318843" y="154.01785714285714"/>
         </tableViewCell>

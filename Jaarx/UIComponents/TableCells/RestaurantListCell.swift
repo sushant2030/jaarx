@@ -15,7 +15,7 @@ class RestaurantListCell: UITableViewCell {
     @IBOutlet weak var lblRestaurantTitle: UILabel!
     @IBOutlet weak var btnPreOrder: UIButton!
     @IBOutlet weak var btnScan: UIButton!
-    @IBOutlet weak var searchedImageView: UIImageView!
+    @IBOutlet weak var restaurantImageView: UIImageView!
     var searchData:SearchData?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -58,7 +58,7 @@ extension RestaurantListCell : CellConfigurable {
             lblRestaurantTitle.text = searchVM.restaurantName
             if searchVM.type == .restaurant {
                 if let imagePathURL = searchVM.getImageUrl(){
-                    searchedImageView.downloaded(from: imagePathURL)
+                    restaurantImageView.downloaded(from: imagePathURL)
                 }
             }
         }

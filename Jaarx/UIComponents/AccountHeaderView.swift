@@ -16,6 +16,9 @@ class AccountHeaderView: UIView {
     @IBOutlet weak var likedPlacesButton: UIButton!
     @IBOutlet weak var settingButton: UIButton!
     @IBOutlet weak var settingHighlightView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     var buttonAction: ((UIButton) -> Void)?
     
     class func instanceFromNib() -> UIView {
@@ -23,6 +26,10 @@ class AccountHeaderView: UIView {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.phoneNumberLabel.text = UserDataSource.sharedInstance.user.phoneNumber
+               self.emailLabel.text = UserDataSource.sharedInstance.user.email
+        self.nameLabel.text = UserDataSource.sharedInstance.user.firstName + " " + UserDataSource.sharedInstance.user.lastName
+               
     }
     
     @IBAction func likedPlaceButtonAction(_ sender: UIButton) {
