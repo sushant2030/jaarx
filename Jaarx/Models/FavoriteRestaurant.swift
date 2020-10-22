@@ -29,10 +29,10 @@ struct FavoriteData : Codable {
 struct FavoriteRestaurantList : Codable {
     let code : Int?
     let message : String?
-    let data : [FavoriteRes]
+    let favoriteData : [FavoriteRest]?
 }
 
-struct FavoriteRes : Codable {
+struct FavoriteRest : Codable {
     let id:String?
     let userId:String?
     let resId:String?

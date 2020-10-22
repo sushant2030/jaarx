@@ -61,6 +61,13 @@ extension RestaurantListCell : CellConfigurable {
                     restaurantImageView.downloaded(from: imagePathURL)
                 }
             }
+        } else if let viewModel = (viewModel as? RestaurantCellVM) {
+            lblDescription.text = viewModel.location ?? ""
+            lblRestaurantTitle.text = viewModel.title ?? ""
+            if let imagePathURL = viewModel.imageDetails{
+                //TODO
+//                restaurantImageView.downloaded(from: imagePathURL)
+            }
         }
     }
     

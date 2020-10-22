@@ -21,12 +21,12 @@ class FavoriteRestaurantsVM {
         }
     }
     func buildFavoriteRestaurantViewModel(favoriteRestaurants:FavoriteRestaurantList) {
-       // if let favRestaurantList = favoriteRestaurants.data{
-        for favoriteRestaurant in favoriteRestaurants.data{
+        if let favRestaurantList = favoriteRestaurants.favoriteData {
+        for favoriteRestaurant in favRestaurantList{
             let restaurantVM = RestaurantCellVM.init(restaurantId: favoriteRestaurant.favRestaurant.resId, imageDetails: favoriteRestaurant.favRestaurant.resImageDetails, location: favoriteRestaurant.favRestaurant.resLocation, title: favoriteRestaurant.favRestaurant.resName, categoryName: nil, categoryColor: nil)
             self.favoriteRestaurantVM.value.append(restaurantVM)
         }
-       // }
+        }
     }
     
     func getFavoriteRestaurantsForUser(userId:String) {

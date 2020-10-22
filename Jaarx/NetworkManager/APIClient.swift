@@ -82,7 +82,7 @@ class APIClient {
     
     static func getFavoriteRestaurantsForUser(userId : String, completion:@escaping (AFResult<FavoriteRestaurantList>) -> Void){
            do {
-            let restaurantRouter = try RestaurantRouter.getFavorites(userId: userId).asOrderURLRequest()
+            let restaurantRouter = try RestaurantRouter.getFavorites(userId: userId).asURLRequest()
                performRequest(route: restaurantRouter, completion:completion)
            }
            catch (let error){
