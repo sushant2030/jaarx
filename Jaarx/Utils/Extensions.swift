@@ -143,6 +143,14 @@ extension UIView{
     }
 }
 
+extension UIViewController {
+    func setNavigationTitle(withTitle title:String)  {
+        self.navigationItem.title = title
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white,NSAttributedString.Key.font:UIFont.init(name: "Helvetica Neue", size: 25)]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
+    }
+}
+
 extension UITableViewCell {
     /// Generated cell identifier derived from class name
     public static func cellIdentifier() -> String {

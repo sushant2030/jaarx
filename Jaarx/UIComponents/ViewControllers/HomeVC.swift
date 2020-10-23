@@ -17,9 +17,9 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerDelegateAndDataSource()
-        homeViewModel.getHomeData()
+//        homeViewModel.getHomeData()
         bindData()
-//        navigateToRestaurantDetailVC(restaurantId: "15")
+        navigateToRestaurantDetailVC(restaurantId: "15")
         // Do any additional setup after loading the view.
     }
     
@@ -30,7 +30,7 @@ class HomeVC: UIViewController {
         homeTableView.register(UINib.init(nibName: CarouselTableCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: CarouselTableCell.cellIdentifier())
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor().getHexColor(hex: "#009EFD")
-        self.navigationController?.title = "Jaarx"
+        self.navigationController?.navigationItem.title = "Jaarx"
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
 
 

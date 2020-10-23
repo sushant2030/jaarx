@@ -65,6 +65,10 @@ class JOrderHubVC: UIViewController {
     }
     
     @IBAction func actionBillGeneration(_ sender: Any) {
+        if let checkoutVC = UIStoryboard.checkOutVC() {
+                               checkoutVC.modalPresentationStyle = .fullScreen
+                               self.present(checkoutVC, animated: true, completion: nil)
+                           }
     }
     /*
     // MARK: - Navigation
