@@ -140,16 +140,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3B407C6E-D0BB-4302-8C8A-F74D7104A0F3"
+            uuid = "634A3C79-8B5B-4349-971B-0085E6998922"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/ViewControllers/JEditCartVC.swift"
+            filePath = "Jaarx/UIComponents/TableCells/MenuTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "makeCornerRadius()"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "setup(viewModel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12008583-7F53-4E4E-9AE4-41371137FE3B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jaarx/ViewModels/MenuViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "getCellSize(collectionView:collectionViewType:indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

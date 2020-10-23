@@ -39,10 +39,18 @@ class MenuViewModel {
         }
     }
     
-    func getCellSize(collectionView : UICollectionView, collectionViewType : MenuCollectionType) -> CGSize {
+    func getCellSize(collectionView : UICollectionView, collectionViewType : MenuCollectionType, indexPath:IndexPath) -> CGSize {
         switch collectionViewType {
         case .header:
-            return CGSize.init(width: 100, height: collectionView.bounds.size.height)
+            let viewModel = cuisineCategories.value[indexPath.row]
+            let cuisineName = viewModel.cuisineCategoryName ?? ""
+            var spaces = 0
+            if cuisineName.contains(" ") {
+             spaces = cuisineName.components(separatedBy: " ").count - 1
+            }
+            let width = CGFloat((cuisineName.count + spaces) + 10) * 5
+            
+            return CGSize.init(width: width, height: collectionView.bounds.size.height)
         default:
             return collectionView.bounds.size
         }

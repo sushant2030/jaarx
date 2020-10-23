@@ -30,8 +30,8 @@ extension MenuHeaderCell: CellConfigurable {
     }
     
     func setSelection(isSelected : Bool)  {
-        
-        self.underLinedView.backgroundColor = isSelected ? .black : .clear
+        self.lblTitle.textColor = isSelected ? UIColor().getHexColor(hex: "#EAFF00") : .white
+        self.underLinedView.backgroundColor = isSelected ? UIColor().getHexColor(hex: "#EAFF00") : .clear
         
     }
     

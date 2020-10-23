@@ -30,10 +30,11 @@ class JRestaurantMenuVC: UIViewController {
         headerCollectionView.register(UINib.init(nibName: MenuHeaderCell.cellIdentifier(), bundle: nil), forCellWithReuseIdentifier: MenuHeaderCell.cellIdentifier())
         headerCollectionView.delegate = self
         headerCollectionView.dataSource = self
-        
+        self.navigationController?.title = "Menu"
     }
-    func setRestaurantId(resId : String) {
+    func setRestaurantId(resId : String, name : String) {
         menuViewModel.getRestaurantMenu(resId: resId)
+        self.navigationController?.title = name
     }
     
     func bindData()  {
@@ -94,7 +95,7 @@ extension JRestaurantMenuVC : UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return menuViewModel.getCellSize(collectionView: collectionView, collectionViewType: (collectionView == menuCollectionView) ? .menu : .header)
+        return menuViewModel.getCellSize(collectionView: collectionView, collectionViewType: (collectionView == menuCollectionView) ? .menu : .header, indexPath : indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

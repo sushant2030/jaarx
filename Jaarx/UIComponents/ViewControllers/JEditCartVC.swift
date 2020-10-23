@@ -9,7 +9,6 @@
 import UIKit
 
 class JEditCartVC: UIViewController {
-    @IBOutlet weak var testView: UIView!
     let editCartVM = EditCartViewModel()
     @IBOutlet weak var holderView: UIView!
     @IBOutlet weak var cartTableView: UITableView!
@@ -26,7 +25,6 @@ class JEditCartVC: UIViewController {
         super.viewWillAppear(animated)
         editCartVM.carts.value = UserDataSource.sharedInstance.carts.value
     }
-    
     func registerView() {
         cartTableView.delegate = self
         cartTableView.dataSource = self
@@ -35,11 +33,11 @@ class JEditCartVC: UIViewController {
     
     private func makeCornerRadius()   {
         let rectShape = CAShapeLayer()
-        rectShape.bounds = testView.frame
-        rectShape.position = testView.center
-        rectShape.path = UIBezierPath(roundedRect: testView.bounds, byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 50, height: 80)).cgPath
+        rectShape.bounds = holderView.frame
+        rectShape.position = holderView.center
+        rectShape.path = UIBezierPath(roundedRect: holderView.bounds, byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 100, height: 100)).cgPath
         //Here I'm masking the textView's layer with rectShape layer
-        testView.layer.mask = rectShape
+        holderView.layer.mask = rectShape
         cartTableView.backgroundColor = .clear
         btnPlaceHolder.makeCornerRadiusWithRadi(radius: 5.0)
     }
@@ -84,16 +82,6 @@ class JEditCartVC: UIViewController {
         }
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 

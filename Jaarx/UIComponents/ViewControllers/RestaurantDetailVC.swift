@@ -43,6 +43,7 @@ class RestaurantDetailVC : UIViewController{
             DispatchQueue.main.async {
                 self?.restaurantDetailTableView.reloadData()
                 self?.restaurantDetailTableView.isHidden = false
+                self?.navigationController?.title = restaurantHeaderVM?.restaurantName ?? ""
             }
         }
         restaurantDetailVM!.isLoading.addObserver {[weak self] isLoading in
@@ -68,7 +69,7 @@ class RestaurantDetailVC : UIViewController{
 //            self.navigationController?.pushViewController(preOrderVC, animated: true)
 //        }
         if let menuVC = UIStoryboard.menuVC() {
-            menuVC.setRestaurantId(resId: restaurantId)
+            menuVC.setRestaurantId(resId: restaurantId, name: restaurantDetailVM?.restaurantHeaderVM.value?.restaurantName ?? "")
             self.navigationController?.pushViewController(menuVC, animated: true)
         }
     }

@@ -12,19 +12,11 @@ class JMainTabbarVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewControllers()
+        
 
         // Do any additional setup after loading the view.
     }
     
-    
-    func setupViewControllers()  {
-        
-//        if let homeVC = UIStoryboard.homeVC(){
-//            let navigationVC = JNavigationVC.init(rootViewController: homeVC)
-//            self.viewControllers = [navigationVC]
-//        }
-    }
 
     /*
     // MARK: - Navigation

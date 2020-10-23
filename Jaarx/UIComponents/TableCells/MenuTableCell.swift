@@ -30,10 +30,12 @@ class MenuTableCell: UITableViewCell {
     }
 
     func updateViews()  {
-        btnMenu.makeViewCornerRadiusWithRadi(radius: 15)
-        btnMenu.makeAppThemeColorBorder()
-        menuButtonHolder.makeAppThemeColorBorder()
-        menuButtonHolder.makeViewCornerRadiusWithRadi(radius: 15)
+        btnMenu.makeViewCornerRadiusWithRadi(radius: 5)
+        btnMenu.layer.borderWidth = 1.0
+        menuButtonHolder.layer.borderWidth = 1.0
+        btnMenu.layer.borderColor = UIColor().getHexColor(hex: "#AFAFAF").cgColor
+        menuButtonHolder.layer.borderColor = UIColor().getHexColor(hex: "#AFAFAF").cgColor
+        menuButtonHolder.makeViewCornerRadiusWithRadi(radius: 5)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -89,6 +91,9 @@ extension MenuTableCell: CellConfigurable {
             self.lblPrice.text = viewModel.dishPrice
             if let image = viewModel.getImageUrl() {
                 self.foodImageView.downloaded(from: image)
+            }
+            if let isVeg = viewModel.vegan {
+                indicatorImage.image = UIImage.init(named: isVeg ? "veg" : "nonVeg")
             }
             menuButtonHolder.isHidden = true
         }
