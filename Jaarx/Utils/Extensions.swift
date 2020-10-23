@@ -51,6 +51,17 @@ extension UIStoryboard {
     static func paymentVC() -> JPaymentVC? {
         return orderStoryboard().instantiateViewController(identifier: "JPaymentVC") as? JPaymentVC
     }
+    static func cashVC() -> JCashVC? {
+        return orderStoryboard().instantiateViewController(identifier: "JCashVC") as? JCashVC
+    }
+    static func orderHub() -> JOrderHubVC? {
+        return orderStoryboard().instantiateViewController(identifier: "JOrderHubVC") as? JOrderHubVC
+    }
+    
+    
+    
+    
+    
 }
 
 extension UIButton {

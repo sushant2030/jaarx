@@ -77,6 +77,7 @@ struct OrderFoodDetails : Codable {
     let quantity : String?
     let status : String?
     let foodDetails : FoodDetails?
+    
     enum CodingKeys: String, CodingKey {
         case orderFoodId = "orderFood_id"
         case foodId  = "food_id"
@@ -100,6 +101,7 @@ struct OrderAmountDetails : Codable {
     let orderFoodDetails : [OrderFoodDetails]?
     let orderStatus : String?
     let orderDateTime : String?
+    let restaurantDetails : RestaurantData?
     enum CodingKeys: String, CodingKey {
         case orderId = "order_id"
         case resId  = "res_id"
@@ -113,5 +115,7 @@ struct OrderAmountDetails : Codable {
         case paymentStatus = "payment_status"
         case orderStatus = "status"
         case orderDateTime = "order_date_time"
+        case restaurantDetails = "restaurant_details"
+
     }
 }

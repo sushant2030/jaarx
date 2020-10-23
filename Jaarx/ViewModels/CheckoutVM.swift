@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class CheckoutVM {
+    
     var userFlow : UserFlow = .preOrder
     var subTotal = Observable<String> (value : "loading..." )
     var offerDiscount = Observable<String> (value: "loading...")
@@ -38,7 +39,7 @@ class CheckoutVM {
             let dishName = cartFood.foodDetails?.dishName ?? ""
             let price = cartFood.foodDetails?.dishPrice ?? "0"
             let totalPrice = "\(Int(price)! * Int(quantity)!)"
-            let cartFood = CartFoodVM.init(withCartDetails: dishName, originalPrice: price, totalPrice: totalPrice, quantity: quantity)
+            let cartFood = CartFoodVM.init(withCartDetails: dishName, originalPrice: price, totalPrice: totalPrice, quantity: quantity, foodStatus: cartFood.foodDetails?.status ?? "", isVeg: cartFood.foodDetails?.vegan ?? true)
             foodData.value.append(cartFood)
         }
     }
@@ -49,7 +50,7 @@ class CheckoutVM {
             let dishName = cartFood.foodDetails?.dishName ?? ""
             let price = cartFood.foodDetails?.dishPrice ?? "0"
             let totalPrice = "\(Int(price)! * Int(quantity)!)"
-            let orderFood = CartFoodVM.init(withCartDetails: dishName, originalPrice: price, totalPrice: totalPrice, quantity: quantity)
+            let orderFood = CartFoodVM.init(withCartDetails: dishName, originalPrice: price, totalPrice: totalPrice, quantity: quantity, foodStatus: cartFood.foodDetails?.status ?? "", isVeg: cartFood.foodDetails?.vegan ?? true)
             orderFood.foodStatus = cartFood.foodDetails?.status ?? ""
             foodData.value.append(orderFood)
         }
@@ -86,6 +87,7 @@ class CheckoutVM {
                 let total = Float(gst)! + Float(sgst)! + Float(serviceCharge)!
                 self.gst.value = "\(total)"
                 self.total.value = orderCheckoutResponse.response?.totalPrice ?? "0.0"
+                UserDataSource.sharedInstance.cashDetails = CashDetails.init(withTotal: self.total.value, gst: self.gst.value, discount: "0.0",sub: self.subTotal.value)
                 self.parseOrderDetails(orderFoodDetails: orderCheckoutResponse.response?.orderFoodDetails ?? [])
                 self.orderNo.value = orderCheckoutResponse.response?.orderId ?? ""
             case .failure(let error):
@@ -109,11 +111,14 @@ class CartFoodVM : RowViewModel {
     let originalPrice : String?
     let totalPrice : String?
     let quantity : String?
-    var foodStatus : String? = nil
-    init(withCartDetails dishName:String, originalPrice : String, totalPrice : String, quantity : String) {
+    var foodStatus : String?
+    let isVeg : Bool?
+    init(withCartDetails dishName:String, originalPrice : String, totalPrice : String, quantity : String, foodStatus : String, isVeg : Bool) {
         self.dishName = dishName
         self.originalPrice = originalPrice
         self.totalPrice = totalPrice
         self.quantity = quantity
+        self.foodStatus = foodStatus
+        self.isVeg = isVeg
     }
 }

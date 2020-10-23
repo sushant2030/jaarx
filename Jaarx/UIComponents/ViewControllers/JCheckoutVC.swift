@@ -91,7 +91,10 @@ class JCheckoutVC: UIViewController {
     @IBAction func actionPayment(_ sender: UIButton) {
         switch checkoutVM.paymentMode.value {
         case .cash:
-            print("")
+            if let cashVC = UIStoryboard.cashVC() {
+                cashVC.modalPresentationStyle = .fullScreen
+                self.present(cashVC, animated: true, completion: nil)
+            }
         case .online:
             if let paymentVC = UIStoryboard.paymentVC() {
                 paymentVC.modalPresentationStyle = .fullScreen

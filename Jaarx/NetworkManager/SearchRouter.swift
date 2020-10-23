@@ -15,7 +15,7 @@ enum SearchRouter {
 
 extension SearchRouter : APIRouter {
     var path: String {
-        return "/search/item?"
+        return "/search/item"
     }
     
     var httpMethod: HTTPMethod {

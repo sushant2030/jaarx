@@ -23,6 +23,7 @@ protocol APIRouter: URLRequestConvertible {
 extension APIRouter {
     
     var baseURL: String {
+//        return "http://localhost:9444"
         return "http://ec2-3-134-99-218.us-east-2.compute.amazonaws.com:9444"
     }
     

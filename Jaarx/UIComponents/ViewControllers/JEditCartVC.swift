@@ -9,6 +9,7 @@
 import UIKit
 
 class JEditCartVC: UIViewController {
+    @IBOutlet weak var testView: UIView!
     let editCartVM = EditCartViewModel()
     @IBOutlet weak var holderView: UIView!
     @IBOutlet weak var cartTableView: UITableView!
@@ -21,6 +22,11 @@ class JEditCartVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        editCartVM.carts.value = UserDataSource.sharedInstance.carts.value
+    }
+    
     func registerView() {
         cartTableView.delegate = self
         cartTableView.dataSource = self
@@ -29,11 +35,11 @@ class JEditCartVC: UIViewController {
     
     private func makeCornerRadius()   {
         let rectShape = CAShapeLayer()
-        rectShape.bounds = holderView.frame
-        rectShape.position = holderView.center
-        rectShape.path = UIBezierPath(roundedRect: holderView.bounds, byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 100, height: 100)).cgPath
+        rectShape.bounds = testView.frame
+        rectShape.position = testView.center
+        rectShape.path = UIBezierPath(roundedRect: testView.bounds, byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 50, height: 80)).cgPath
         //Here I'm masking the textView's layer with rectShape layer
-        holderView.layer.mask = rectShape
+        testView.layer.mask = rectShape
         cartTableView.backgroundColor = .clear
         btnPlaceHolder.makeCornerRadiusWithRadi(radius: 5.0)
     }
@@ -67,9 +73,9 @@ class JEditCartVC: UIViewController {
         default:
             UserDataSource.sharedInstance.addOrder { (isSuccess) in
                 if isSuccess {
-                    if let checkoutVC = UIStoryboard.checkOutVC() {
-                        checkoutVC.modalPresentationStyle = .fullScreen
-                        self.present(checkoutVC, animated: true, completion: nil)
+                    if let orderHub = UIStoryboard.orderHub() {
+                        orderHub.modalPresentationStyle = .fullScreen
+                        self.present(orderHub, animated: true, completion: nil)
                     }
                 } else {
                     //SHOW ERROR

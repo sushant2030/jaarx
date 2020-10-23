@@ -63,10 +63,7 @@ class JRestaurantMenuVC: UIViewController {
     // MARK: - IBOutlets
     
     @IBAction func actionConfirm(_ sender: UIButton) {
-        if let editCartVC = UIStoryboard.editCartVC() {
-            editCartVC.modalPresentationStyle = .fullScreen
-            self.present(editCartVC, animated: true, completion: nil)
-        }
+        self.tabBarController?.selectedIndex = 2
     }
     
 

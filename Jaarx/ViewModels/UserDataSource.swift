@@ -24,8 +24,22 @@ class Cart : RowViewModel {
     }
 }
 
+class CashDetails {
+    var total : String?
+    var sub : String?
+    var gst : String?
+    var discount : String?
+    init(withTotal total:String, gst:String, discount : String, sub : String) {
+        self.total = total
+        self.gst = gst
+        self.discount = discount
+        self.sub = sub
+    }
+}
+
 class UserDataSource {
     static var sharedInstance = UserDataSource()
+    var cashDetails : CashDetails? 
     var user : User!
     var carts = Observable<[FoodDetails]> (value: [])
     var userFlow : UserFlow = .preOrder
@@ -58,7 +72,7 @@ class UserDataSource {
         })
         let foodItemDict = ["fooditems":fooditemsArray]
         print(foodItemDict)
-        APIClient.addCartForRestaurantWithDetail(foodItems: foodItemDict) { (response) in
+        APIClient.addCartForRestaurantWithDetail(foodItems: foodItemDict) {  (response) in
             switch response {
             case .success(let responseData):
                 if !(responseData.message?.contains("not"))!{

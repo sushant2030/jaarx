@@ -17,7 +17,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerDelegateAndDataSource()
-        homeViewModel.getHomeData()
+//        homeViewModel.getHomeData()
         bindData()
         // Do any additional setup after loading the view.
     }

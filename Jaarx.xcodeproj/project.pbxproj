@@ -68,6 +68,11 @@
 		5BA783392497E1B1007A4755 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA783382497E1B1007A4755 /* Helper.swift */; };
 		5BA9E698241030CC0044CDBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BA9E697241030CC0044CDBF /* Main.storyboard */; };
 		5BA9E69B241033B00044CDBF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9E69A241033B00044CDBF /* HomeVC.swift */; };
+		5BAFE03C25422F0B0004BFA1 /* JCashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFE03B25422F0B0004BFA1 /* JCashVC.swift */; };
+		5BAFE03E2542C07B0004BFA1 /* JOrderHubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFE03D2542C07B0004BFA1 /* JOrderHubVC.swift */; };
+		5BAFE0402542C27B0004BFA1 /* OrderHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFE03F2542C27B0004BFA1 /* OrderHubViewModel.swift */; };
+		5BAFE0432542D6390004BFA1 /* OrderHubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFE0412542D6390004BFA1 /* OrderHubCell.swift */; };
+		5BAFE0442542D6390004BFA1 /* OrderHubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BAFE0422542D6390004BFA1 /* OrderHubCell.xib */; };
 		5BBE873324F953BC005FABBD /* MenuResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE873224F953BC005FABBD /* MenuResponse.swift */; };
 		5BC0C70A24A27A1D0045782B /* FavoriteRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0C70824A27A1D0045782B /* FavoriteRestaurant.swift */; };
 		5BC0C70B24A27A1D0045782B /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC0C70924A27A1D0045782B /* UserDetail.swift */; };
@@ -208,6 +213,11 @@
 		5BA783382497E1B1007A4755 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		5BA9E697241030CC0044CDBF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5BA9E69A241033B00044CDBF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		5BAFE03B25422F0B0004BFA1 /* JCashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCashVC.swift; sourceTree = "<group>"; };
+		5BAFE03D2542C07B0004BFA1 /* JOrderHubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOrderHubVC.swift; sourceTree = "<group>"; };
+		5BAFE03F2542C27B0004BFA1 /* OrderHubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHubViewModel.swift; sourceTree = "<group>"; };
+		5BAFE0412542D6390004BFA1 /* OrderHubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHubCell.swift; sourceTree = "<group>"; };
+		5BAFE0422542D6390004BFA1 /* OrderHubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderHubCell.xib; sourceTree = "<group>"; };
 		5BBE873224F953BC005FABBD /* MenuResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuResponse.swift; sourceTree = "<group>"; };
 		5BC0C70824A27A1D0045782B /* FavoriteRestaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurant.swift; sourceTree = "<group>"; };
 		5BC0C70924A27A1D0045782B /* UserDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
@@ -349,6 +359,7 @@
 				5B8B8A3C24FBF076009E5E37 /* UserDataSource.swift */,
 				5B283665251784FE007C5710 /* EditCartViewModel.swift */,
 				5B4071A625405E8300E8FA9D /* CheckoutVM.swift */,
+				5BAFE03F2542C27B0004BFA1 /* OrderHubViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -490,6 +501,8 @@
 				5B09533724FAC1F0004264B8 /* MenuTableCell.xib */,
 				5B76E71F2540223600BC7753 /* OrderListCell.swift */,
 				5B76E7202540223600BC7753 /* OrderListCell.xib */,
+				5BAFE0412542D6390004BFA1 /* OrderHubCell.swift */,
+				5BAFE0422542D6390004BFA1 /* OrderHubCell.xib */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -545,6 +558,8 @@
 				5B283663251782F0007C5710 /* JEditCartVC.swift */,
 				5B76E71D254018E800BC7753 /* JCheckoutVC.swift */,
 				5B4071AA254088BA00E8FA9D /* JPaymentVC.swift */,
+				5BAFE03B25422F0B0004BFA1 /* JCashVC.swift */,
+				5BAFE03D2542C07B0004BFA1 /* JOrderHubVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -782,6 +797,7 @@
 				D8CA36AC24FC30630098AA64 /* ProfileSettingCollectionCell.xib in Resources */,
 				5BF85E6C24BD0BA2004335E8 /* Order.storyboard in Resources */,
 				D8CA36B024FD31FB0098AA64 /* AccountHeaderView.xib in Resources */,
+				5BAFE0442542D6390004BFA1 /* OrderHubCell.xib in Resources */,
 				5BECC6F924CCE1E30025B4BC /* RoundCollectionCell.xib in Resources */,
 				D8EFB7BF24CD2CB6000D72AF /* TagCollectionCell.xib in Resources */,
 				D851A06124F5954900279B67 /* AccountTableViewHeader.xib in Resources */,
@@ -967,6 +983,7 @@
 				5B4071A925405E9200E8FA9D /* CheckoutResponse.swift in Sources */,
 				5B72E1B0240EED600032F004 /* SquareCollectionCell.swift in Sources */,
 				5B72E173240ECFD40032F004 /* ViewController.swift in Sources */,
+				5BAFE03C25422F0B0004BFA1 /* JCashVC.swift in Sources */,
 				5B72E16F240ECFD40032F004 /* AppDelegate.swift in Sources */,
 				5B8546DD24942DAF0092743E /* RestaurantRouter.swift in Sources */,
 				D8EFB7C524CDC8E2000D72AF /* RestaurantPickaBooCell.swift in Sources */,
@@ -979,17 +996,20 @@
 				D830CC2424BCAE0400CDC75A /* QRCodeScannerVC.swift in Sources */,
 				5B09532E24FA7CFA004264B8 /* JRestaurantMenuVC.swift in Sources */,
 				5B76E7212540223600BC7753 /* OrderListCell.swift in Sources */,
+				5BAFE0402542C27B0004BFA1 /* OrderHubViewModel.swift in Sources */,
 				D8EFB7C824CDD97E000D72AF /* RestaurantDetailSectionHeader.swift in Sources */,
 				D829D4C524EFCA66005C000C /* RatingContainerView.swift in Sources */,
 				5B77677324CF43B200C88D4B /* PreOrderViewModel.swift in Sources */,
 				5B6FBF5024C2582100C04D3E /* SearchViewModel.swift in Sources */,
 				5B8B8A3D24FBF076009E5E37 /* UserDataSource.swift in Sources */,
 				5B76E71E254018E800BC7753 /* JCheckoutVC.swift in Sources */,
+				5BAFE0432542D6390004BFA1 /* OrderHubCell.swift in Sources */,
 				5B8546DB24942D610092743E /* LoginRouter.swift in Sources */,
 				5B6FBF4C24C250A600C04D3E /* SearchResponse.swift in Sources */,
 				5B23731A252069880001B511 /* EditCartCell.swift in Sources */,
 				D84D8C5824A24B1E007F7EDA /* AddOrderResponse.swift in Sources */,
 				5BC0C70A24A27A1D0045782B /* FavoriteRestaurant.swift in Sources */,
+				5BAFE03E2542C07B0004BFA1 /* JOrderHubVC.swift in Sources */,
 				5B61329024A8E8C70031448F /* JNavigationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
