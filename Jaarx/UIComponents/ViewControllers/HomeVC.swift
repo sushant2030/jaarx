@@ -17,9 +17,9 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerDelegateAndDataSource()
-//        homeViewModel.getHomeData()
+        homeViewModel.getHomeData()
         bindData()
-        navigateToRestaurantDetailVC(restaurantId: "15")
+//        navigateToRestaurantDetailVC(restaurantId: "15")
         // Do any additional setup after loading the view.
     }
     
