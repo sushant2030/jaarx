@@ -22,6 +22,8 @@ extension SquareCollectionCell:CellConfigurable
 {
     func setup(viewModel: RowViewModel) {
         guard let viewModel = (viewModel as? RestaurantCellVM) else {return}
+        let i = arc4random() % 10
+        squareImageView.image = UIImage.init(named: (i % 2 == 0) ? "foodTwo" : ((i % 3 == 0) ? "foodThree" : "foodOne" ))
         if let imageUrl = viewModel.imageUrl{
             squareImageView.downloaded(from:imageUrl)
         }
