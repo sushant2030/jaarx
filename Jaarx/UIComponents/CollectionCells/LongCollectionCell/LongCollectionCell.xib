@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,23 +17,23 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwv-3O-68i">
-                        <rect key="frame" x="2" y="5" width="107" height="227"/>
+                        <rect key="frame" x="5" y="5" width="101" height="227"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VGg-8k-hIK">
-                                <rect key="frame" x="0.0" y="0.0" width="107" height="107"/>
+                                <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VGg-8k-hIK" secondAttribute="height" id="TXk-Vl-XSV"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tashvini" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8d-KY-giP">
-                                <rect key="frame" x="0.0" y="115" width="107" height="21.5"/>
+                                <rect key="frame" x="0.0" y="109" width="101" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQF-kK-8BT">
-                                <rect key="frame" x="10.5" y="163.5" width="86" height="25"/>
+                                <rect key="frame" x="10" y="157.5" width="81" height="25"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Kah-Rg-0nb"/>
@@ -47,13 +47,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seawoods" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sB-hG-HdE">
-                                <rect key="frame" x="0.0" y="141.5" width="107" height="12"/>
+                                <rect key="frame" x="0.0" y="135.5" width="101" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHW-cO-s7s">
-                                <rect key="frame" x="10.5" y="198.5" width="86" height="25"/>
+                                <rect key="frame" x="10" y="192.5" width="81" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Pre Order"/>
                                 <connections>
@@ -61,7 +61,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QHW-cO-s7s" firstAttribute="top" secondItem="BQF-kK-8BT" secondAttribute="bottom" constant="10" id="26Z-3q-b3q"/>
                             <constraint firstItem="4sB-hG-HdE" firstAttribute="centerX" secondItem="gwv-3O-68i" secondAttribute="centerX" id="614-11-AQ5"/>
@@ -89,10 +89,10 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="gwv-3O-68i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="gzf-zH-aTc"/>
-                <constraint firstAttribute="trailing" secondItem="gwv-3O-68i" secondAttribute="trailing" constant="2" id="l6c-se-szy"/>
+                <constraint firstItem="gwv-3O-68i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="mEg-bY-Bai"/>
                 <constraint firstItem="gwv-3O-68i" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="taJ-fE-K4Z"/>
                 <constraint firstAttribute="bottom" secondItem="gwv-3O-68i" secondAttribute="bottom" constant="5" id="wl2-Er-v3k"/>
+                <constraint firstAttribute="trailing" secondItem="gwv-3O-68i" secondAttribute="trailing" constant="5" id="x1h-LO-iBF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="111" height="237"/>

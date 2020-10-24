@@ -5,21 +5,11 @@
 //  Created by Sumit Kumar on 25/07/20.
 //  Copyright © 2020 Sushant Alone. All rights reserved.
 //
-
-import Foundation
-
 import Foundation
 import UIKit
 
 class FavoriteRestaurantsVM {
     var favoriteRestaurantVM = Observable<[RestaurantCellVM]> (value : [])
-    var isLoading = Observable<Bool> (value: true)
-    var cellButtonAction = Observable<RestaurantCellVM?> (value: nil)
-    var rowHeight: CGFloat {
-        get {
-            return 250.0
-        }
-    }
     func buildFavoriteRestaurantViewModel(favoriteRestaurants:FavoriteRestaurantList) {
         if let favRestaurantList = favoriteRestaurants.favoriteData {
         for favoriteRestaurant in favRestaurantList{
@@ -28,13 +18,11 @@ class FavoriteRestaurantsVM {
         }
         }
     }
-    
     func getFavoriteRestaurantsForUser(userId:String) {
-        favoriteRestaurantVM.value = []
-        APIClient.getFavoriteRestaurantsForUser(userId:userId) { (result) in
+        APIClient.getFavoriteRestaurantsForUser(userId:userId) {[weak self] (result) in
             switch result {
             case .success(let favoriteRestaurant):
-                self.buildFavoriteRestaurantViewModel(favoriteRestaurants: favoriteRestaurant)
+                self?.buildFavoriteRestaurantViewModel(favoriteRestaurants: favoriteRestaurant)
             case .failure(let error) :
                 print(error)
             }

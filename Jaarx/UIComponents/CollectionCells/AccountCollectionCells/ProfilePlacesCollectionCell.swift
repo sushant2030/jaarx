@@ -11,44 +11,46 @@ import UIKit
 class ProfilePlacesCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var profileTableView: UITableView!
-    let favoriteRestaurantsVM = FavoriteRestaurantsVM()
+    var restaurantsVM : [RestaurantCellVM]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.registerViews()
-        self.favoriteRestaurantsVM.getFavoriteRestaurantsForUser(userId: "e74996b1-22c4-43a3-886c-2ddc9763f798")
-        self.bindData()
     }
-    func bindData(){
-        favoriteRestaurantsVM.favoriteRestaurantVM.addObserver(fireNow: false) { [weak self] (favoriteRestaurantVM) in
-            DispatchQueue.main.async {
-                self?.profileTableView.reloadData()
-            }
-        }
-    }
+    
     func registerViews() {
         profileTableView.delegate = self
         profileTableView.dataSource = self
         profileTableView.register(UINib.init(nibName: RestaurantListCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: RestaurantListCell.cellIdentifier())
     }
+    func reloadData()  {
+        self.profileTableView.reloadData()
+    }
 }
 extension ProfilePlacesCollectionCell : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoriteRestaurantsVM.favoriteRestaurantVM.value.count
+        return restaurantsVM?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let favResVM = favoriteRestaurantsVM.favoriteRestaurantVM.value[indexPath.row]
+        let resVM = restaurantsVM?[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantListCell.cellIdentifier(), for: indexPath)
         if let cell = cell as? CellConfigurable{
-            cell.setup(viewModel: favResVM)
+            cell.setup(viewModel: resVM!)
         }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let resVM = restaurantsVM?[indexPath.row]{
+            resVM.cellPressed?()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return favoriteRestaurantsVM.rowHeight
+        return BucketCellHeight.large.rawValue
     }
     
 }

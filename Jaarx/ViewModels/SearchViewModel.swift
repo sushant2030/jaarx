@@ -15,7 +15,7 @@ class SearchViewModel {
     var cellButtonAction = Observable<SearchData?> (value: nil)
     var rowHeight: CGFloat {
         get {
-            return 250.0
+            return BucketCellHeight.large.rawValue
         }
     }
     func buildSearchViewModel(searchResponse:SearchReponse) {

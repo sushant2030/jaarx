@@ -194,5 +194,14 @@ class APIClient {
             print(error)
         }
     }
+    static func getSeeMoreRestaurantsForType(type:String, completion:@escaping (AFResult<[RestaurantDetail]>) -> Void) {
+        do {
+            let homeRouter = try HomeRouter.seeMore(type: type).asURLRequest()
+            performRequest(route: homeRouter, completion: completion)
+        }
+        catch (let error){
+            print(error)
+        }
+    }
 }
 

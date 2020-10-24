@@ -28,12 +28,7 @@ class HomeVC: UIViewController {
         homeTableView.dataSource = self
         homeTableView.register(UINib.init(nibName: BucketCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: BucketCell.cellIdentifier())
         homeTableView.register(UINib.init(nibName: CarouselTableCell.cellIdentifier(), bundle: nil), forCellReuseIdentifier: CarouselTableCell.cellIdentifier())
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = UIColor().getHexColor(hex: "#009EFD")
-        self.navigationController?.navigationItem.title = "Jaarx"
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
-
-
+        setNavigationBar(WithTitle: "Jaarx")
     }
     
     func bindData(){
@@ -43,6 +38,7 @@ class HomeVC: UIViewController {
                 self?.homeTableView.isHidden = false
                 for homeVM in homeVMs{
                     let restaurantViewModel = homeVM.restaurantViewModel
+                    homeVM.seeAllButtonAction = self?.seeAllButtonAction(viewModel: homeVM)
                     for restaurantCellVM in restaurantViewModel?.restaurantCollectionVM.value ?? []{
                         restaurantCellVM.cellButtonAction = self?.handleCellButtonAction(viewModel: restaurantCellVM)
                         restaurantCellVM.cellPressed = {
@@ -58,7 +54,7 @@ class HomeVC: UIViewController {
         homeViewModel.isLoading.addObserver {[weak self] isLoading in
             DispatchQueue.main.async {
                 if (isLoading){
-                    self?.view.activityStartAnimating(activityColor: UIColor.white, backgroundColor: UIColor.black.withAlphaComponent(0.3))
+                    self?.view.activityStartAnimating(activityColor: UIColor().getHexColor(hex: "#009EFD"), backgroundColor: UIColor.white)
                     self?.homeTableView.isHidden = true
                 }
                 else{
@@ -68,6 +64,14 @@ class HomeVC: UIViewController {
         }
     }
     // MARK: - User interaction
+    func seeAllButtonAction(viewModel : HomeRowVM) -> (() -> Void) {
+        return { [weak self, weak viewModel]  in
+            if let seeAllVC = UIStoryboard.seeAllVCWithRestaurantType(type: "scanned"){
+                self?.navigationController?.pushViewController(seeAllVC, animated: true)
+            }
+        }
+    }
+    
     func handleCellButtonAction(viewModel : RestaurantCellVM) -> ((CellAction) -> Void) {
         return { [weak self, weak viewModel] action in
             switch action {

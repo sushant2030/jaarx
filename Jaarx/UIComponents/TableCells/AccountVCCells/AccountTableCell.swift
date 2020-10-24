@@ -13,11 +13,10 @@ class AccountTableCell: UITableViewCell  {
     @IBOutlet weak var accountViewCollectionCell: UICollectionView!
     var currentPage : Int = 0
     var accountCollectionCurrentPage : ((Int) -> Void)?
+    var accountVM : AccountViewModel?
     override func awakeFromNib() {
         super.awakeFromNib()
         registerViews()
-        // Initialization code
-        
     }
     
     override func prepareForReuse() {
@@ -31,9 +30,8 @@ class AccountTableCell: UITableViewCell  {
         accountViewCollectionCell.dataSource = self
     }
     
-    private func reload()  {
+     func reload()  {
         accountViewCollectionCell.reloadData()
-        
     }
 }
 
@@ -45,17 +43,28 @@ extension AccountTableCell : UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell : UICollectionViewCell
         switch indexPath.item {
+        case 0:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: (ProfilePlacesCollectionCell.cellIdentifier()) , for: indexPath)
+            if let cell = cell as? ProfilePlacesCollectionCell{
+                cell.restaurantsVM = self.accountVM?.visitedRestaurantVM.visitedRestaurantVM.value
+                cell.reloadData()
+            }
+        case 1:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: (ProfilePlacesCollectionCell.cellIdentifier()) , for: indexPath)
+            if let cell = cell as? ProfilePlacesCollectionCell{
+                cell.restaurantsVM = self.accountVM?.favoriteRestaurantVM.favoriteRestaurantVM.value
+                cell.reloadData()
+            }
         case 2:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: (ProfileSettingCollectionCell.cellIdentifier()) , for: indexPath)
         default:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: (ProfilePlacesCollectionCell.cellIdentifier()) , for: indexPath)
+            
         }
         return cell
     }
     func collectionView( _ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: contentView.frame.width, height: contentView.frame.height)
-        
     }
     
     func collectionView( _ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

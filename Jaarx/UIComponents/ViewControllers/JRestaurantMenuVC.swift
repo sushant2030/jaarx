@@ -30,7 +30,7 @@ class JRestaurantMenuVC: UIViewController {
         headerCollectionView.register(UINib.init(nibName: MenuHeaderCell.cellIdentifier(), bundle: nil), forCellWithReuseIdentifier: MenuHeaderCell.cellIdentifier())
         headerCollectionView.delegate = self
         headerCollectionView.dataSource = self
-        self.navigationController?.title = "Menu"
+        setNavigationBar(WithTitle: "Menu")
     }
     func setRestaurantId(resId : String, name : String) {
         menuViewModel.getRestaurantMenu(resId: resId)
