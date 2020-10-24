@@ -15,7 +15,7 @@ class SquareCollectionCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        shadowView.dropShadow()
+//        shadowView.dropShadow()
     }
 
 }

@@ -44,14 +44,18 @@ class RestaurantListCell: UITableViewCell {
     }
     @IBAction func actionScan(_ sender: UIButton) {
         UserDataSource.sharedInstance.userFlow = .scan
-        searchData?.cellButtonAction?(.scan)
+        if let searchData = searchData{
+            searchData.cellButtonAction?(.scan)
+        }else if let restaurantData = restaurantData{
+            restaurantData.cellButtonAction?(.scan)
+        }
     }
     
     
     @IBAction func actionPreOrder(_ sender: UIButton) {
         UserDataSource.sharedInstance.userFlow = .preOrder
         if let searchData = searchData{
-            searchData.cellButtonAction?(.scan)
+            searchData.cellButtonAction?(.preOrder)
         }else if let restaurantData = restaurantData{
             restaurantData.cellButtonAction?(.preOrder)
         }
