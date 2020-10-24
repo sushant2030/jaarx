@@ -35,6 +35,9 @@
                                 <rect key="frame" x="293" y="5" width="34" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" title="See All"/>
+                                <connections>
+                                    <action selector="seeAllButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LD1-qT-aaf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -75,6 +78,7 @@
                 <outlet property="bucketTitleLabel" destination="hUb-F3-X3w" id="PL2-kO-le3"/>
                 <outlet property="bucketTitleViewHeight" destination="lBw-Bu-ggC" id="ADy-RB-fFs"/>
                 <outlet property="containerCollectionView" destination="9Jm-5r-ac9" id="bwJ-tM-pNh"/>
+                <outlet property="seeAllButton" destination="QPh-t3-vSv" id="Sf5-xH-6gv"/>
             </connections>
             <point key="canvasLocation" x="146.37681159420291" y="175.78125"/>
         </tableViewCell>

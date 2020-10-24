@@ -56,6 +56,7 @@ class HomeRowVM : RowViewModel{
     var backgroundColor : UIColor {
         get{self.getBackgroundColor()}
     }
+    var seeAllButtonAction: (() -> Void)? = nil
     var bucketType:BucketType?
     var rowHeight : CGFloat {
         get{self.getRowHeight()}

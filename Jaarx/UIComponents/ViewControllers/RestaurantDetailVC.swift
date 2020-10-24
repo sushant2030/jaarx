@@ -43,15 +43,13 @@ class RestaurantDetailVC : UIViewController{
             DispatchQueue.main.async {
                 self?.restaurantDetailTableView.reloadData()
                 self?.restaurantDetailTableView.isHidden = false
-                self?.navigationItem.title = restaurantHeaderVM?.restaurantName ?? ""
-                let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white,NSAttributedString.Key.font:UIFont.init(name: "Helvetica Neue", size: 25)]
-                self?.navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
+                self?.setNavigationBar(WithTitle: restaurantHeaderVM?.restaurantName ?? "")
             }
         }
         restaurantDetailVM!.isLoading.addObserver {[weak self] isLoading in
             DispatchQueue.main.async {
                 if (isLoading){
-                    self?.view.activityStartAnimating(activityColor: UIColor.white, backgroundColor: UIColor.black.withAlphaComponent(0.3))
+                    self?.view.activityStartAnimating(activityColor: UIColor().getHexColor(hex: "#009EFD"), backgroundColor: UIColor.white)
                     self?.restaurantDetailTableView.isHidden = true
                 }
                 else{

@@ -54,7 +54,7 @@ class RestaurantViewModel {
         case .hashtags:
             return 5
         default:
-            return 20
+            return 5
         }
     }
     

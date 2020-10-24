@@ -60,8 +60,6 @@ class JSearchVC: UIViewController {
         
     }
     
-    
-    
     func navigateToQRCodeScannerVC(restaurantId:String) {
         if let qrCodeScannerVC = UIStoryboard.qrCodeScannerVC(){
             self.navigationController?.pushViewController(qrCodeScannerVC, animated: true)

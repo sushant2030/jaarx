@@ -10,10 +10,12 @@ import UIKit
 
 class SquareCollectionCell: UICollectionViewCell {
 
+    @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var squareImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        shadowView.dropShadow()
     }
 
 }

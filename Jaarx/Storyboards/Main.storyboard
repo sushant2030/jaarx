@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Avn-Eu-mka">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Avn-Eu-mka">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -120,14 +120,14 @@
                         <segue destination="iZH-3Y-EdH" kind="relationship" relationship="viewControllers" id="qrQ-kU-K6h"/>
                         <segue destination="Dt7-wS-Bl3" kind="relationship" relationship="viewControllers" id="mAm-l6-pOd"/>
                         <segue destination="WeL-Hq-c7l" kind="relationship" relationship="viewControllers" id="Thf-RL-YWW"/>
-                        <segue destination="1Vk-Jg-Xve" kind="relationship" relationship="viewControllers" id="fmK-EK-Pqu"/>
+                        <segue destination="Bzv-1v-QSt" kind="relationship" relationship="viewControllers" id="fmK-EK-Pqu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8U-A3-fnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2146" y="-866"/>
         </scene>
-        <!--Account-->
+        <!--AccountVC-->
         <scene sceneID="rva-s0-a61">
             <objects>
                 <viewController id="1Vk-Jg-Xve" customClass="AccountVC" customModule="Jaarx" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,17 +136,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYL-hw-Z4A">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ABr-zr-ypm">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="PXv-m2-H7J">
+                                        <rect key="frame" x="188.5" y="344" width="37" height="37"/>
+                                        <color key="color" red="0.0" green="0.61960784310000006" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="PXv-m2-H7J" firstAttribute="centerX" secondItem="MYL-hw-Z4A" secondAttribute="centerX" id="Gg2-KW-esV"/>
                                     <constraint firstItem="ABr-zr-ypm" firstAttribute="top" secondItem="MYL-hw-Z4A" secondAttribute="top" id="Qzr-5Z-Xa1"/>
                                     <constraint firstAttribute="trailing" secondItem="ABr-zr-ypm" secondAttribute="trailing" id="fqD-6l-Us8"/>
+                                    <constraint firstItem="PXv-m2-H7J" firstAttribute="centerY" secondItem="MYL-hw-Z4A" secondAttribute="centerY" id="lPV-UL-00t"/>
                                     <constraint firstItem="ABr-zr-ypm" firstAttribute="leading" secondItem="MYL-hw-Z4A" secondAttribute="leading" id="u5K-8N-tZs"/>
                                     <constraint firstAttribute="bottom" secondItem="ABr-zr-ypm" secondAttribute="bottom" id="w0C-Hi-IDl"/>
                                 </constraints>
@@ -161,16 +167,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hQ1-pg-7Gv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" image="person" catalog="system" selectedImage="person.fill" id="sHJ-aa-4Nb"/>
+                    <navigationItem key="navigationItem" id="ERz-eG-FII"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="accountTableView" destination="ABr-zr-ypm" id="rhL-CL-gRE"/>
+                        <outlet property="activityIndicator" destination="PXv-m2-H7J" id="cBS-aG-7e8"/>
                         <outlet property="containerView" destination="MYL-hw-Z4A" id="HIs-Yh-b0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9n-42-FU6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3227.536231884058" y="247.76785714285714"/>
+            <point key="canvasLocation" x="4137.68115942029" y="247.76785714285714"/>
         </scene>
         <!--Restaurant DetailVC-->
         <scene sceneID="707-n6-I0B">
@@ -364,6 +371,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Qm-fW-KOx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3257" y="-1136"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="I7P-lG-q7n">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bzv-1v-QSt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Account" image="person" catalog="system" selectedImage="person.fill" id="sHJ-aa-4Nb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vxk-K9-xi2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1Vk-Jg-Xve" kind="relationship" relationship="rootViewController" id="aYv-Pb-aOp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqG-8F-5wQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3227.536231884058" y="247.76785714285714"/>
+        </scene>
+        <!--SeeAllViewController-->
+        <scene sceneID="qup-XQ-ZJr">
+            <objects>
+                <viewController storyboardIdentifier="SeeAllViewController" title="SeeAllViewController" id="xzv-BB-N7q" customClass="SeeAllViewController" customModule="Jaarx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fV0-2b-PXJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rD2-te-Wj8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="j3C-pu-ZrF">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.61960784310000006" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rD2-te-Wj8" firstAttribute="leading" secondItem="RDm-Cu-rub" secondAttribute="leading" id="K2z-od-UAi"/>
+                            <constraint firstItem="j3C-pu-ZrF" firstAttribute="centerX" secondItem="fV0-2b-PXJ" secondAttribute="centerX" id="RzE-jM-cmi"/>
+                            <constraint firstItem="rD2-te-Wj8" firstAttribute="trailing" secondItem="RDm-Cu-rub" secondAttribute="trailing" id="a3M-Ar-nCY"/>
+                            <constraint firstAttribute="bottom" secondItem="rD2-te-Wj8" secondAttribute="bottom" id="lxm-ox-iSu"/>
+                            <constraint firstItem="j3C-pu-ZrF" firstAttribute="centerY" secondItem="fV0-2b-PXJ" secondAttribute="centerY" id="sGZ-iq-90t"/>
+                            <constraint firstItem="rD2-te-Wj8" firstAttribute="top" secondItem="RDm-Cu-rub" secondAttribute="top" id="sSj-9U-Wsi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RDm-Cu-rub"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="j3C-pu-ZrF" id="pxF-45-vfm"/>
+                        <outlet property="seeAllTableView" destination="rD2-te-Wj8" id="ZD3-eC-qbi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sjz-9y-cgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1244.9275362318842" y="130.58035714285714"/>
         </scene>
     </scenes>
     <resources>

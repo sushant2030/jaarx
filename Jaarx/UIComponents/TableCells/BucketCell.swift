@@ -15,7 +15,9 @@ class BucketCell: UITableViewCell{
     @IBOutlet weak var containerCollectionView: UICollectionView!
     @IBOutlet weak var bucketDescriptionLabel: UILabel!
     @IBOutlet weak var bucketTitleLabel: UILabel!
+    @IBOutlet weak var seeAllButton: UIButton!
     var restaurantViewModel : RestaurantViewModel?
+    var viewModel : HomeRowVM?
     override func awakeFromNib() {
         super.awakeFromNib()
         registerViews()
@@ -36,6 +38,9 @@ class BucketCell: UITableViewCell{
         containerCollectionView.dataSource = self
     }
     
+    @IBAction func seeAllButtonAction(_ sender: UIButton) {
+        self.viewModel?.seeAllButtonAction?()
+    }
     private func reload()  {
         containerCollectionView.reloadData()
     }
@@ -50,6 +55,7 @@ extension BucketCell : CellConfigurable {
     
     func setup(viewModel: RowViewModel) {
         guard let viewModel = (viewModel as? HomeRowVM) else {return}
+        self.viewModel = viewModel
         self.restaurantViewModel = viewModel.restaurantViewModel
         self.backgroundColor = viewModel.backgroundColor
         self.bucketTitleLabel.text = viewModel.title

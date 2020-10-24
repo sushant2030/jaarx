@@ -25,6 +25,11 @@ extension UIStoryboard {
         restaurantVC?.restaurantId = id
         return restaurantVC
     }
+    static func seeAllVCWithRestaurantType(type : String) -> SeeAllViewController? {
+        let seeAllRestaurantVC = mainStoryboard().instantiateViewController(withIdentifier: "SeeAllViewController") as? SeeAllViewController
+        seeAllRestaurantVC?.restaurantType = type
+        return seeAllRestaurantVC
+    }
     static func tabBarVC() -> JMainTabbarVC? {
         return mainStoryboard().instantiateViewController(withIdentifier: "JMainTabbarVC") as? JMainTabbarVC
     }
@@ -103,8 +108,9 @@ extension UIView{
         backgroundView.backgroundColor = backgroundColor
         backgroundView.tag = activityBackgroundViewTag
         var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-        activityIndicator = UIActivityIndicatorView(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50))
-        activityIndicator.center = self.center
+        activityIndicator = UIActivityIndicatorView(frame: CGRect.init(x: 0, y: 0, width: 44, height: 44))
+        activityIndicator.center.y = (self.window?.center.y)! - 108
+        activityIndicator.center.x = (self.window?.center.x)!
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = UIActivityIndicatorView.Style.large
         activityIndicator.color = activityColor
@@ -144,10 +150,14 @@ extension UIView{
 }
 
 extension UIViewController {
-    func setNavigationTitle(withTitle title:String)  {
+    func setNavigationBar(WithTitle title:String)  {
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor().getHexColor(hex: "#009EFD")
+        self.navigationController?.navigationBar.tintColor = .white
         self.navigationItem.title = title
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white,NSAttributedString.Key.font:UIFont.init(name: "Helvetica Neue", size: 25)]
         self.navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
 }
 

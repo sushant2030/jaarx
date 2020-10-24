@@ -9,7 +9,7 @@
 import UIKit
 
 class RestaurantListCell: UITableViewCell {
-
+    
     @IBOutlet weak var holderView: UIView!
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var lblRestaurantTitle: UILabel!
@@ -17,6 +17,7 @@ class RestaurantListCell: UITableViewCell {
     @IBOutlet weak var btnScan: UIButton!
     @IBOutlet weak var restaurantImageView: UIImageView!
     var searchData:SearchData?
+    var restaurantData : RestaurantCellVM?
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
@@ -35,18 +36,27 @@ class RestaurantListCell: UITableViewCell {
         btnScan.layer.cornerRadius = btnScan.bounds.size.height / 2
         btnPreOrder.layer.cornerRadius =  btnScan.bounds.size.height / 2
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     @IBAction func actionScan(_ sender: UIButton) {
-        searchData?.cellButtonAction?(.scan)
+        
+        if let searchData = searchData{
+            searchData.cellButtonAction?(.scan)
+        }else if let restaurantData = restaurantData{
+            restaurantData.cellButtonAction?(.scan)
+        }
     }
     
     @IBAction func actionPreOrder(_ sender: UIButton) {
-        searchData?.cellButtonAction?(.preOrder)
+        if let searchData = searchData{
+            searchData.cellButtonAction?(.scan)
+        }else if let restaurantData = restaurantData{
+            restaurantData.cellButtonAction?(.preOrder)
+        }
     }
 }
 
@@ -62,11 +72,12 @@ extension RestaurantListCell : CellConfigurable {
                 }
             }
         } else if let viewModel = (viewModel as? RestaurantCellVM) {
+            self.restaurantData = viewModel
             lblDescription.text = viewModel.location ?? ""
             lblRestaurantTitle.text = viewModel.title ?? ""
             if let imagePathURL = viewModel.imageDetails{
                 //TODO
-//                restaurantImageView.downloaded(from: imagePathURL)
+                //                restaurantImageView.downloaded(from: imagePathURL)
             }
         }
     }
