@@ -70,6 +70,7 @@ enum CellAction {
 enum UserFlow {
     case preOrder
     case scan
+    case none
 }
 enum RestaurantDetailCellType {
     case ScanNOrder

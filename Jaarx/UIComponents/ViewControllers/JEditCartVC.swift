@@ -55,7 +55,6 @@ class JEditCartVC: UIViewController {
     }
     
     @IBAction func actionPlaceOrder(_ sender: UIButton) {
-        UserDataSource.sharedInstance.userFlow = .scan
         switch UserDataSource.sharedInstance.userFlow {
         case .preOrder:
             UserDataSource.sharedInstance.addCart { (isSuccess) in

@@ -42,7 +42,7 @@ class UserDataSource {
     var cashDetails : CashDetails? 
     var user : User!
     var carts = Observable<[FoodDetails]> (value: [])
-    var userFlow : UserFlow = .preOrder
+    var userFlow : UserFlow = .none
     func setUser(user : User) {
         self.user = user
     }

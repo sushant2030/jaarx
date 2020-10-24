@@ -63,19 +63,34 @@ class RestaurantDetailVC : UIViewController{
     }
     func navigateToQRCodeScannerVC(restaurantId:String) {
         if let qrCodeScannerVC = UIStoryboard.qrCodeScannerVC(){
+            UserDataSource.sharedInstance.userFlow = .scan
             self.navigationController?.pushViewController(qrCodeScannerVC, animated: true)
         }
     }
     func navigateToPreOrder(restaurantId:String) {
-//        if let preOrderVC = UIStoryboard.preOrderVC(){
-//            self.navigationController?.pushViewController(preOrderVC, animated: true)
-//        }
-        if let menuVC = UIStoryboard.menuVC() {
-            menuVC.setRestaurantId(resId: restaurantId, name: restaurantDetailVM?.restaurantHeaderVM.value?.restaurantName ?? "")
-            self.navigationController?.pushViewController(menuVC, animated: true)
+        if let preOrderVC = UIStoryboard.preOrderVC(){
+            UserDataSource.sharedInstance.userFlow = .preOrder
+            self.navigationController?.pushViewController(preOrderVC, animated: true)
         }
     }
     
+    @IBAction func actionLike(_ sender: Any) {
+    }
+    @IBAction func actionMenu(_ sender: Any) {
+        if let restID = self.restaurantId {
+        if let menuVC = UIStoryboard.menuVC() {
+            menuVC.setRestaurantId(resId: restID, name: restaurantDetailVM?.restaurantHeaderVM.value?.restaurantName ?? "")
+            self.navigationController?.pushViewController(menuVC, animated: true)
+        }
+    }
+    }
+    @IBAction func actionShare(_ sender: Any) {
+    }
+    
+    @IBAction func actionNavigate(_ sender: Any) {
+    }
+    @IBAction func actionReview(_ sender: Any) {
+    }
 }
 
 extension RestaurantDetailVC: UITableViewDataSource {

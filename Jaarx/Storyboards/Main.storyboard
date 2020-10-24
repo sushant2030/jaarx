@@ -195,30 +195,45 @@
                                                 <state key="normal" title="Like">
                                                     <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="actionLike:" destination="U8l-tR-Ptz" eventType="touchUpInside" id="aev-QD-Y7D"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBx-up-CL5">
                                                 <rect key="frame" x="83" y="0.0" width="82.5" height="60"/>
                                                 <state key="normal" title="Menu">
                                                     <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="actionMenu:" destination="U8l-tR-Ptz" eventType="touchUpInside" id="oLu-zj-5i1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5w-EM-T0B">
                                                 <rect key="frame" x="165.5" y="0.0" width="83" height="60"/>
                                                 <state key="normal" title="Navigate">
                                                     <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="actionNavigate:" destination="U8l-tR-Ptz" eventType="touchUpInside" id="ily-bo-AyE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cy6-Tx-nxw">
                                                 <rect key="frame" x="248.5" y="0.0" width="82.5" height="60"/>
                                                 <state key="normal" title="Review">
                                                     <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="actionReview:" destination="U8l-tR-Ptz" eventType="touchUpInside" id="6B0-Y2-YBF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AM-Q5-Ihn">
                                                 <rect key="frame" x="331" y="0.0" width="83" height="60"/>
                                                 <state key="normal" title="Share">
                                                     <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="actionShare:" destination="U8l-tR-Ptz" eventType="touchUpInside" id="Ugw-dV-HgZ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

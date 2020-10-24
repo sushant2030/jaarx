@@ -42,10 +42,12 @@ class RestaurantListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func actionScan(_ sender: UIButton) {
+        UserDataSource.sharedInstance.userFlow = .scan
         searchData?.cellButtonAction?(.scan)
     }
     
     @IBAction func actionPreOrder(_ sender: UIButton) {
+        UserDataSource.sharedInstance.userFlow = .preOrder
         searchData?.cellButtonAction?(.preOrder)
     }
 }
