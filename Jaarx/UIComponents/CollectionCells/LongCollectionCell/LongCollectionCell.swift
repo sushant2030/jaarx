@@ -45,7 +45,12 @@ extension LongCollectionCell:CellConfigurable
     func setup(viewModel: RowViewModel) {
         guard let viewModel = (viewModel as? RestaurantCellVM) else {return}
         self.restaurantCellVM = viewModel
-        descriptionLabel.text = viewModel.location
+        if let location = viewModel.location {
+            descriptionLabel.text = location.count > 0 ? location : " "
+
+        } else {
+        descriptionLabel.text = " "
+        }
         titleLabel.text = viewModel.title
         if let imageUrl = viewModel.imageUrl{
             squareImage.downloaded(from:imageUrl)
