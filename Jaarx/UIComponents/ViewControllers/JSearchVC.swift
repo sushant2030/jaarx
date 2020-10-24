@@ -18,8 +18,7 @@ class JSearchVC: UIViewController {
         super.viewDidLoad()
         registerViews()
         bindData()
-        
-
+        setNavigationBar(WithTitle: "Search")
         // Do any additional setup after loading the view.
     }
     
