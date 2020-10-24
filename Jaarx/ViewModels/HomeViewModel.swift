@@ -84,12 +84,17 @@ class HomeRowVM : RowViewModel{
         switch self.bucketType {
         case .carousel,.banner,.scanAndOrder,.hotcuisins:
             rowHeight = BucketCellHeight.medium.rawValue
+            return rowHeight
         case .hashtags:
+            if (restaurantViewModel?.restaurantCollectionVM.value.count == 0) {
+                return 0.0
+            }
             rowHeight = BucketCellHeight.small.rawValue
+            return rowHeight
         default:
             rowHeight = BucketCellHeight.large.rawValue
+            return rowHeight
         }
-        return rowHeight
     }
     func cellIdentifier() -> String {
         var cellIdentifier : String
