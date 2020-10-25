@@ -15,6 +15,11 @@ class QRCodeScannerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         qrScannerView.delegate = self
+        UserDataSource.sharedInstance.userFlow = .scan
+        if let menuVC = UIStoryboard.menuVC() {
+            menuVC.setRestaurantId(resId: "13", name: "Menu")
+            self.navigationController?.pushViewController(menuVC, animated: true)
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -44,7 +49,7 @@ extension QRCodeScannerVC : QRScannerViewDelegate {
                 UserDataSource.sharedInstance.user.tableId = Int(tableId)!
                 UserDataSource.sharedInstance.userFlow = .scan
                 if let menuVC = UIStoryboard.menuVC() {
-                    menuVC.setRestaurantId(resId: resId, name: "Menu")
+                    menuVC.setRestaurantId(resId: "13", name: "Menu")
                     self.navigationController?.pushViewController(menuVC, animated: true)
                 }
             }

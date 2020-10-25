@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Ellipse 108@3x.png",
+      "filename" : "Login screen.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Ellipse 108@3x@2x.png",
+      "filename" : "Login screen-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Ellipse 108@3x@3x.png",
+      "filename" : "Login screen-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

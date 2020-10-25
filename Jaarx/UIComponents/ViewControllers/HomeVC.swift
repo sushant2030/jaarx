@@ -10,7 +10,6 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    
     @IBOutlet weak var homeTableView: UITableView!
     var homeViewModel : HomeViewModel = HomeViewModel()
     var scanButtonAction : (() -> Void)?
