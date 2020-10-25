@@ -18,6 +18,10 @@ class HomeVC: UIViewController {
         registerDelegateAndDataSource()
         homeViewModel.getHomeData()
         bindData()
+//        if let checkoutVC = UIStoryboard.checkOutVC() {
+//            checkoutVC.modalPresentationStyle = .fullScreen
+//            self.present(checkoutVC, animated: true, completion: nil)
+//        }
 //        navigateToRestaurantDetailVC(restaurantId: "15")
         // Do any additional setup after loading the view.
     }

@@ -55,19 +55,29 @@ class MenuTableCell: UITableViewCell {
         let modifyingItem : [FoodDetails] = UserDataSource.sharedInstance.carts.value.filter{ $0.foodId! == foodDetailVM.foodId! }
         if modifyingItem.count > 0 {
             let cart = modifyingItem[0]
-            cart.cartQuantity -= 1
-            lblQuantity.text = "\(cart.cartQuantity)"
+            if cart.cartQuantity > 1 {
+                cart.cartQuantity -= 1
+                lblQuantity.text = "\(cart.cartQuantity)"
+            } else {
+                cart.cartQuantity -= 1
+                UserDataSource.sharedInstance.carts.value.removeAll{$0 === cart}
+                btnMenu.isHidden = false
+                menuButtonHolder.isHidden = true
+                
+            }
         }
+        UserDataSource.sharedInstance.cartUpdated.value = true
+
     }
     
     @IBAction func actionAddQuantity(_ sender: UIButton) {
         let modifyingItem : [FoodDetails] = UserDataSource.sharedInstance.carts.value.filter{ $0.dishName! == foodDetailVM.dishName! }
-//        if modifyingItem.count > 0 {
+        if modifyingItem.count > 0 {
             let cart = modifyingItem[0]
             cart.cartQuantity += 1
             lblQuantity.text = "\(cart.cartQuantity)"
-//        }
-        print(modifyingItem)
+        }
+        UserDataSource.sharedInstance.cartUpdated.value = true
     }
     
     
@@ -89,13 +99,23 @@ extension MenuTableCell: CellConfigurable {
             self.lblTitle.text = viewModel.dishName
             self.lblDescription.text = viewModel.dishDescription
             self.lblPrice.text = viewModel.dishPrice
+            lblQuantity.text = "\(viewModel.cartQuantity)"
             if let image = viewModel.getImageUrl() {
                 self.foodImageView.downloaded(from: image)
             }
             if let isVeg = viewModel.vegan {
                 indicatorImage.image = UIImage.init(named: isVeg ? "veg" : "nonVeg")
             }
-            menuButtonHolder.isHidden = true
+            let modifyingItem : [FoodDetails] = UserDataSource.sharedInstance.carts.value.filter{ $0.dishName! == foodDetailVM.dishName! }
+            if modifyingItem.count > 0 {
+                menuButtonHolder.isHidden = false
+                btnMenu.isHidden = true
+            } else {
+                menuButtonHolder.isHidden = true
+                btnMenu.isHidden = false
+            }
+            
+            
         }
     }
     

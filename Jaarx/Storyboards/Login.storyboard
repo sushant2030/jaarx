@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBB-mP-vvS">
-                                <rect key="frame" x="40" y="318" width="295" height="150"/>
+                                <rect key="frame" x="40" y="230" width="295" height="150"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sYk-XW-SY8" customClass="AkiraTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="74" width="295" height="40"/>
@@ -50,7 +50,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9f-GJ-yD0">
-                                <rect key="frame" x="40" y="498" width="295" height="50"/>
+                                <rect key="frame" x="40" y="410" width="295" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.61960784310000006" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5KL-ps-ajd"/>
@@ -64,7 +64,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iVu-Ef-xNo">
-                                <rect key="frame" x="46.5" y="588" width="282.5" height="36"/>
+                                <rect key="frame" x="55.5" y="500" width="282.5" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgg-L2-X3b">
                                         <rect key="frame" x="0.0" y="0.0" width="180.5" height="36"/>
@@ -84,15 +84,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BIo-2v-MFW">
-                                <rect key="frame" x="112.5" y="20" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="BIo-2v-MFW" secondAttribute="height" multiplier="1:1" id="UTj-24-3IW"/>
-                                    <constraint firstAttribute="width" constant="150" id="zjM-Wo-5lZ"/>
-                                </constraints>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lME-h0-FvW">
-                                <rect key="frame" x="67.5" y="178" width="240" height="80"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jaarxLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lME-h0-FvW">
+                                <rect key="frame" x="92.5" y="50" width="190" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="cPw-hV-qdR"/>
                                 </constraints>
@@ -103,33 +96,30 @@
                             <constraint firstItem="lA9-Cg-iOC" firstAttribute="trailing" secondItem="TBB-mP-vvS" secondAttribute="trailing" constant="40" id="2uQ-vw-Zvp"/>
                             <constraint firstItem="W9f-GJ-yD0" firstAttribute="top" secondItem="TBB-mP-vvS" secondAttribute="bottom" constant="30" id="6E4-zd-mjf"/>
                             <constraint firstItem="TBB-mP-vvS" firstAttribute="leading" secondItem="lA9-Cg-iOC" secondAttribute="leading" constant="40" id="8VM-Dr-v01"/>
-                            <constraint firstItem="iVu-Ef-xNo" firstAttribute="centerX" secondItem="3hm-TJ-etF" secondAttribute="centerX" id="AYv-8U-7gn"/>
+                            <constraint firstItem="iVu-Ef-xNo" firstAttribute="centerX" secondItem="3hm-TJ-etF" secondAttribute="centerX" multiplier="1.05" id="AYv-8U-7gn"/>
                             <constraint firstItem="iVu-Ef-xNo" firstAttribute="top" secondItem="W9f-GJ-yD0" secondAttribute="bottom" constant="40" id="EFi-j7-jrf"/>
                             <constraint firstItem="7SO-I5-fvy" firstAttribute="bottom" secondItem="3hm-TJ-etF" secondAttribute="bottom" id="Gd9-VV-hbM"/>
                             <constraint firstItem="TBB-mP-vvS" firstAttribute="centerX" secondItem="3hm-TJ-etF" secondAttribute="centerX" id="I04-Ti-vCh"/>
-                            <constraint firstItem="lME-h0-FvW" firstAttribute="width" secondItem="BIo-2v-MFW" secondAttribute="width" multiplier="1.6" id="LOU-wu-qtO"/>
                             <constraint firstItem="7SO-I5-fvy" firstAttribute="trailing" secondItem="lA9-Cg-iOC" secondAttribute="trailing" id="MGm-VY-YnU"/>
-                            <constraint firstItem="lME-h0-FvW" firstAttribute="top" secondItem="BIo-2v-MFW" secondAttribute="bottom" constant="8" id="PL0-2X-0Xg"/>
                             <constraint firstItem="lME-h0-FvW" firstAttribute="centerX" secondItem="3hm-TJ-etF" secondAttribute="centerX" id="XXh-TL-M4P"/>
                             <constraint firstItem="W9f-GJ-yD0" firstAttribute="width" secondItem="TBB-mP-vvS" secondAttribute="width" id="cUG-OX-KF1"/>
                             <constraint firstItem="7SO-I5-fvy" firstAttribute="top" secondItem="3hm-TJ-etF" secondAttribute="top" id="i76-CR-BI3"/>
                             <constraint firstItem="iVu-Ef-xNo" firstAttribute="width" secondItem="W9f-GJ-yD0" secondAttribute="width" multiplier="0.957627" id="jUZ-Yt-3bW"/>
+                            <constraint firstItem="lME-h0-FvW" firstAttribute="top" secondItem="lA9-Cg-iOC" secondAttribute="top" constant="50" id="lAa-tK-F2K"/>
                             <constraint firstItem="7SO-I5-fvy" firstAttribute="leading" secondItem="lA9-Cg-iOC" secondAttribute="leading" id="sj4-Bn-iwe"/>
-                            <constraint firstItem="TBB-mP-vvS" firstAttribute="top" secondItem="lME-h0-FvW" secondAttribute="bottom" constant="60" id="uA0-s4-lJW"/>
+                            <constraint firstItem="TBB-mP-vvS" firstAttribute="top" secondItem="lME-h0-FvW" secondAttribute="bottom" constant="100" id="uA0-s4-lJW"/>
                             <constraint firstItem="W9f-GJ-yD0" firstAttribute="centerX" secondItem="3hm-TJ-etF" secondAttribute="centerX" id="yJe-rr-yJd"/>
-                            <constraint firstItem="BIo-2v-MFW" firstAttribute="centerX" secondItem="3hm-TJ-etF" secondAttribute="centerX" id="yZY-cj-6WA"/>
-                            <constraint firstItem="BIo-2v-MFW" firstAttribute="top" secondItem="lA9-Cg-iOC" secondAttribute="top" constant="20" id="zUu-uG-i6o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lA9-Cg-iOC"/>
                     </view>
                     <connections>
                         <outlet property="btnOtp" destination="W9f-GJ-yD0" id="fH1-LC-pPC"/>
                         <outlet property="containerView" destination="TBB-mP-vvS" id="zuV-hy-vJN"/>
+                        <outlet property="lblSignup" destination="Hgg-L2-X3b" id="g9I-B9-1GU"/>
                         <outlet property="logoImageView" destination="lME-h0-FvW" id="hvi-Lh-7gn"/>
                         <outlet property="splashImageView" destination="7SO-I5-fvy" id="xro-ur-ikV"/>
                         <outlet property="textFieldContainerView" destination="TBB-mP-vvS" id="NYL-su-h4r"/>
                         <outlet property="tfMobile" destination="sYk-XW-SY8" id="95m-4n-VKh"/>
-                        <outlet property="topImageView" destination="BIo-2v-MFW" id="cNz-rY-9tT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZH9-sS-s42" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -231,6 +221,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="login" width="100" height="177.5"/>
+        <image name="jaarxLogo" width="190" height="77"/>
+        <image name="login" width="1221" height="2170.5"/>
     </resources>
 </document>

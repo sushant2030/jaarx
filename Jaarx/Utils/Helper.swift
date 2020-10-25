@@ -63,4 +63,18 @@ struct Helper {
         let date = dateFormatter.string(from: Date())
         return TimeMode.init(rawValue: date)!
     }
+    
+    static func extractOrderIdFromUrl(url urlString: String) {
+        let urlComponents = urlString.components(separatedBy: "?")
+        if urlComponents.count > 1 {
+            let urlParams = urlComponents[1].components(separatedBy: "&")
+            if urlParams.count > 0 {
+                let orderParam = urlParams[0].components(separatedBy: "=")
+                if orderParam.count > 1 {
+                    let orderId = orderParam[1]
+                    UserDataSource.sharedInstance.user.orderId = Int(orderId)!
+                }
+            }
+        }
+    }
 }

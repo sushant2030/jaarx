@@ -24,9 +24,15 @@ class JCashVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        abstractView.makeSelectedCornersRounded()
+        
+    }
+    
     func installViews()  {
         if let cashDetails = UserDataSource.sharedInstance.cashDetails {
-            lblOrderNo.text = "\(UserDataSource.sharedInstance.user.orderId ?? 0)"
+            lblOrderNo.text = "Order No \(UserDataSource.sharedInstance.user.orderId ?? 0)"
             lblOffer.text = "₹0.0"
             lblSubTotalValue.text = "₹\(cashDetails.sub ?? "")"
             lblTotal.text = "₹\(cashDetails.total ?? "")"
@@ -35,14 +41,10 @@ class JCashVC: UIViewController {
         
         billInfoView.makeViewCornerRadiusWithRadi(radius: 15.0)
         billInfoView.dropShadow(scale: true)
-        let rectShape = CAShapeLayer()
-        rectShape.bounds = abstractView.frame
-        rectShape.position = abstractView.center
-        rectShape.path = UIBezierPath(roundedRect: abstractView.bounds, byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 100, height: 120)).cgPath
-        //Here I'm masking the textView's layer with rectShape layer
-        abstractView.layer.mask = rectShape
         abstractView.dropShadow(scale: true)
     }
+    
+    
     
 
     @IBAction func actionBack(_ sender: UIButton) {

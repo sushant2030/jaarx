@@ -82,6 +82,13 @@ enum PaymentMode {
     case online
 }
 
+enum TransactionStatus{
+    case success
+    case fail
+    case noTransaction
+    case preorderSuccess
+}
+
 enum HTTPHeaderField: String {
     case authentication = "Authorization"
     case contentType = "Content-Type"

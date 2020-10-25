@@ -314,8 +314,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4Q-D4-8XI">
-                                                <rect key="frame" x="367" y="38" width="39" height="30"/>
-                                                <state key="normal" title="Close">
+                                                <rect key="frame" x="372" y="38" width="34" height="30"/>
+                                                <state key="normal" title="clear">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>

@@ -16,6 +16,13 @@
 		5B09533924FAC1F0004264B8 /* MenuTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B09533724FAC1F0004264B8 /* MenuTableCell.xib */; };
 		5B09533C24FACCB7004264B8 /* MenuHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09533A24FACCB7004264B8 /* MenuHeaderCell.swift */; };
 		5B09533D24FACCB7004264B8 /* MenuHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B09533B24FACCB7004264B8 /* MenuHeaderCell.xib */; };
+		5B140F7A2545EE4C0019F0A9 /* PreOrderConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B140F792545EE4C0019F0A9 /* PreOrderConfirmationVC.swift */; };
+		5B140F7C2545F5670019F0A9 /* PaymentConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B140F7B2545F5670019F0A9 /* PaymentConfirmationVC.swift */; };
+		5B140F7E2545F57F0019F0A9 /* PaymentFailureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B140F7D2545F57F0019F0A9 /* PaymentFailureVC.swift */; };
+		5B140F80254611F80019F0A9 /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B140F7F254611F80019F0A9 /* PaymentRouter.swift */; };
+		5B140F82254618360019F0A9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B140F81254618360019F0A9 /* WebKit.framework */; };
+		5B140F84254626D10019F0A9 /* OrderListShadowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B140F83254626D10019F0A9 /* OrderListShadowCell.xib */; };
+		5B140F86254627350019F0A9 /* OrderListShadowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B140F85254627350019F0A9 /* OrderListShadowCell.swift */; };
 		5B23731A252069880001B511 /* EditCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B237318252069880001B511 /* EditCartCell.swift */; };
 		5B23731B252069880001B511 /* EditCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B237319252069880001B511 /* EditCartCell.xib */; };
 		5B283664251782F0007C5710 /* JEditCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B283663251782F0007C5710 /* JEditCartVC.swift */; };
@@ -158,6 +165,13 @@
 		5B09533724FAC1F0004264B8 /* MenuTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableCell.xib; sourceTree = "<group>"; };
 		5B09533A24FACCB7004264B8 /* MenuHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderCell.swift; sourceTree = "<group>"; };
 		5B09533B24FACCB7004264B8 /* MenuHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuHeaderCell.xib; sourceTree = "<group>"; };
+		5B140F792545EE4C0019F0A9 /* PreOrderConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOrderConfirmationVC.swift; sourceTree = "<group>"; };
+		5B140F7B2545F5670019F0A9 /* PaymentConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationVC.swift; sourceTree = "<group>"; };
+		5B140F7D2545F57F0019F0A9 /* PaymentFailureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentFailureVC.swift; sourceTree = "<group>"; };
+		5B140F7F254611F80019F0A9 /* PaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
+		5B140F81254618360019F0A9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5B140F83254626D10019F0A9 /* OrderListShadowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderListShadowCell.xib; sourceTree = "<group>"; };
+		5B140F85254627350019F0A9 /* OrderListShadowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListShadowCell.swift; sourceTree = "<group>"; };
 		5B237318252069880001B511 /* EditCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCartCell.swift; sourceTree = "<group>"; };
 		5B237319252069880001B511 /* EditCartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditCartCell.xib; sourceTree = "<group>"; };
 		5B283663251782F0007C5710 /* JEditCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JEditCartVC.swift; sourceTree = "<group>"; };
@@ -288,6 +302,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B140F82254618360019F0A9 /* WebKit.framework in Frameworks */,
 				5BA497B22413907600CED8EA /* Pods_Jaarx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +529,8 @@
 				5B76E7202540223600BC7753 /* OrderListCell.xib */,
 				5BAFE0412542D6390004BFA1 /* OrderHubCell.swift */,
 				5BAFE0422542D6390004BFA1 /* OrderHubCell.xib */,
+				5B140F85254627350019F0A9 /* OrderListShadowCell.swift */,
+				5B140F83254626D10019F0A9 /* OrderListShadowCell.xib */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -538,6 +555,7 @@
 				5B8546DE249439A60092743E /* UserRouter.swift */,
 				5B8546E2249502710092743E /* HomeRouter.swift */,
 				5B6FBF4924C235E200C04D3E /* SearchRouter.swift */,
+				5B140F7F254611F80019F0A9 /* PaymentRouter.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -572,6 +590,9 @@
 				5BAFE03B25422F0B0004BFA1 /* JCashVC.swift */,
 				5BAFE03D2542C07B0004BFA1 /* JOrderHubVC.swift */,
 				D8DA7A6D25443D6D00D4B56E /* SeeAllViewController.swift */,
+				5B140F792545EE4C0019F0A9 /* PreOrderConfirmationVC.swift */,
+				5B140F7B2545F5670019F0A9 /* PaymentConfirmationVC.swift */,
+				5B140F7D2545F57F0019F0A9 /* PaymentFailureVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -601,6 +622,7 @@
 		9ADBA32901BD68423125DC0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B140F81254618360019F0A9 /* WebKit.framework */,
 				5BA497B12413907600CED8EA /* Pods_Jaarx.framework */,
 				5BA497AB2413904B00CED8EA /* Alamofire.framework */,
 				2670C3D9E2A8165F5E01BFFA /* Pods_Jaarx.framework */,
@@ -791,6 +813,7 @@
 				5BA9E698241030CC0044CDBF /* Main.storyboard in Resources */,
 				D8EFB7CA24CDD993000D72AF /* RestaurantDetailSectionHeader.xib in Resources */,
 				5BF85E7024BE4CEB004335E8 /* CarouselTableCell.xib in Resources */,
+				5B140F84254626D10019F0A9 /* OrderListShadowCell.xib in Resources */,
 				5B76E7222540223600BC7753 /* OrderListCell.xib in Resources */,
 				5B72E17E240ECFD70032F004 /* LaunchScreen.storyboard in Resources */,
 				D8CA36A724FC302B0098AA64 /* ProfilePlacesCollectionCell.xib in Resources */,
@@ -951,6 +974,7 @@
 				5B3D014824A0A38F002EFD89 /* APIClient.swift in Sources */,
 				D830CC2E24BDDD8100CDC75A /* RestaurantViewModel.swift in Sources */,
 				5B6FBF4724C227D000C04D3E /* RestaurantListCell.swift in Sources */,
+				5B140F7C2545F5670019F0A9 /* PaymentConfirmationVC.swift in Sources */,
 				5BF85E6F24BE4CEB004335E8 /* CarouselTableCell.swift in Sources */,
 				D87FB85225437498006202A3 /* VisitedRestaurantVM.swift in Sources */,
 				5BBE873324F953BC005FABBD /* MenuResponse.swift in Sources */,
@@ -961,6 +985,7 @@
 				D8EFB7C124CD6775000D72AF /* RestaurantDetailViewModel.swift in Sources */,
 				5B8546DF249439A60092743E /* UserRouter.swift in Sources */,
 				5B283666251784FE007C5710 /* EditCartViewModel.swift in Sources */,
+				5B140F86254627350019F0A9 /* OrderListShadowCell.swift in Sources */,
 				5B61329B24A938BD0031448F /* JTextFieldCell.swift in Sources */,
 				5B4071A725405E8300E8FA9D /* CheckoutVM.swift in Sources */,
 				5B283664251782F0007C5710 /* JEditCartVC.swift in Sources */,
@@ -977,6 +1002,7 @@
 				5B61328D24A8E41D0031448F /* LoginVC.swift in Sources */,
 				D8CA36AB24FC30630098AA64 /* ProfileSettingCollectionCell.swift in Sources */,
 				5BECC6F424CCC7500025B4BC /* PreOrderVC.swift in Sources */,
+				5B140F7E2545F57F0019F0A9 /* PaymentFailureVC.swift in Sources */,
 				5B2CA6FF24B8D5F600CDD824 /* JMainTabbarVC.swift in Sources */,
 				D8CA36A224FC17550098AA64 /* AccountTableCell.swift in Sources */,
 				5B61329824A9350A0031448F /* SignUpVC.swift in Sources */,
@@ -1010,6 +1036,7 @@
 				5B09533C24FACCB7004264B8 /* MenuHeaderCell.swift in Sources */,
 				5B4071AB254088BA00E8FA9D /* JPaymentVC.swift in Sources */,
 				D830CC2424BCAE0400CDC75A /* QRCodeScannerVC.swift in Sources */,
+				5B140F80254611F80019F0A9 /* PaymentRouter.swift in Sources */,
 				5B09532E24FA7CFA004264B8 /* JRestaurantMenuVC.swift in Sources */,
 				5B76E7212540223600BC7753 /* OrderListCell.swift in Sources */,
 				5BAFE0402542C27B0004BFA1 /* OrderHubViewModel.swift in Sources */,
@@ -1027,6 +1054,7 @@
 				5BC0C70A24A27A1D0045782B /* FavoriteRestaurant.swift in Sources */,
 				5BAFE03E2542C07B0004BFA1 /* JOrderHubVC.swift in Sources */,
 				5B61329024A8E8C70031448F /* JNavigationVC.swift in Sources */,
+				5B140F7A2545EE4C0019F0A9 /* PreOrderConfirmationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1195,6 +1223,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = X2ADJS9PN3;
 				INFOPLIST_FILE = Jaarx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1219,6 +1248,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = X2ADJS9PN3;
 				INFOPLIST_FILE = Jaarx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

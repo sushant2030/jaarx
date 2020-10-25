@@ -26,10 +26,20 @@ class JCheckoutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkoutVM.setUserFlow(withMode: UserDataSource.sharedInstance.userFlow)
-        checkoutVM.getDetails()
         bindData()
         installView()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkoutVM.getDetails()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        abstractView.makeSelectedCornersRounded()
+        abstractView.dropShadow(scale: true)
     }
     
     func installView()  {
@@ -41,14 +51,10 @@ class JCheckoutVC: UIViewController {
         billInfoView.dropShadow(scale: true)
         btnAction.makeCornerRadiusWithRadi(radius: 10.0)
         btnAction.dropShadow(scale: true)
-        let rectShape = CAShapeLayer()
-        rectShape.bounds = abstractView.frame
-        rectShape.position = abstractView.center
-        rectShape.path = UIBezierPath(roundedRect: abstractView.bounds, byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 100, height: 120)).cgPath
-        //Here I'm masking the textView's layer with rectShape layer
-        abstractView.layer.mask = rectShape
-        abstractView.dropShadow(scale: true)
+        
+
         if checkoutVM.userFlow == .preOrder {
+            checkoutVM.paymentMode.value = .online
             btnSkipView.isHidden = true
             self.btnAction.setTitle("Pay Online", for: .normal)
         } else {
@@ -86,6 +92,20 @@ class JCheckoutVC: UIViewController {
         checkoutVM.orderNo.addObserver(fireNow: false) { (value) in
             self.lblOrderNo.text = "orderNo \(value)"
         }
+        checkoutVM.paymentStatus.addObserver(fireNow: false) { (value) in
+            switch UserDataSource.sharedInstance.transactionStatus {
+            case .noTransaction:
+                print("")
+            case .fail:
+                self.presentPaymentFailurePage()
+            case .success:
+                self.presentPaymentConfirmationPage()
+            case .preorderSuccess:
+                self.presentPreOrder()
+            default:
+                print("")
+            }
+        }
     }
     
     @IBAction func actionPayment(_ sender: UIButton) {
@@ -119,16 +139,29 @@ class JCheckoutVC: UIViewController {
     @IBAction func actionPromocode(_ sender: UIButton) {
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func presentPaymentConfirmationPage()  {
+        if let paymentPage = UIStoryboard.paymentConfirmationVC() {
+            paymentPage.modalPresentationStyle = .fullScreen
+            paymentPage.setCheckOutInfo(checkoutVM: checkoutVM)
+            self.present(paymentPage, animated: true, completion: nil)
+        }
     }
-    */
-
+    
+    func presentPaymentFailurePage() {
+        if let paymentPage = UIStoryboard.paymentFailureVC() {
+            paymentPage.setBillInfo(checkoutVM: checkoutVM)
+            paymentPage.modalPresentationStyle = .fullScreen
+            self.present(paymentPage, animated: true, completion: nil)
+        }
+    }
+    
+    func presentPreOrder()  {
+        if let preOrderConfirmation = UIStoryboard.preOrderConfirmation() {
+            preOrderConfirmation.modalPresentationStyle = .fullScreen
+            self.present(preOrderConfirmation, animated: true, completion: nil)
+        }
+    }
 }
 
 extension JCheckoutVC : UITableViewDelegate, UITableViewDataSource {

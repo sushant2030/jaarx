@@ -147,8 +147,8 @@
             filePath = "Jaarx/UIComponents/TableCells/MenuTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "setup(viewModel:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -156,63 +156,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7860E6C1-8B80-45AE-ADD0-6CEBEB3B7403"
-            shouldBeEnabled = "Yes"
+            uuid = "A0C6E388-EC85-4C6B-B275-B22E9D49F124"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/ViewControllers/JEditCartVC.swift"
+            filePath = "Jaarx/UIComponents/TableCells/MenuTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "actionPlaceOrder(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0EFBA409-0B1E-4876-963D-F0CAE05092F9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/ViewControllers/JEditCartVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "actionPlaceOrder(_:)"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "actionRemoveQuantity(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "0EFBA409-0B1E-4876-963D-F0CAE05092F9 - 7ff53d8ec74ca90"
+                  uuid = "A0C6E388-EC85-4C6B-B275-B22E9D49F124 - 3197a36a4c0f0315"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Jaarx.JEditCartVC.actionPlaceOrder(__C.UIButton) -&gt; ()"
+                  symbolName = "Jaarx.MenuTableCell.actionRemoveQuantity(__C.UIButton) -&gt; ()"
                   moduleName = "Jaarx"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/UIComponents/ViewControllers/JEditCartVC.swift"
+                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/UIComponents/TableCells/MenuTableCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "218">
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1409">
                </Location>
                <Location
-                  uuid = "0EFBA409-0B1E-4876-963D-F0CAE05092F9 - 46148643078435ad"
+                  uuid = "A0C6E388-EC85-4C6B-B275-B22E9D49F124 - 5e178d693158466b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Jaarx.JEditCartVC.actionPlaceOrder(__C.UIButton) -&gt; ()"
+                  symbolName = "closure #2 (Jaarx.FoodDetails) -&gt; Swift.Bool in Jaarx.MenuTableCell.actionRemoveQuantity(__C.UIButton) -&gt; ()"
                   moduleName = "Jaarx"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/UIComponents/ViewControllers/JEditCartVC.swift"
+                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/UIComponents/TableCells/MenuTableCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "112">
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -220,47 +204,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "81FA489D-157B-47CE-AA22-5B5E4CDD32C6"
+            uuid = "4A8B495C-72DA-4729-B4EF-E54AC0E3BF9B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Jaarx/UIComponents/ViewControllers/JEditCartVC.swift"
+            filePath = "Jaarx/UIComponents/TableCells/MenuTableCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "actionPlaceOrder(_:)"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "actionRemoveQuantity(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "22801689-005F-4E2F-9A75-2FD45E7746AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Jaarx/ViewModels/CheckoutVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "getOrderDetails()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "81FA489D-157B-47CE-AA22-5B5E4CDD32C6 - 7ff53d8ec74ca90"
+                  uuid = "22801689-005F-4E2F-9A75-2FD45E7746AC - 2bc36aac814e7cd3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Jaarx.JEditCartVC.actionPlaceOrder(__C.UIButton) -&gt; ()"
+                  symbolName = "Jaarx.CheckoutVM.getOrderDetails() -&gt; ()"
                   moduleName = "Jaarx"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/UIComponents/ViewControllers/JEditCartVC.swift"
+                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/ViewModels/CheckoutVM.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "442">
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "30">
                </Location>
                <Location
-                  uuid = "81FA489D-157B-47CE-AA22-5B5E4CDD32C6 - e507531f19680ae"
+                  uuid = "22801689-005F-4E2F-9A75-2FD45E7746AC - 2c28ad63d9e2e883"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Bool) -&gt; () in Jaarx.JEditCartVC.actionPlaceOrder(__C.UIButton) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;Jaarx.OrderCheckoutResponse, Alamofire.AFError&gt;) -&gt; () in Jaarx.CheckoutVM.getOrderDetails() -&gt; ()"
                   moduleName = "Jaarx"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/UIComponents/ViewControllers/JEditCartVC.swift"
+                  urlString = "file:///Users/sush/Documents/Workspace/iOS/Jaarx_iOS/Jaarx/Jaarx/ViewModels/CheckoutVM.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "112">
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "264">
                </Location>
             </Locations>
          </BreakpointContent>

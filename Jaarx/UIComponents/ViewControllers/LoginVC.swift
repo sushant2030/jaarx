@@ -17,6 +17,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var tfMobile: AkiraTextField!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var lblSignup: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,9 @@ class LoginVC: UIViewController {
         containerView.makeViewCornerRadiusWithRadi(radius: 15.0)
         tfMobile.borderColor = .clear
         containerView.dropShadow()
+        tfMobile.delegate = self
+        containerView.backgroundColor = .white
+        lblSignup.textColor = .white
         // Do any additional setup after loading the view.
     }
     
@@ -73,4 +77,11 @@ class LoginVC: UIViewController {
     }
     */
 
+}
+
+extension LoginVC : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

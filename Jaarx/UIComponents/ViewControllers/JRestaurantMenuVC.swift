@@ -48,7 +48,17 @@ class JRestaurantMenuVC: UIViewController {
             DispatchQueue.main.async {
                 self?.lblItemCount.text = "\(carts.count) Items"
                 let count = carts.reduce(0) { (result, cart)  in
-                    result + Int((cart.dishPrice)!)!
+                    result + (Int((cart.dishPrice)!)! * cart.cartQuantity)
+                }
+                self?.lblTotalCost.text = "Total " + "\(count)"
+            }
+        }
+        
+        UserDataSource.sharedInstance.cartUpdated.addObserver(fireNow: false) { [weak self] (value) in
+            DispatchQueue.main.async {
+                self?.lblItemCount.text = "\(UserDataSource.sharedInstance.carts.value.count) Items"
+                let count = UserDataSource.sharedInstance.carts.value.reduce(0) { (result, cart)  in
+                    result + (Int((cart.dishPrice)!)! * cart.cartQuantity)
                 }
                 self?.lblTotalCost.text = "Total " + "\(count)"
             }
@@ -56,7 +66,7 @@ class JRestaurantMenuVC: UIViewController {
         menuViewModel.currentMenuPage.addObserver(fireNow: false) { (page) in
             DispatchQueue.main.async {
                 self.menuCollectionView.scrollToItem(at: page, at: .left, animated: true)
-                self.headerCollectionView.selectItem(at: page, animated: false, scrollPosition: .centeredVertically)
+                self.headerCollectionView.selectItem(at: page, animated: false, scrollPosition: .left)
             }
         }
     }
@@ -99,6 +109,10 @@ extension JRestaurantMenuVC : UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = self.menuViewModel.cuisineCategories.value.filter({ $0.isSelected == true})
+        if model.count > 0 {
+            model[0].isSelected = false
+        }
         menuViewModel.currentMenuPage.value = indexPath
         if let cell  = collectionView.cellForItem(at: indexPath) as? MenuHeaderCell {
             let model = self.menuViewModel.cuisineCategories.value[indexPath.item]
@@ -106,16 +120,6 @@ extension JRestaurantMenuVC : UICollectionViewDelegate, UICollectionViewDataSour
             cell.setSelection(isSelected:true)
         }
         self.headerCollectionView.reloadData()
-        
-    }
-                      
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-
-         let model = self.menuViewModel.cuisineCategories.value.filter({ $0.isSelected == true})
-        if model.count > 0 {
-            model[0].isSelected = false
-        }
-            
         
     }
     

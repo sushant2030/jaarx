@@ -75,6 +75,7 @@ class RestaurantDetailVC : UIViewController{
     @IBAction func actionLike(_ sender: Any) {
     }
     @IBAction func actionMenu(_ sender: Any) {
+        UserDataSource.sharedInstance.userFlow = .none
         if let restID = self.restaurantId {
         if let menuVC = UIStoryboard.menuVC() {
             menuVC.setRestaurantId(resId: restID, name: restaurantDetailVM?.restaurantHeaderVM.value?.restaurantName ?? "")

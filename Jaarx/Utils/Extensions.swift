@@ -62,11 +62,15 @@ extension UIStoryboard {
     static func orderHub() -> JOrderHubVC? {
         return orderStoryboard().instantiateViewController(identifier: "JOrderHubVC") as? JOrderHubVC
     }
-    
-    
-    
-    
-    
+    static func paymentConfirmationVC() -> PaymentConfirmationVC? {
+        return orderStoryboard().instantiateViewController(identifier: "PaymentConfirmationVC") as? PaymentConfirmationVC
+    }
+    static func paymentFailureVC() -> PaymentFailureVC? {
+        return orderStoryboard().instantiateViewController(identifier: "PaymentFailureVC") as? PaymentFailureVC
+    }
+    static func preOrderConfirmation() -> PreOrderConfirmationVC? {
+        return orderStoryboard().instantiateViewController(identifier: "PreOrderConfirmationVC") as? PreOrderConfirmationVC
+    }
 }
 
 extension UIButton {
@@ -141,6 +145,19 @@ extension UIView{
     func makeViewCornerRadiusWithRadi(radius:CGFloat) {
         self.layer.cornerRadius = radius
         self.layer.masksToBounds = true
+    }
+    
+    func makeSelectedCornersRounded()  {
+        self.layer.masksToBounds = true
+        let rectShape = CAShapeLayer()
+        rectShape.bounds = self.frame
+        rectShape.position = self.center
+        rectShape.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.bottomLeft,.bottomRight], cornerRadii: CGSize(width: 200, height: 80)).cgPath
+        //Here I'm masking the textView's layer with rectShape layer
+        self.layer.mask = rectShape
+//        self.layer.cornerRadius = 40.0
+//        self.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMaxYCorner]
+//        self.clipsToBounds = true
     }
     
     func makeAppThemeColorBorder()  {

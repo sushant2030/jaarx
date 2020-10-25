@@ -43,9 +43,11 @@ class UserDataSource {
     var user : User!
     var carts = Observable<[FoodDetails]> (value: [])
     var userFlow : UserFlow = .none
+    var cartUpdated = Observable<Bool> (value: false)
     func setUser(user : User) {
         self.user = user
     }
+    var transactionStatus : TransactionStatus! = .noTransaction
     
     func getUserDetails(completion : @escaping ((Bool) -> Void)) {
         APIClient.getUserDetails { [unowned self] (response) in

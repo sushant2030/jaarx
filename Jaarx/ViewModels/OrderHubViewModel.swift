@@ -15,7 +15,7 @@ class OrderHubViewModel {
     let totalCost = Observable<String> (value: "")
     let restaurantName = Observable<String> (value: "")
     let restaurantLocation = Observable<String> (value: "")
-    
+    let orderStatus = Observable<String> (value: "")
     
     func getNumberOfSections() -> Int {
         if pendingFoodData.value.count > 0 , servedFoodData.value.count > 0 {

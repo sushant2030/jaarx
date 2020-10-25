@@ -42,7 +42,7 @@ class OrderHubCell: UITableViewCell {
 extension OrderHubCell : CellConfigurable {
     func setup(viewModel: RowViewModel) {
         if let viewModel = viewModel as? CartFoodVM {
-            foodPrice.text = viewModel.totalPrice
+            foodPrice.text = "₹\(viewModel.totalPrice ?? "0.0")"
             foodTitle.text = viewModel.dishName
             let veg = viewModel.isVeg ?? true
             vegBulletImageView.image = UIImage.init(named: veg ? "veg" : "nonVeg")

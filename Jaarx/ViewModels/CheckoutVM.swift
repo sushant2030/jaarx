@@ -19,17 +19,24 @@ class CheckoutVM {
     var orderNo = Observable<String> (value: "")
     var foodData = Observable<[CartFoodVM]> (value: [])
     var paymentMode = Observable<PaymentMode> (value : .cash)
+    var paymentStatus = Observable<String> (value: "")
     
     func setUserFlow(withMode userFlow : UserFlow) {
         self.userFlow = userFlow
     }
     
     func getDetails() {
-        switch userFlow {
-        case .preOrder:
-            self.getCartDetails()
-        default:
+        if let _ = UserDataSource.sharedInstance.user.orderId {
             self.getOrderDetails()
+        } else {
+            switch userFlow {
+            case .preOrder:
+                self.getCartDetails()
+            case .scan:
+                self.getOrderDetails()
+            default:
+                print("")
+            }
         }
     }
     
@@ -87,6 +94,7 @@ class CheckoutVM {
                 let total = Float(gst)! + Float(sgst)! + Float(serviceCharge)!
                 self.gst.value = "\(total)"
                 self.total.value = orderCheckoutResponse.response?.totalPrice ?? "0.0"
+                self.paymentStatus.value = orderCheckoutResponse.response?.paymentStatus ?? ""
                 UserDataSource.sharedInstance.cashDetails = CashDetails.init(withTotal: self.total.value, gst: self.gst.value, discount: "0.0",sub: self.subTotal.value)
                 self.parseOrderDetails(orderFoodDetails: orderCheckoutResponse.response?.orderFoodDetails ?? [])
                 self.orderNo.value = orderCheckoutResponse.response?.orderId ?? ""

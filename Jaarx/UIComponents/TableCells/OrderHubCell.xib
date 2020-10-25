@@ -45,11 +45,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYZ-fc-riS">
-                                <rect key="frame" x="171" y="10" width="73" height="20"/>
+                                <rect key="frame" x="166.5" y="7" width="78" height="22"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="fnq-Ma-5ri"/>
-                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZSo-zA-a7R">
                                 <rect key="frame" x="169" y="8" width="73" height="20"/>
@@ -76,19 +73,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ZSo-zA-a7R" firstAttribute="centerY" secondItem="gzf-Fo-z9Z" secondAttribute="centerY" id="0W9-Bh-pFf"/>
+                            <constraint firstItem="YYZ-fc-riS" firstAttribute="centerX" secondItem="ZSo-zA-a7R" secondAttribute="centerX" id="3EA-gD-w6U"/>
+                            <constraint firstItem="YYZ-fc-riS" firstAttribute="centerY" secondItem="ZSo-zA-a7R" secondAttribute="centerY" id="3NF-ca-CU4"/>
                             <constraint firstItem="BUn-Zf-BZ7" firstAttribute="centerY" secondItem="Z47-k5-Vg2" secondAttribute="centerY" id="7kB-zV-1y5"/>
                             <constraint firstAttribute="trailing" secondItem="hXo-eg-spv" secondAttribute="trailing" constant="16" id="F0I-76-mgy"/>
-                            <constraint firstItem="YYZ-fc-riS" firstAttribute="bottom" secondItem="ZSo-zA-a7R" secondAttribute="bottom" constant="2" id="GZ2-HE-FMj"/>
                             <constraint firstItem="Z47-k5-Vg2" firstAttribute="leading" secondItem="gzf-Fo-z9Z" secondAttribute="leading" constant="8" id="Q6J-lt-5Ml"/>
-                            <constraint firstItem="YYZ-fc-riS" firstAttribute="trailing" secondItem="ZSo-zA-a7R" secondAttribute="trailing" constant="2" id="Rj1-vh-kz3"/>
-                            <constraint firstItem="YYZ-fc-riS" firstAttribute="leading" secondItem="ZSo-zA-a7R" secondAttribute="leading" constant="2" id="ULh-rN-4Au"/>
                             <constraint firstItem="rOH-Ya-hlq" firstAttribute="leading" secondItem="BUn-Zf-BZ7" secondAttribute="leading" id="Vc6-vv-uT3"/>
                             <constraint firstItem="ZSo-zA-a7R" firstAttribute="centerX" secondItem="gzf-Fo-z9Z" secondAttribute="centerX" multiplier="1.3" id="Zkl-3j-GoG"/>
                             <constraint firstItem="hXo-eg-spv" firstAttribute="centerY" secondItem="gzf-Fo-z9Z" secondAttribute="centerY" id="axU-sv-EsX"/>
                             <constraint firstItem="BUn-Zf-BZ7" firstAttribute="leading" secondItem="Z47-k5-Vg2" secondAttribute="trailing" constant="8" id="dqe-eC-n3M"/>
                             <constraint firstItem="rOH-Ya-hlq" firstAttribute="top" secondItem="BUn-Zf-BZ7" secondAttribute="bottom" constant="5" id="ego-1S-p5L"/>
                             <constraint firstItem="Z47-k5-Vg2" firstAttribute="top" secondItem="gzf-Fo-z9Z" secondAttribute="top" constant="8" id="fg2-wO-Q6o"/>
-                            <constraint firstItem="YYZ-fc-riS" firstAttribute="top" secondItem="ZSo-zA-a7R" secondAttribute="top" constant="2" id="gSO-HO-LhP"/>
+                            <constraint firstItem="YYZ-fc-riS" firstAttribute="height" secondItem="ZSo-zA-a7R" secondAttribute="height" constant="2" id="ndp-W4-egr"/>
+                            <constraint firstItem="YYZ-fc-riS" firstAttribute="width" secondItem="ZSo-zA-a7R" secondAttribute="width" constant="5" id="wq3-D0-8ha"/>
                         </constraints>
                     </view>
                 </subviews>

@@ -29,14 +29,14 @@ class EditCartCell: UITableViewCell {
     @IBAction func actionAdd(_ sender: UIButton) {
         if let quantity = cartItemModel?.cartQuantity {
             cartItemModel?.cartQuantity += 1
-            lblFoodCount.text = "\(quantity + 1)"
+            lblFoodCount.text = "x \(quantity + 1)"
         }
     }
     
     @IBAction func actionRemove(_ sender: Any) {
         if let quantity = cartItemModel?.cartQuantity, quantity > 0 {
             cartItemModel?.cartQuantity -= 1
-            lblFoodCount.text = "\(quantity - 1)"
+            lblFoodCount.text = "x \(quantity - 1)"
         }
     }
 }

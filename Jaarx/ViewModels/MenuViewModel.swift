@@ -19,6 +19,9 @@ class MenuViewModel {
                     if let menuData = menuData[0].cuisineCategoryDetails {
                         for cuisineDetails in menuData {
                             let categoryDetail = CategoryDetailVM.init(with: cuisineDetails)
+                            if menuData[0].cuisineCategoryId == categoryDetail.cuisineCategoryId{
+                                categoryDetail.isSelected = true
+                            }
                             self?.cuisineCategories.value.append(categoryDetail)
                         }
                     }

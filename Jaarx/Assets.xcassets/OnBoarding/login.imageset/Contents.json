@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Login screen.png",
+      "filename" : "Intersection 25.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Login screen-1.png",
+      "filename" : "Intersection 25-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Login screen-2.png",
+      "filename" : "Intersection 25-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -203,5 +203,25 @@ class APIClient {
             print(error)
         }
     }
+    
+    static func getPaymentUrl() -> URLRequest? {
+        do {
+            switch UserDataSource.sharedInstance.userFlow {
+            case .preOrder:
+                let paymentRequest = try PaymentRouter.preorder.asURLRequest()
+                return paymentRequest
+            case .scan:
+                let paymentRequest = try PaymentRouter.scan.asURLRequest()
+                return paymentRequest
+            default:
+                return nil
+            }
+        }
+        catch (let error){
+            print(error)
+            return nil
+        }
+        
+    }
 }
 

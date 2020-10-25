@@ -16,9 +16,13 @@ class JEditCartVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerView()
-        makeCornerRadius()
         bindData()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        makeCornerRadius()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +42,7 @@ class JEditCartVC: UIViewController {
         rectShape.path = UIBezierPath(roundedRect: holderView.bounds, byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 100, height: 100)).cgPath
         //Here I'm masking the textView's layer with rectShape layer
         holderView.layer.mask = rectShape
+        holderView.dropShadow(scale: true)
         cartTableView.backgroundColor = .clear
         btnPlaceHolder.makeCornerRadiusWithRadi(radius: 5.0)
     }
@@ -51,7 +56,8 @@ class JEditCartVC: UIViewController {
     }
     
     @IBAction func actionClose(_ sender: UIButton) {
-        self.dismiss(animated: false, completion: nil)
+        UserDataSource.sharedInstance.carts.value = []
+        editCartVM.carts.value = []
     }
     
     @IBAction func actionPlaceOrder(_ sender: UIButton) {
@@ -67,7 +73,7 @@ class JEditCartVC: UIViewController {
                     //SHOW ERROR
                 }
             }
-        default:
+        case .scan:
             UserDataSource.sharedInstance.addOrder { (isSuccess) in
                 if isSuccess {
                     if let orderHub = UIStoryboard.orderHub() {
@@ -78,6 +84,19 @@ class JEditCartVC: UIViewController {
                     //SHOW ERROR
                 }
             }
+        default:
+            print("")
+             //SHOW ERROR
+//            UserDataSource.sharedInstance.addCart { (isSuccess) in
+//                if isSuccess {
+//                    if let checkoutVC = UIStoryboard.checkOutVC() {
+//                        checkoutVC.modalPresentationStyle = .fullScreen
+//                        self.present(checkoutVC, animated: true, completion: nil)
+//                    }
+//                } else {
+//                    //SHOW ERROR
+//                }
+//            }
         }
         
     }

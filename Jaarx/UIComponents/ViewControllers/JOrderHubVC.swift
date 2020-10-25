@@ -101,6 +101,7 @@ extension JOrderHubVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView.init(frame: CGRect.init(x: 0, y: 10, width: tableView.bounds.width, height: 100
         ))
+        view.backgroundColor = .white
         let label = UILabel.init(frame: CGRect.init(x: 4, y: 0, width: view.bounds.width, height: 30))
         label.text = section == 0 ? "Pending Orders" : "Served Orders"
         label.font = UIFont.init(name: "Helvetica Neue", size: 25)
